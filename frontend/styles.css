@@ -1,0 +1,15 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+:root{--bg:#f7f8fb;--card:#fff;--text:#111;--accent:#1f6feb}
+[data-theme='dark']{--bg:#0f1720;--card:#0b1220;--text:#e6eef8;--accent:#60a5fa}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:900px;margin:28px auto;padding:0 16px}
+.site-header{padding:28px 0;background:linear-gradient(90deg,var(--accent),#8ec5ff33);}
+.site-header .org-name{font-size:28px}
+.site-header .org-tag{margin-top:6px;color:rgba(0,0,0,0.6)}
+.btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.btn.small{font-size:13px;padding:6px 10px}
+.card{background:var(--card);padding:18px;border-radius:10px;margin-top:16px;box-shadow:0 6px 18px rgba(8,15,30,0.06)}
+.members-list{display:flex;gap:12px;flex-wrap:wrap}
+.member{display:flex;gap:12px;align-items:center;padding:8px;border-radius:8px}
+.member img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.site-footer{padding:20px 0;text-align:center;color:rgba(0,0,0,0.6);margin-top:28px}

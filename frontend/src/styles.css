@@ -1,0 +1,81 @@
+:root{--bg:#f7f8fb;--card:#fff;--text:#111;--accent:#0a57a6;--accent-2:#08306b}
+[data-theme='dark']{--bg:#0f1720;--card:#0b1220;--text:#e6eef8;--accent:#60a5fa}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:900px;margin:28px auto;padding:0 16px}
+.site-header{padding:28px 0;background:linear-gradient(90deg,var(--accent),#8ec5ff33);}
+.site-header .org-name{font-size:28px}
+.site-header .org-tag{margin-top:6px;color:rgba(0,0,0,0.6)}
+
+/* Top navigation */
+.top-nav{position:fixed;left:0;right:0;top:0;height:80px;background:linear-gradient(90deg,var(--accent-2),var(--accent));color:white;z-index:60}
+.top-nav .container{margin:0; padding-left:16px; padding-right:16px; height:100%}
+.top-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.top-nav .logo{display:flex;align-items:center;gap:12px;padding-left:6px}
+.brand-logo{height:64px;display:block}
+.logo img{display:block}
+.logo-text{line-height:1;display:flex;flex-direction:column}
+.logo-sub{font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:2px}
+.logo-title{font-weight:800;font-size:18px;color:#fff}
+/* If image missing, ensure broken icon hidden and fallback text appears clean */
+.brand-logo[alt="Logo"]{object-fit:contain}
+.logo-fallback{font-weight:800;font-size:18px;color:#fff}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-link{color:rgba(255,255,255,0.9);text-decoration:none;font-size:14px;padding:8px 6px}
+.nav-link:hover{color:var(--accent-2);background:rgba(255,255,255,0.04);border-radius:6px}
+
+/* Keep existing main content visible below fixed nav */
+main.container{padding-top:20px}
+.card{background:var(--card);padding:18px;border-radius:10px;margin-top:16px;box-shadow:0 6px 18px rgba(8,15,30,0.06)}
+.members-list{display:flex;gap:12px;flex-wrap:wrap}
+.member{display:flex;gap:12px;align-items:center;padding:8px;border-radius:8px}
+.member img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.site-footer{padding:20px 0;text-align:center;color:rgba(0,0,0,0.6);margin-top:28px}
+
+/* Divisions grid */
+.divisions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.division-item{display:flex;gap:12px;align-items:flex-start}
+.division-thumb{width:140px;height:84px;background-size:cover;background-position:center;border-radius:8px;flex-shrink:0}
+.division-info h3{margin:0 0 6px 0;font-size:16px}
+.division-info p{margin:0;color:rgba(0,0,0,0.7)}
+
+@media (max-width:900px){
+	.divisions-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+	.divisions-grid{grid-template-columns:1fr}
+}
+
+/* Division detail styles */
+.division-detail .detail-inner{display:flex;gap:16px;align-items:flex-start}
+.division-detail .detail-image{width:60%;min-height:260px;background-size:cover;background-position:center;border-radius:8px}
+.division-detail .detail-body{flex:1}
+.division-detail h2{margin-top:0}
+
+@media (max-width:720px){
+	.division-detail .detail-inner{flex-direction:column}
+	.division-detail .detail-image{width:100%;min-height:180px}
+}
+
+/* Hero slider */
+.hero-slider{position:relative;margin-top:80px;height:60vh;min-height:360px;overflow:hidden}
+.slides-inner{display:flex;height:100%;transition:transform 700ms cubic-bezier(.22,.9,.37,1)}
+.hero-slider .slide{flex:0 0 100%;height:100%;background-size:cover;background-position:center center}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.35);color:#fff;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:28px}
+.slide-btn.prev{left:18px}
+.slide-btn.next{right:18px}
+.dots{position:static}
+.bottom-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;gap:8px}
+.dot{width:12px;height:12px;background:rgba(255,255,255,0.12);border:none;border-radius:50%;cursor:pointer;padding:0}
+.dot.active{background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+
+@media (max-width:720px){
+	.top-nav{height:64px}
+	.hero-slider{margin-top:64px;height:44vh}
+	.nav-links{gap:12px}
+	.slide-btn{width:40px;height:40px;font-size:22px}
+	.dots{flex-direction:row;right:50%;transform:translateX(50%);bottom:12px}
+	.dot{width:10px;height:10px;border-radius:50%}
+	.logo-text{display:block}
+	.brand-logo{height:48px}
+}
