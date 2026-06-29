@@ -1,0 +1,133 @@
+{
+  "profile": {
+    "name": "Ikatan Mahasiswa Kerinci - Universitas Andalas",
+    "description": "Organisasi ini bergerak di bidang pendidikan dan pemberdayaan masyarakat."
+  },
+  "contact": {
+    "email": "contact@organisasi.example",
+    "phone": "+62 812-3456-7890",
+    "address": "Jalan Contoh No. 1, Kota",
+    "instagram": "",
+    "facebook": "",
+    "website": ""
+  },
+  "members": [
+    {
+      "id": 1,
+      "name": "Jazil Baskara",
+      "role": "Ketua Umum",
+      "avatar": "/uploads/1782732421101-thh2x3.jpeg",
+      "division_key": "inti"
+    },
+    {
+      "id": 2,
+      "name": "Rahil Akram Hammad",
+      "role": "Wakil Ketua Umum Eksternal",
+      "avatar": "/uploads/1782732953510-hiplpy.jpeg",
+      "division_key": "inti"
+    },
+    {
+      "id": "1782732458007",
+      "name": "Zaki Alhazbi",
+      "role": "Wakil Ketua Umum Internal",
+      "division_key": "inti",
+      "avatar": "/uploads/1782733560984-tu75z9.jpeg"
+    },
+    {
+      "id": "1782732483527",
+      "name": "Ocha Ramadhani",
+      "role": "Sekretaris Umum",
+      "division_key": "inti",
+      "avatar": "/uploads/1782733719632-onu4ae.jpeg"
+    },
+    {
+      "id": "1782732498831",
+      "name": "Azizah Khairunnisa",
+      "role": "Bendahara Umum",
+      "division_key": "inti",
+      "avatar": "/uploads/1782733744229-agv4lp.jpeg"
+    }
+  ],
+  "divisions": [
+    {
+      "key": "inti",
+      "name": "Inti",
+      "description": "Presidium Inti adalah jajaran pimpinan tertinggi atau kelompok pengarah utama dalam suatu organisasi atau lembaga. Mereka berfungsi sebagai pusat koordinasi, pengambil keputusan strategis, dan penggerak arah kebijakan untuk memastikan seluruh program kerja berjalan sesuai visi dan misi.",
+      "avatar": "/uploads/1782729492916-3zd6b8.jpeg"
+    },
+    {
+      "key": "psdm",
+      "name": "Pengembangan Sumber Daya Manusia (PSDM)",
+      "description": "PSDM bertanggung jawab mengoptimalkan, membina, dan mempersiapkan kader, serta fokus pada pengembangan internal, apresiasi, informasi soft skill, dan penguatan solidaritas organisasi.",
+      "avatar": "https://via.placeholder.com/1200x600?text=PSDM"
+    },
+    {
+      "key": "kestari",
+      "name": "Kesekretariatan (Kestari)",
+      "description": "Bidang Kesekretariatan bertanggung jawab atas tugas umum kepengurusan IMK-UNAND, meliputi surat-menyurat, pengarsipan, inventarisasi, serta memfasilitasi penataan dan pengelolaan kegiatan organisasi agar berjalan tertib.",
+      "avatar": "https://via.placeholder.com/1200x600?text=Kestari"
+    },
+    {
+      "key": "kpp",
+      "name": "Konseling dan Pemberdayaan Perempuan (KPP)",
+      "description": "Bidang KPP mengoordinasikan kegiatan anggota perempuan, menjaga hubungan harmonis antaranggota, serta menyediakan layanan konsultasi dan bantuan untuk penyelesaian masalah. Bidang ini terbagi menjadi dua sub-bidang:\nKonseling: Memberikan solusi atas permasalahan anggota, menjadi wadah aspirasi, dan mencari dukungan.\nPemberdayaan Perempuan: Mendukung upaya pemberdayaan anggota perempuan IMK-UNAND.",
+      "avatar": "https://via.placeholder.com/1200x600?text=KPP"
+    },
+    {
+      "key": "infokom",
+      "name": "Informasi dan Komunikasi (Infokom)",
+      "description": "Bidang INFOKOM bertanggung jawab untuk mengelola, menampung, dan menyampaikan informasi guna memperkuat hubungan internal maupun eksternal serta mempertahankan eksistensi IMK-UNAND di dunia maya. ",
+      "avatar": "https://via.placeholder.com/1200x600?text=Infokom"
+    },
+    {
+      "key": "olahraga",
+      "name": "Olahraga",
+      "description": "Bidang Olahraga berfungsi sebagai wadah untuk mengembangkan minat dan bakat anggota IMK-UNAND. Bidang ini juga berperan sebagai sarana silaturahmi untuk mempererat ikatan persaudaraan antaranggota IMK-UNAND.",
+      "avatar": "https://via.placeholder.com/1200x600?text=Olahraga"
+    },
+    {
+      "key": "danus",
+      "name": "Dana dan Usaha (Danus)",
+      "description": "Bidang Danus bertanggung jawab mengelola sumber dana organisasi melalui usaha kreatif, kolaboratif, dan sponsorship. Divisi dibagi menjadi Kewirausahaan dan Sponsorship & Kemitraan, namun pelaksanaannya bersifat fleksibel dan saling mendukung.\n",
+      "avatar": "https://via.placeholder.com/1200x600?text=Danus"
+    },
+    {
+      "key": "sosroh",
+      "name": "Sosial dan Rohani (Sosroh)",
+      "description": "Bidang Sosroh bertugas mengelola kegiatan sosial dan keagamaan untuk membangun kepedulian, memperkuat nilai rohani, serta menciptakan lingkungan organisasi yang harmonis. Fokus utamanya meliputi donasi, bakti sosial, respon bencana, serta kajian dan peringatan hari besar Islam.",
+      "avatar": "https://via.placeholder.com/1200x600?text=Sosroh"
+    },
+    {
+      "key": "senbudpar",
+      "name": "Seni Budaya dan Pariwisata (Senbudpar)",
+      "description": "Bidang ini bertujuan untuk melestarikan adat, budaya, serta memperkenalkan pariwisata dan ekonomi kreatif dari Kota Sungai Penuh dan Kabupaten Kerinci kepada mahasiswa Universitas Andalas. Bidang ini terbagi menjadi dua sub-bidang:\nSeni dan Budaya: Bergerak di bidang seni kebudayaan.\nPariwisata dan Ekonomi Kreatif: Berfokus pada promosi UMKM, komoditi unggulan, dan kuliner tradisional.",
+      "avatar": "https://via.placeholder.com/1200x600?text=Senbudpar"
+    }
+  ],
+  "programs": [
+    {
+      "id": 1,
+      "title": "Musyawarah Besar",
+      "description": "Agenda tahunan untuk menentukan arah organisasi.",
+      "date": "2026-01-15"
+    },
+    {
+      "id": 2,
+      "title": "Bakti Sosial",
+      "description": "Kegiatan sosial membantu masyarakat sekitar.",
+      "date": "2026-03-20"
+    }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "src": "/uploads/1782731131806-4zzl4v.jpeg",
+      "caption": "Selamat Datang"
+    },
+    {
+      "id": 2,
+      "src": "https://via.placeholder.com/1200x600?text=Slide+2",
+      "caption": "IMK-UNAND"
+    }
+  ]
+}

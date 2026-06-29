@@ -5,26 +5,24 @@ export default function HeroSlider(){
   const [index, setIndex] = useState(0)
 
   useEffect(()=>{
-    // fetch divisions from API and create large placeholder slides when needed
-    fetch('/api/divisions')
+    // fetch slides from API
+    fetch('/api/slides')
       .then(r=>r.json())
       .then(data => {
         const s = data.map((m,i)=>{
-          let url = m.avatar || `https://via.placeholder.com/1200x600?text=${encodeURIComponent(m.name)}`
-          // if avatar is small placeholder, use larger variant
-          if (url.includes('via.placeholder.com') && url.match(/\d+x\d+/)==null) url = `https://via.placeholder.com/1200x600?text=${encodeURIComponent(m.name)}`
-          return { src: url, alt: m.name }
+          let url = m.src || `https://via.placeholder.com/1200x600?text=${encodeURIComponent(m.caption || 'Slide')}`
+          return { src: url, alt: m.caption || `Slide ${i+1}` }
         })
         if (s.length===0){
-          s.push({src:'https://via.placeholder.com/1200x600?text=Pengurus+1', alt:'Pengurus 1'})
-          s.push({src:'https://via.placeholder.com/1200x600?text=Pengurus+2', alt:'Pengurus 2'})
+          s.push({src:'https://via.placeholder.com/1200x600?text=Slide+1', alt:'Slide 1'})
+          s.push({src:'https://via.placeholder.com/1200x600?text=Slide+2', alt:'Slide 2'})
         }
         setSlides(s)
       })
       .catch(()=>{
         setSlides([
-          {src:'https://via.placeholder.com/1200x600?text=Pengurus+1', alt:'Pengurus 1'},
-          {src:'https://via.placeholder.com/1200x600?text=Pengurus+2', alt:'Pengurus 2'}
+          {src:'https://via.placeholder.com/1200x600?text=Slide+1', alt:'Slide 1'},
+          {src:'https://via.placeholder.com/1200x600?text=Slide+2', alt:'Slide 2'}
         ])
       })
   },[])
@@ -42,7 +40,7 @@ export default function HeroSlider(){
 
   return (
     <section className="hero-slider" aria-label="Hero slider">
-      <div className="slides-inner" style={{width:`${slides.length*100}%`, transform:`translateX(-${index*100}%)`}}>
+      <div className="slides-inner" style={{ transform:`translateX(-${index*100}%)`}}>
         {slides.map((s, i)=> (
           <div key={i} className="slide" style={{backgroundImage:`url(${s.src})`}} role="img" aria-label={s.alt} />
         ))}
