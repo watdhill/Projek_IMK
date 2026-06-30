@@ -20,7 +20,8 @@ export default function ImageUpload({
   previewHeight = 160, 
   previewStyle = null,
   aspect,
-  cropShape = 'rect'
+  cropShape = 'rect',
+  noCrop = false
 }) {
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
@@ -66,9 +67,13 @@ export default function ImageUpload({
     setUploading(false)
   }
 
-  // Handle file selection (open cropper instead of uploading directly)
+  // Handle file selection (open cropper instead of uploading directly unless noCrop is true)
   const processFile = (file) => {
     if (!file) return
+    if (noCrop) {
+      handleUpload(file)
+      return
+    }
     const reader = new FileReader()
     reader.onload = () => {
       setCropSrc(reader.result)
@@ -153,7 +158,7 @@ export default function ImageUpload({
           <div className="upload-placeholder">
             <span className="upload-icon">📁</span>
             <span>Klik atau drag & drop gambar di sini</span>
-            <span className="upload-hint">JPG, PNG, GIF, WebP, SVG — Maks 10MB</span>
+            <span className="upload-hint">JPG, PNG, GIF, WebP, SVG</span>
           </div>
         )}
       </div>

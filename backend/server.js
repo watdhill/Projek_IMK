@@ -8,7 +8,7 @@ const profileRouter = profileModule.router
 
 const app = express()
 app.use(cors())
-app.use(express.json({ limit: '10mb' }))
+app.use(express.json({ limit: '500mb' }))
 
 // ── File uploads setup ───────────────────────────────────────────────
 const UPLOADS_DIR = path.join(__dirname, 'uploads')
@@ -28,7 +28,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
   fileFilter: (req, file, cb) => {
     const allowed = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']
     const ext = path.extname(file.originalname).toLowerCase()
@@ -94,9 +93,6 @@ app.post('/api/admin/upload', upload.single('image'), (req, res) => {
 // Multer error handler
 app.use((err, req, res, next) => {
   if (err instanceof multer.MulterError) {
-    if (err.code === 'LIMIT_FILE_SIZE') {
-      return res.status(400).json({ error: 'Ukuran file maksimal 10MB' })
-    }
     return res.status(400).json({ error: err.message })
   }
   if (err && err.message) {

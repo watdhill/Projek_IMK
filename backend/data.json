@@ -1,13 +1,16 @@
 {
   "profile": {
     "name": "Ikatan Mahasiswa Kerinci - Universitas Andalas",
-    "description": "Organisasi ini bergerak di bidang pendidikan dan pemberdayaan masyarakat."
+    "description": "Di tengah upaya membangun masyarakat yang adil dan makmur, hadir sekelompok anak muda dari Kerinci yang membawa mimpi dan semangat ke Universitas Andalas. Mereka percaya bahwa pembangunan daerah bukan sekadar tugas pemerintah, melainkan juga panggilan jiwa bagi generasi muda yang kreatif, aktif, dan dinamis generasi yang menjadi harapan bangsa.\n\nIMK-UNAND hadir sebagai wadah para mahasiswa Kerinci untuk bertumbuh, berbagi gagasan, dan mengasah kemampuan di bidangnya masing-masing. Setiap anggota didorong untuk menerapkan ilmu yang diperoleh, tidak hanya untuk kemajuan Kerinci, tetapi juga Indonesia secara luas. Di balik setiap program dan aktivitas, terpatri tekad untuk membangun persatuan, mempererat kebersamaan, dan mengabdi dengan penuh tanggung jawab kepada Tuhan Yang Maha Esa, bangsa, serta masyarakat.\n\nBersama IMK-UNAND, langkah-langkah kecil yang diambil hari ini menjadi pijakan untuk masa depan Kerinci dan Indonesia yang lebih baik.",
+    "struktur": "/uploads/1782799326502-fxjt62.jpg",
+    "visi": "IMK-UNAND sebagai wadah bagi anggotanya guna untuk meningkatkan potensi diri, mengembangkan rasa kepedulian, dan berkontribusi secara nyata demi terwujudnya perubahan yang lebih baik.",
+    "misi": "1. Mengembangkan insan akademis yang berkualitas dan berakhlak mulia.\n2. Melakukan berbagai kegiatan seperti kegiatan Pendidikan dan pengabdian Masyarakat.\n3. Mewadahi anggota IMK-UNAND dalam mengembangkan dan memanfaatkan ilmu dan teknologi pada umumnya."
   },
   "contact": {
-    "email": "contact@organisasi.example",
-    "phone": "+62 812-3456-7890",
-    "address": "Jalan Contoh No. 1, Kota",
-    "instagram": "",
+    "email": "imkunand18@gmail.com",
+    "phone": "085212619866",
+    "address": "Padang",
+    "instagram": "@imkunand_",
     "facebook": "",
     "website": ""
   },
@@ -23,7 +26,7 @@
       "id": 2,
       "name": "Rahil Akram Hammad",
       "role": "Wakil Ketua Umum Eksternal",
-      "avatar": "/uploads/1782732953510-hiplpy.jpeg",
+      "avatar": "/uploads/1782796896468-kwvewg.jpeg",
       "division_key": "inti"
     },
     {
@@ -109,13 +112,15 @@
       "id": 1,
       "title": "Musyawarah Besar",
       "description": "Agenda tahunan untuk menentukan arah organisasi.",
-      "date": "2026-01-15"
+      "date": "2026-01-15",
+      "division_key": "psdm"
     },
     {
       "id": 2,
       "title": "Bakti Sosial",
       "description": "Kegiatan sosial membantu masyarakat sekitar.",
-      "date": "2026-03-20"
+      "date": "2026-03-20",
+      "division_key": "sosroh"
     }
   ],
   "slides": [
@@ -123,11 +128,32 @@
       "id": 1,
       "src": "/uploads/1782731131806-4zzl4v.jpeg",
       "caption": "Selamat Datang"
+    }
+  ],
+  "finances": [
+    {
+      "id": 1,
+      "type": "masuk",
+      "amount": 1000000,
+      "date": "2026-06-30",
+      "description": "uang masuk"
     },
     {
       "id": 2,
-      "src": "https://via.placeholder.com/1200x600?text=Slide+2",
-      "caption": "IMK-UNAND"
+      "type": "keluar",
+      "amount": 50000,
+      "date": "2026-06-30",
+      "description": "uang keluar"
     }
-  ]
+  ],
+  "inventory": [
+    {
+      "id": 1,
+      "name": "Sound System",
+      "quantity": 1,
+      "condition": "baik",
+      "location": ""
+    }
+  ],
+  "anggota": []
 }

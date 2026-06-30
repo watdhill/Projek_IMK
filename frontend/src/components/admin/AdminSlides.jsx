@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
 import ImageUpload from './ImageUpload'
+import ConfirmModal from './ConfirmModal'
 
 export default function AdminSlides({ showToast, onUpdate }) {
   const [slides, setSlides] = useState([])
   const [modal, setModal] = useState(null)
+  const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
 
   const fetchSlides = async () => {
@@ -40,7 +42,6 @@ export default function AdminSlides({ showToast, onUpdate }) {
   }
 
   const handleDelete = async (id) => {
-    if (!confirm('Yakin ingin menghapus slide ini?')) return
     try {
       await fetch(`/api/admin/slides/${id}`, { method: 'DELETE', headers: apiHeaders() })
       showToast('Slide berhasil dihapus')
@@ -90,10 +91,10 @@ export default function AdminSlides({ showToast, onUpdate }) {
                       className="admin-btn admin-btn-ghost admin-btn-sm"
                       onClick={() => setModal({ mode: 'edit', data: { ...s } })}
                     >✏️</button>
-                    <button
-                      className="admin-btn admin-btn-danger admin-btn-sm"
-                      onClick={() => handleDelete(s.id)}
-                    >🗑️</button>
+                      <button
+                        className="admin-btn admin-btn-danger admin-btn-sm"
+                        onClick={() => setDeleteId(s.id)}
+                      >🗑️</button>
                   </div>
                 </div>
               </div>
@@ -128,6 +129,14 @@ export default function AdminSlides({ showToast, onUpdate }) {
           </form>
         </div>
       )}
+
+      <ConfirmModal 
+        isOpen={!!deleteId} 
+        title="Hapus Slide" 
+        message="Yakin ingin menghapus slide ini? Tindakan ini tidak dapat dibatalkan." 
+        onConfirm={() => handleDelete(deleteId)} 
+        onCancel={() => setDeleteId(null)} 
+      />
     </>
   )
 }

@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react'
 export default function HeroSlider(){
   const [slides, setSlides] = useState([])
   const [index, setIndex] = useState(0)
+  const [transitioning, setTransitioning] = useState(false)
 
   useEffect(()=>{
-    // fetch slides from API
     fetch('/api/slides')
       .then(r=>r.json())
       .then(data => {
@@ -29,29 +29,36 @@ export default function HeroSlider(){
 
   useEffect(()=>{
     if (!slides.length) return
-    const t = setInterval(()=> setIndex(i=> (i+1) % slides.length), 5000)
+    const t = setInterval(()=> goTo((i) => (i+1) % slides.length), 5500)
     return ()=> clearInterval(t)
   },[slides])
 
-  const prev = ()=> setIndex(i=> (i-1+slides.length) % slides.length)
-  const next = ()=> setIndex(i=> (i+1) % slides.length)
+  const goTo = (nextFn) => {
+    setIndex(prev => {
+      const next = typeof nextFn === 'function' ? nextFn(prev) : nextFn
+      return next
+    })
+  }
+
+  const prev = ()=> goTo(i => (i-1+slides.length) % slides.length)
+  const next = ()=> goTo(i => (i+1) % slides.length)
 
   if (!slides.length) return null
 
   return (
     <section className="hero-slider" aria-label="Hero slider">
       <div className="slides-inner" style={{ transform:`translateX(-${index*100}%)`}}>
-        {slides.map((s, i)=> (
+        {slides.map((s, i)=>(
           <div key={i} className="slide" style={{backgroundImage:`url(${s.src})`}} role="img" aria-label={s.alt} />
         ))}
       </div>
 
-      <button className="slide-btn prev" aria-label="Previous slide" onClick={prev}>&lsaquo;</button>
-      <button className="slide-btn next" aria-label="Next slide" onClick={next}>&rsaquo;</button>
+      <button className="slide-btn prev" aria-label="Previous slide" onClick={prev}>‹</button>
+      <button className="slide-btn next" aria-label="Next slide" onClick={next}>›</button>
 
-      <div className="dots bottom-dots">
-        {slides.map((_, i)=> (
-          <button key={i} className={`dot ${i===index? 'active':''}`} onClick={()=>setIndex(i)} aria-label={`Go to slide ${i+1}`} />
+      <div className="bottom-dots">
+        {slides.map((_, i)=>(
+          <button key={i} className={`dot ${i===index? 'active':''}`} onClick={()=>goTo(i)} aria-label={`Go to slide ${i+1}`} />
         ))}
       </div>
     </section>

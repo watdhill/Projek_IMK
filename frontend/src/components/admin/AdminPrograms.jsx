@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
+import ConfirmModal from './ConfirmModal'
 
 export default function AdminPrograms({ showToast, onUpdate }) {
   const [programs, setPrograms] = useState([])
   const [modal, setModal] = useState(null)
+  const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  const [divisions, setDivisions] = useState([])
 
   const fetchPrograms = async () => {
     try {
-      const res = await fetch('/api/programs')
-      setPrograms(await res.json())
+      const [resProgs, resDivs] = await Promise.all([
+        fetch('/api/programs'),
+        fetch('/api/divisions')
+      ])
+      setPrograms(await resProgs.json())
+      setDivisions(await resDivs.json())
     } catch { /* ignore */ }
     setLoading(false)
   }
@@ -39,7 +47,6 @@ export default function AdminPrograms({ showToast, onUpdate }) {
   }
 
   const handleDelete = async (id) => {
-    if (!confirm('Yakin ingin menghapus program ini?')) return
     try {
       await fetch(`/api/admin/programs/${id}`, { method: 'DELETE', headers: apiHeaders() })
       showToast('Program berhasil dihapus')
@@ -66,7 +73,7 @@ export default function AdminPrograms({ showToast, onUpdate }) {
           <h2>Daftar Program ({programs.length})</h2>
           <button
             className="admin-btn admin-btn-primary"
-            onClick={() => setModal({ mode: 'add', data: { title: '', description: '', date: '' } })}
+            onClick={() => setModal({ mode: 'add', data: { title: '', description: '', date: '', division_key: 'umum' } })}
           >
             ＋ Tambah Program
           </button>
@@ -83,6 +90,7 @@ export default function AdminPrograms({ showToast, onUpdate }) {
               <thead>
                 <tr>
                   <th>Judul</th>
+                  <th>Divisi</th>
                   <th>Deskripsi</th>
                   <th>Tanggal</th>
                   <th>Aksi</th>
@@ -92,6 +100,11 @@ export default function AdminPrograms({ showToast, onUpdate }) {
                 {programs.map((p) => (
                   <tr key={p.id}>
                     <td><strong>{p.title}</strong></td>
+                    <td>
+                      {p.division_key === 'umum' || !p.division_key ? 'Umum' : 
+                       p.division_key === 'inti' ? 'Pengurus Inti' : 
+                       divisions.find(d => d.key === p.division_key)?.name || p.division_key}
+                    </td>
                     <td style={{ maxWidth: 280, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {p.description}
                     </td>
@@ -104,7 +117,7 @@ export default function AdminPrograms({ showToast, onUpdate }) {
                         >✏️ Edit</button>
                         <button
                           className="admin-btn admin-btn-danger admin-btn-sm"
-                          onClick={() => handleDelete(p.id)}
+                          onClick={() => setDeleteId(p.id)}
                         >🗑️</button>
                       </div>
                     </td>
@@ -128,6 +141,17 @@ export default function AdminPrograms({ showToast, onUpdate }) {
             </div>
 
             <div className="admin-form-group">
+              <label>Divisi</label>
+              <select className="admin-input" value={modal.data.division_key || 'umum'} onChange={(e) => setField('division_key', e.target.value)} required>
+                <option value="umum">Umum (Semua Divisi)</option>
+                <option value="inti">Pengurus Inti</option>
+                {divisions.map(d => (
+                  <option key={d.key} value={d.key}>{d.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="admin-form-group">
               <label>Deskripsi</label>
               <textarea className="admin-textarea" value={modal.data.description} onChange={(e) => setField('description', e.target.value)} placeholder="Deskripsi program" />
             </div>
@@ -144,6 +168,14 @@ export default function AdminPrograms({ showToast, onUpdate }) {
           </form>
         </div>
       )}
+
+      <ConfirmModal 
+        isOpen={!!deleteId} 
+        title="Hapus Program" 
+        message="Yakin ingin menghapus program kerja ini?" 
+        onConfirm={() => handleDelete(deleteId)} 
+        onCancel={() => setDeleteId(null)} 
+      />
     </>
   )
 }

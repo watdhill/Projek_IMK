@@ -3,65 +3,56 @@ import { Link } from 'react-router-dom'
 
 export default function Divisions(){
   const [divs, setDivs] = useState([])
-  const [activeKey, setActiveKey] = useState('')
 
   useEffect(()=>{
     fetch('/api/divisions')
       .then(r=>r.json())
-      .then(data=>{
-        setDivs(data)
-        if(data.length > 0) setActiveKey(data[0].key)
-      })
+      .then(data=>{ setDivs(data) })
       .catch(()=>setDivs([]))
   },[])
 
   if (!divs.length) return (
-    <div className="card"><h2>Divisi</h2><p>Memuat...</p></div>
+    <div className="card"><p style={{color:'var(--text-muted)'}}>Memuat divisi...</p></div>
   )
 
-  const activeDiv = divs.find(d => d.key === activeKey) || divs[0]
-
   return (
-    <div className="card divisions-interactive">
+    <div>
       <div className="divisions-header">
-        <h2>Divisi Kami</h2>
-        <p>Kenali lebih dekat bagian-bagian penggerak organisasi kami.</p>
-      </div>
-      
-      <div className="divisions-layout">
-        {/* Sidebar Tabs */}
-        <div className="divisions-sidebar">
-          {divs.map(d=> (
-            <button 
-              key={d.key} 
-              className={`division-tab ${activeKey === d.key ? 'active' : ''}`}
-              onClick={() => setActiveKey(d.key)}
-            >
-              <div className="tab-indicator" />
-              <span>{d.name}</span>
-            </button>
-          ))}
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 6,
+          background: 'var(--accent-pale)', color: 'var(--accent)',
+          fontSize: 12, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
+          padding: '6px 14px', borderRadius: 100, marginBottom: 16,
+          border: '1px solid var(--border)'
+        }}>
+          Organisasi
         </div>
-        
-        {/* Content Area */}
-        <div className="divisions-content-area">
-          {activeDiv && (
-            <div className="active-division-card" key={activeDiv.key}>
-              <div 
-                className="active-div-image" 
-                style={{backgroundImage: `url(${activeDiv.avatar})`}} 
-                aria-hidden 
-              />
-              <div className="active-div-info">
-                <h3>{activeDiv.name}</h3>
-                <p>{activeDiv.description}</p>
-                <Link to={`/divisi/${activeDiv.key}`} className="btn-detail">
-                  Pelajari Lebih Lanjut &rarr;
-                </Link>
+        <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 800, letterSpacing: '-0.8px', color: 'var(--text)' }}>
+          Divisi Kami
+        </h2>
+        <p style={{ color: 'var(--text-muted)', marginTop: 10, fontSize: 16 }}>
+          Kenali lebih dekat bagian-bagian penggerak organisasi kami.
+        </p>
+      </div>
+
+      <div className="divisions-grid-layout">
+        {divs.map(d => (
+          <Link key={d.key} to={`/divisi/${d.key}`} className="division-grid-card">
+            <div
+              className="division-card-image"
+              style={{ backgroundImage: d.avatar ? `url(${d.avatar})` : 'none' }}
+            />
+            <div className="division-card-body">
+              <h3>{d.name}</h3>
+              <p>{d.description}</p>
+              <div className="division-card-footer">
+                <span className="division-card-link">
+                  Selengkapnya <span>→</span>
+                </span>
               </div>
             </div>
-          )}
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   )

@@ -1,8 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 export default function Nav(){
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [divisions, setDivisions] = useState([])
+
+  useEffect(() => {
+    fetch('/api/divisions')
+      .then(r => r.json())
+      .then(d => setDivisions(d))
+      .catch(()=>{})
+  }, [])
+
   const scrollToId = (e, id) => {
     e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        doScroll(id)
+      }, 100)
+      return
+    }
+    doScroll(id)
+  }
+
+  const doScroll = (id) => {
     const el = document.getElementById(id)
     if (!el) return
     const headerOffset = 96 // nav height (80) + 16px spacing to match App padding
@@ -14,14 +37,29 @@ export default function Nav(){
   return (
     <header className="top-nav">
       <div className="container nav-inner">
-          <div className="logo">
+          <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
               {/** show image if available, otherwise fallback to text to avoid broken-icon look */}
               <LogoImage srcPath="/logo%20imk.png" />
-            </div>
+            </Link>
         <nav className="nav-links">
-          <a className="nav-link" href="#profil" onClick={(e)=>scrollToId(e,'profil')}>Profil</a>
-          <a className="nav-link" href="#divisi" onClick={(e)=>scrollToId(e,'divisi')}>Divisi</a>
-          <a className="nav-link" href="#program" onClick={(e)=>scrollToId(e,'program')}>Program Kerja</a>
+          <div className="nav-item">
+            <a className="nav-link" href="#profil" onClick={(e)=>scrollToId(e,'profil')}>Profil ▾</a>
+            <div className="dropdown-menu">
+              <a href="#visi-misi" className="dropdown-item" onClick={(e)=>scrollToId(e,'visi-misi')}>Visi dan Misi</a>
+              <a href="#prestasi" className="dropdown-item" onClick={(e)=>scrollToId(e,'prestasi')}>Prestasi</a>
+              <Link to="/struktur" className="dropdown-item">Struktur Organisasi</Link>
+            </div>
+          </div>
+          
+          <div className="nav-item">
+            <a className="nav-link" href="#divisi" onClick={(e)=>scrollToId(e,'divisi')}>Divisi ▾</a>
+            <div className="dropdown-menu">
+              {divisions.map(d => (
+                <Link key={d.key} to={`/divisi/${d.key}`} className="dropdown-item">{d.name}</Link>
+              ))}
+            </div>
+          </div>
+
           <a className="nav-link" href="#kontak" onClick={(e)=>scrollToId(e,'kontak')}>Kontak</a>
         </nav>
       </div>

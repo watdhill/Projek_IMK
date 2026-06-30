@@ -10,6 +10,11 @@ const defaultData = {
   profile: {
     name: 'Ikatan Mahasiswa Kerinci - Universitas Andalas',
     description: 'Organisasi ini bergerak di bidang pendidikan dan pemberdayaan masyarakat.',
+    visi: '',
+    misi: '',
+    visiMisi: '',
+    prestasi: '',
+    struktur: ''
   },
   contact: {
     email: 'contact@organisasi.example',
@@ -42,6 +47,9 @@ const defaultData = {
     { id: 1, src: 'https://via.placeholder.com/1200x600?text=Slide+1', caption: 'Selamat Datang' },
     { id: 2, src: 'https://via.placeholder.com/1200x600?text=Slide+2', caption: 'IMK-UNAND' },
   ],
+  finances: [],
+  inventory: [],
+  anggota: [],
 }
 
 function loadData() {
@@ -221,6 +229,93 @@ router.delete('/admin/slides/:id', (req, res) => {
   res.json({ success: true })
 })
 
+// Finances
+router.get('/admin/finances', (req, res) => {
+  res.json(data.finances || [])
+})
+
+router.post('/admin/finances', (req, res) => {
+  const finance = { ...req.body, id: nextId(data.finances || []) }
+  if (!data.finances) data.finances = []
+  data.finances.push(finance)
+  saveData(data)
+  res.status(201).json(finance)
+})
+
+router.put('/admin/finances/:id', (req, res) => {
+  if (!data.finances) data.finances = []
+  const idx = data.finances.findIndex(f => String(f.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Finance record not found' })
+  data.finances[idx] = { ...data.finances[idx], ...req.body, id: data.finances[idx].id }
+  saveData(data)
+  res.json(data.finances[idx])
+})
+
+router.delete('/admin/finances/:id', (req, res) => {
+  if (!data.finances) data.finances = []
+  data.finances = data.finances.filter(f => String(f.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
+// Inventory
+router.get('/admin/inventory', (req, res) => {
+  res.json(data.inventory || [])
+})
+
+router.post('/admin/inventory', (req, res) => {
+  const item = { ...req.body, id: nextId(data.inventory || []) }
+  if (!data.inventory) data.inventory = []
+  data.inventory.push(item)
+  saveData(data)
+  res.status(201).json(item)
+})
+
+router.put('/admin/inventory/:id', (req, res) => {
+  if (!data.inventory) data.inventory = []
+  const idx = data.inventory.findIndex(i => String(i.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Inventory item not found' })
+  data.inventory[idx] = { ...data.inventory[idx], ...req.body, id: data.inventory[idx].id }
+  saveData(data)
+  res.json(data.inventory[idx])
+})
+
+router.delete('/admin/inventory/:id', (req, res) => {
+  if (!data.inventory) data.inventory = []
+  data.inventory = data.inventory.filter(i => String(i.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
+// Anggota
+router.get('/admin/anggota', (req, res) => {
+  res.json(data.anggota || [])
+})
+
+router.post('/admin/anggota', (req, res) => {
+  const anggota = { ...req.body, id: nextId(data.anggota || []) }
+  if (!data.anggota) data.anggota = []
+  data.anggota.push(anggota)
+  saveData(data)
+  res.status(201).json(anggota)
+})
+
+router.put('/admin/anggota/:id', (req, res) => {
+  if (!data.anggota) data.anggota = []
+  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Anggota not found' })
+  data.anggota[idx] = { ...data.anggota[idx], ...req.body, id: data.anggota[idx].id }
+  saveData(data)
+  res.json(data.anggota[idx])
+})
+
+router.delete('/admin/anggota/:id', (req, res) => {
+  if (!data.anggota) data.anggota = []
+  data.anggota = data.anggota.filter(a => String(a.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
 // Stats for dashboard overview
 router.get('/admin/stats', (req, res) => {
   res.json({
@@ -228,6 +323,9 @@ router.get('/admin/stats', (req, res) => {
     programs: data.programs.length,
     members: data.members.length,
     slides: data.slides.length,
+    finances: (data.finances || []).length,
+    inventory: (data.inventory || []).length,
+    anggota: (data.anggota || []).length,
   })
 })
 

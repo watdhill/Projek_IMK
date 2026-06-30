@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
 import ImageUpload from './ImageUpload'
+import ConfirmModal from './ConfirmModal'
 
 export default function AdminMembers({ showToast, onUpdate }) {
   const [members, setMembers] = useState([])
   const [divisions, setDivisions] = useState([])
   const [modal, setModal] = useState(null)
+  const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
@@ -48,7 +50,6 @@ export default function AdminMembers({ showToast, onUpdate }) {
   }
 
   const handleDelete = async (id) => {
-    if (!confirm('Yakin ingin menghapus pengurus ini?')) return
     try {
       await fetch(`/api/admin/members/${id}`, { method: 'DELETE', headers: apiHeaders() })
       showToast('Pengurus berhasil dihapus')
@@ -117,7 +118,7 @@ export default function AdminMembers({ showToast, onUpdate }) {
                         >✏️ Edit</button>
                         <button
                           className="admin-btn admin-btn-danger admin-btn-sm"
-                          onClick={() => handleDelete(m.id)}
+                          onClick={() => setDeleteId(m.id)}
                         >🗑️</button>
                       </div>
                     </td>
@@ -172,6 +173,14 @@ export default function AdminMembers({ showToast, onUpdate }) {
           </form>
         </div>
       )}
+
+      <ConfirmModal 
+        isOpen={!!deleteId} 
+        title="Hapus Pengurus" 
+        message="Yakin ingin menghapus data pengurus ini?" 
+        onConfirm={() => handleDelete(deleteId)} 
+        onCancel={() => setDeleteId(null)} 
+      />
     </>
   )
 }

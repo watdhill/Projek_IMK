@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
 import ImageUpload from './ImageUpload'
+import ConfirmModal from './ConfirmModal'
 
 export default function AdminDivisions({ showToast, onUpdate }) {
   const [divisions, setDivisions] = useState([])
   const [modal, setModal] = useState(null) // null | { mode:'add'|'edit', data:{} }
+  const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
 
   const fetchDivisions = async () => {
@@ -43,7 +45,6 @@ export default function AdminDivisions({ showToast, onUpdate }) {
   }
 
   const handleDelete = async (key) => {
-    if (!confirm('Yakin ingin menghapus divisi ini?')) return
     try {
       await fetch(`/api/admin/divisions/${key}`, { method: 'DELETE', headers: apiHeaders() })
       showToast('Divisi berhasil dihapus')
@@ -110,7 +111,7 @@ export default function AdminDivisions({ showToast, onUpdate }) {
                         >✏️ Edit</button>
                         <button
                           className="admin-btn admin-btn-danger admin-btn-sm"
-                          onClick={() => handleDelete(d.key)}
+                          onClick={() => setDeleteId(d.key)}
                         >🗑️</button>
                       </div>
                     </td>
@@ -159,6 +160,14 @@ export default function AdminDivisions({ showToast, onUpdate }) {
           </form>
         </div>
       )}
+
+      <ConfirmModal 
+        isOpen={!!deleteId} 
+        title="Hapus Divisi" 
+        message="Yakin ingin menghapus divisi ini? Data yang terhubung mungkin akan ikut terhapus." 
+        onConfirm={() => handleDelete(deleteId)} 
+        onCancel={() => setDeleteId(null)} 
+      />
     </>
   )
 }
