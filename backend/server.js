@@ -29,10 +29,10 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage,
   fileFilter: (req, file, cb) => {
-    const allowed = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']
+    const allowed = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.pdf']
     const ext = path.extname(file.originalname).toLowerCase()
     if (allowed.includes(ext)) return cb(null, true)
-    cb(new Error('Format file tidak didukung. Gunakan JPG, PNG, GIF, WebP, atau SVG.'))
+    cb(new Error('Format file tidak didukung. Gunakan JPG, PNG, GIF, WebP, SVG, atau PDF.'))
   },
 })
 
@@ -99,6 +99,42 @@ app.use((err, req, res, next) => {
     return res.status(400).json({ error: err.message })
   }
   next(err)
+})
+
+// ── Peminjaman endpoint (Public) ─────────────────────────────────────
+app.post('/api/peminjaman', upload.fields([{ name: 'surat', maxCount: 1 }, { name: 'bukti', maxCount: 1 }]), (req, res) => {
+  try {
+    const { itemId, itemName, name, noHp, instansi, startDate, endDate, totalPrice } = req.body
+    const files = req.files || {}
+    const suratFile = files['surat'] ? files['surat'][0] : null
+    const buktiFile = files['bukti'] ? files['bukti'][0] : null
+
+    if (!suratFile || !buktiFile) {
+      return res.status(400).json({ error: 'Surat peminjaman dan bukti transfer wajib diunggah.' })
+    }
+    
+    const newRequestData = {
+      itemId,
+      itemName,
+      name,
+      noHp,
+      instansi,
+      startDate,
+      endDate,
+      totalPrice: Number(totalPrice) || 0,
+      suratUrl: `/uploads/${suratFile.filename}`,
+      buktiUrl: `/uploads/${buktiFile.filename}`,
+      status: 'Menunggu',
+      createdAt: new Date().toISOString()
+    }
+    
+    const newRequest = profileModule.addPeminjamanRecord(newRequestData)
+    
+    res.status(201).json(newRequest)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Terjadi kesalahan pada server' })
+  }
 })
 
 // Mount all API routes

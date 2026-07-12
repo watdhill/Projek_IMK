@@ -60,6 +60,7 @@ export default function Nav(){
             </div>
           </div>
 
+          <Link to="/peminjaman" className="nav-link">Peminjaman</Link>
           <a className="nav-link" href="#kontak" onClick={(e)=>scrollToId(e,'kontak')}>Kontak</a>
         </nav>
       </div>

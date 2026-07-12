@@ -9,6 +9,7 @@ import AdminSlides from './admin/AdminSlides'
 import AdminMembers from './admin/AdminMembers'
 import AdminFinances from './admin/AdminFinances'
 import AdminInventory from './admin/AdminInventory'
+import AdminPeminjaman from './admin/AdminPeminjaman'
 import AdminAnggota from './admin/AdminAnggota'
 import '../admin.css'
 
@@ -22,6 +23,7 @@ const IC = {
   members:   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
   finances:  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
   inventory: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+  peminjaman: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>,
   anggota:   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
   globe:     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
   logout:    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>,
@@ -38,6 +40,7 @@ const PANELS = [
   { key: 'members',    label: 'Pengurus',      icon: IC.members },
   { key: 'finances',   label: 'Keuangan',      icon: IC.finances },
   { key: 'inventory',  label: 'Inventaris',    icon: IC.inventory },
+  { key: 'peminjaman', label: 'Peminjaman',    icon: IC.peminjaman },
   { key: 'anggota',    label: 'Semua Anggota', icon: IC.anggota },
 ]
 
@@ -155,8 +158,9 @@ export default function AdminDashboard() {
         {panel === 'slides' && <AdminSlides showToast={showToast} onUpdate={fetchStats} />}
         {panel === 'members' && <AdminMembers showToast={showToast} onUpdate={fetchStats} />}
         {panel === 'finances' && <AdminFinances showToast={showToast} onUpdate={fetchStats} />}
-        {panel === 'inventory' && <AdminInventory showToast={showToast} onUpdate={fetchStats} />}
-        {panel === 'anggota' && <AdminAnggota showToast={showToast} onUpdate={fetchStats} />}
+        { panel === 'inventory' && <AdminInventory showToast={showToast} onUpdate={fetchStats} /> }
+        { panel === 'peminjaman' && <AdminPeminjaman showToast={showToast} onUpdate={fetchStats} /> }
+        { panel === 'anggota' && <AdminAnggota showToast={showToast} onUpdate={fetchStats} /> }
       </main>
 
       {/* Toast */}
@@ -196,6 +200,7 @@ function OverviewPanel({ stats, onNav }) {
     { label: 'Slides',          key: 'slides',    icon: IC.slides,    color: 'red',    panelKey: 'slides' },
     { label: 'Semua Anggota',   key: 'anggota',   icon: IC.anggota,   color: 'purple', panelKey: 'anggota' },
     { label: 'Barang',          key: 'inventory', icon: IC.inventory, color: 'gray',   panelKey: 'inventory' },
+    { label: 'Peminjaman',      key: 'peminjaman',icon: IC.peminjaman,color: 'blue',   panelKey: 'peminjaman' },
     { label: 'Trans. Keuangan', key: 'finances',  icon: IC.finances,  color: 'green',  panelKey: 'finances' },
   ]
 
@@ -266,6 +271,7 @@ function OverviewPanel({ stats, onNav }) {
           • <strong>Pengurus</strong> — Kelola data pengurus organisasi<br />
           • <strong>Keuangan</strong> — Kelola data uang masuk dan keluar<br />
           • <strong>Inventaris</strong> — Kelola daftar barang organisasi<br />
+          • <strong>Peminjaman</strong> — Kelola pengajuan peminjaman barang<br />
           • <strong>Semua Anggota</strong> — Kelola data seluruh anggota dan alumni
         </p>
       </div>

@@ -6,6 +6,7 @@ import HeroSlider from './components/HeroSlider'
 import Divisions from './components/Divisions'
 import DivisionPage from './components/DivisionPage'
 import StrukturPage from './components/StrukturPage'
+import PeminjamanPage from './components/PeminjamanPage'
 import AdminLogin from './components/AdminLogin'
 import AdminDashboard from './components/AdminDashboard'
 
@@ -162,6 +163,7 @@ export default function App() {
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<><Nav /><Home /></>} />
+        <Route path="/peminjaman" element={<><Nav /><PeminjamanPage /></>} />
         <Route path="/divisi/:key" element={<><Nav /><DivisionPage /></>} />
         <Route path="/struktur" element={<><Nav /><StrukturPage /></>} />
 

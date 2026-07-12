@@ -153,7 +153,50 @@
       "quantity": 1,
       "condition": "baik",
       "location": ""
+    },
+    {
+      "id": 2,
+      "name": "Kamera",
+      "quantity": 1,
+      "condition": "baik",
+      "location": "",
+      "price": "100000",
+      "image": "/uploads/1783838170058-8o43zj.jpeg"
     }
   ],
-  "anggota": []
+  "anggota": [],
+  "peminjaman": [
+    {
+      "itemId": "1",
+      "itemName": "Sound System",
+      "name": "arrival",
+      "noHp": "08224912818",
+      "instansi": "Kerinci ",
+      "startDate": "2025-11-20",
+      "endDate": "2025-11-21",
+      "totalPrice": 0,
+      "suratUrl": "/uploads/1783837103418-ya87vl.pdf",
+      "buktiUrl": "/uploads/1783837103442-x31glf.png",
+      "status": "Selesai",
+      "createdAt": "2026-07-12T06:18:23.449Z",
+      "id": 1,
+      "returnedAt": "2026-07-12T06:18:34.179Z"
+    },
+    {
+      "itemId": "2",
+      "itemName": "Kamera",
+      "name": "Nisa ",
+      "noHp": "082249128237",
+      "instansi": "Teknologi Informasi",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-20",
+      "totalPrice": 400000,
+      "suratUrl": "/uploads/1783838264080-agdy94.pdf",
+      "buktiUrl": "/uploads/1783838264088-1h0je3.png",
+      "status": "Selesai",
+      "createdAt": "2026-07-12T06:37:44.096Z",
+      "id": 2,
+      "returnedAt": "2026-07-12T06:38:10.626Z"
+    }
+  ]
 }

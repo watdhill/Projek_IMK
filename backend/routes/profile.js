@@ -50,6 +50,7 @@ const defaultData = {
   finances: [],
   inventory: [],
   anggota: [],
+  peminjaman: [],
 }
 
 function loadData() {
@@ -112,6 +113,10 @@ router.get('/programs', (req, res) => {
 
 router.get('/slides', (req, res) => {
   res.json(data.slides)
+})
+
+router.get('/inventory', (req, res) => {
+  res.json(data.inventory || [])
 })
 
 // ── Admin CRUD endpoints ────────────────────────────────────────────
@@ -316,6 +321,20 @@ router.delete('/admin/anggota/:id', (req, res) => {
   res.json({ success: true })
 })
 
+// Peminjaman
+router.get('/admin/peminjaman', (req, res) => {
+  res.json(data.peminjaman || [])
+})
+
+router.put('/admin/peminjaman/:id', (req, res) => {
+  if (!data.peminjaman) data.peminjaman = []
+  const idx = data.peminjaman.findIndex(p => String(p.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Peminjaman not found' })
+  data.peminjaman[idx] = { ...data.peminjaman[idx], ...req.body, id: data.peminjaman[idx].id }
+  saveData(data)
+  res.json(data.peminjaman[idx])
+})
+
 // Stats for dashboard overview
 router.get('/admin/stats', (req, res) => {
   res.json({
@@ -326,7 +345,17 @@ router.get('/admin/stats', (req, res) => {
     finances: (data.finances || []).length,
     inventory: (data.inventory || []).length,
     anggota: (data.anggota || []).length,
+    peminjaman: (data.peminjaman || []).length,
   })
 })
 
-module.exports = { router, get divisions() { return data.divisions } }
+function addPeminjamanRecord(record) {
+  if (!data.peminjaman) data.peminjaman = []
+  const newId = nextId(data.peminjaman)
+  const newRecord = { ...record, id: newId }
+  data.peminjaman.push(newRecord)
+  saveData(data)
+  return newRecord
+}
+
+module.exports = { router, get divisions() { return data.divisions }, addPeminjamanRecord }

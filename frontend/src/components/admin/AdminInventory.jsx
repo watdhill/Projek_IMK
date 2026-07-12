@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
 import ConfirmModal from './ConfirmModal'
+import ImageUpload from './ImageUpload'
 
 export default function AdminInventory({ showToast, onUpdate }) {
   const [inventory, setInventory] = useState([])
@@ -72,7 +73,7 @@ export default function AdminInventory({ showToast, onUpdate }) {
           <h2>Daftar Barang ({inventory.length})</h2>
           <button
             className="admin-btn admin-btn-primary"
-            onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', quantity: 1, condition: 'baik', location: '' } })}
+            onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', quantity: 1, condition: 'baik', location: '', price: 0, image: '' } })}
           >
             ＋ Tambah Barang
           </button>
@@ -88,17 +89,27 @@ export default function AdminInventory({ showToast, onUpdate }) {
             <table className="admin-table">
               <thead>
                 <tr>
+                  <th>Gambar</th>
                   <th>Nama Barang</th>
+                  <th>Harga Sewa</th>
                   <th>Jumlah</th>
                   <th>Kondisi</th>
-                  <th>Lokasi / Keterangan</th>
+                  <th>Lokasi</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 {inventory.map((item) => (
                   <tr key={item.id}>
+                    <td>
+                      {item.image ? (
+                        <img src={item.image} alt={item.name} style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: 4 }} />
+                      ) : (
+                        <div style={{ width: 40, height: 40, background: '#e2e8f0', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}>No Img</div>
+                      )}
+                    </td>
                     <td><strong>{item.name}</strong></td>
+                    <td>{item.price ? `Rp ${Number(item.price).toLocaleString('id-ID')}` : 'Gratis'}</td>
                     <td>{item.quantity}</td>
                     <td>
                       <span style={{
@@ -137,8 +148,22 @@ export default function AdminInventory({ showToast, onUpdate }) {
             <h2>{modal.mode === 'edit' ? 'Edit Barang' : 'Tambah Barang'}</h2>
 
             <div className="admin-form-group">
+              <label>Gambar Barang</label>
+              <ImageUpload
+                value={modal.data.image}
+                onChange={(url) => setField('image', url)}
+                aspectRatio={4 / 3}
+              />
+            </div>
+
+            <div className="admin-form-group">
               <label>Nama Barang</label>
               <input className="admin-input" value={modal.data.name} onChange={(e) => setField('name', e.target.value)} placeholder="Contoh: Proyektor, Kamera..." required />
+            </div>
+
+            <div className="admin-form-group">
+              <label>Harga Sewa (Rp)</label>
+              <input type="number" min="0" className="admin-input" value={modal.data.price !== undefined ? modal.data.price : ''} onChange={(e) => setField('price', e.target.value)} required placeholder="0 untuk gratis" />
             </div>
 
             <div className="admin-form-group">
