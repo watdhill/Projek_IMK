@@ -19,14 +19,14 @@
       "id": 1,
       "name": "Jazil Baskara",
       "role": "Ketua Umum",
-      "avatar": "/uploads/1782732421101-thh2x3.jpeg",
+      "avatar": "/uploads/1784997902667-nrd4a8.jpeg",
       "division_key": "inti"
     },
     {
       "id": 2,
       "name": "Rahil Akram Hammad",
       "role": "Wakil Ketua Umum Eksternal",
-      "avatar": "/uploads/1782796896468-kwvewg.jpeg",
+      "avatar": "/uploads/1784997920160-wy5oli.jpeg",
       "division_key": "inti"
     },
     {
@@ -34,21 +34,259 @@
       "name": "Zaki Alhazbi",
       "role": "Wakil Ketua Umum Internal",
       "division_key": "inti",
-      "avatar": "/uploads/1782733560984-tu75z9.jpeg"
+      "avatar": "/uploads/1784997937080-aqljww.jpeg"
     },
     {
       "id": "1782732483527",
       "name": "Ocha Ramadhani",
       "role": "Sekretaris Umum",
       "division_key": "inti",
-      "avatar": "/uploads/1782733719632-onu4ae.jpeg"
+      "avatar": "/uploads/1784997952976-5a99lv.jpeg"
     },
     {
       "id": "1782732498831",
       "name": "Azizah Khairunnisa",
       "role": "Bendahara Umum",
       "division_key": "inti",
-      "avatar": "/uploads/1782733744229-agv4lp.jpeg"
+      "avatar": "/uploads/1784997967774-mp52o2.jpeg"
+    },
+    {
+      "id": 1782732498832,
+      "name": "Aisyah Khairunnisa",
+      "role": "Kepala Bidang",
+      "division_key": "psdm",
+      "avatar": "/uploads/1784996962964-29hajm.jpeg"
+    },
+    {
+      "id": 1782732498833,
+      "name": "Aurellia Salsabila",
+      "role": "Sekretaris Bidang",
+      "division_key": "psdm",
+      "avatar": "/uploads/1784996986703-ax5287.jpeg"
+    },
+    {
+      "id": 1782732498834,
+      "name": "Tri Kurnia Romadhon",
+      "role": "Kepala Seksi Soft Skill",
+      "division_key": "psdm",
+      "avatar": "/uploads/1784997052251-4azrb4.jpeg"
+    },
+    {
+      "id": 1782732498835,
+      "name": "Ratu Fatika Ramadhani",
+      "role": "Kepala Seksi Riset Akademik",
+      "division_key": "psdm",
+      "avatar": "/uploads/1784997033629-8w82sn.jpeg"
+    },
+    {
+      "id": 1782732498836,
+      "name": "Fathir Ahmad Deandra",
+      "role": "Kepala Seksi Kaderisasi",
+      "division_key": "psdm",
+      "avatar": "/uploads/1784997013189-vkdpff.jpeg"
+    },
+    {
+      "id": 1782732498837,
+      "name": "Nadhifa Putri Salwa",
+      "role": "Kepala Bidang",
+      "division_key": "kestari",
+      "avatar": "/uploads/1784997225073-qncsn0.jpeg"
+    },
+    {
+      "id": 1782732498838,
+      "name": "Nurdhiyah Syaffia",
+      "role": "Sekretaris Bidang",
+      "division_key": "kestari",
+      "avatar": "/uploads/1784997248661-iu2slg.jpeg"
+    },
+    {
+      "id": 1782732498839,
+      "name": "Zahira Imana",
+      "role": "Kepala Seksi Inventarisasi dan Kearsipan",
+      "division_key": "kestari",
+      "avatar": "/uploads/1784997271690-huj223.jpeg"
+    },
+    {
+      "id": 1782732498840,
+      "name": "Nada Dwi Maharani",
+      "role": "Kepala Bidang",
+      "division_key": "kpp",
+      "avatar": "/uploads/1784997301029-l5bibt.jpeg"
+    },
+    {
+      "id": 1782732498841,
+      "name": "Gefira Ziskinda",
+      "role": "Sekretaris Bidang",
+      "division_key": "kpp",
+      "avatar": "/uploads/1784997321953-gol981.jpeg"
+    },
+    {
+      "id": 1782732498842,
+      "name": "Nurul Izzaty",
+      "role": "Kepala Seksi Pemberdayaan Perempuan",
+      "division_key": "kpp",
+      "avatar": "/uploads/1784997370487-5g8wm4.jpeg"
+    },
+    {
+      "id": 1782732498843,
+      "name": "Dea Shahira",
+      "role": "Kepala Seksi Konseling",
+      "division_key": "kpp",
+      "avatar": "/uploads/1784997349741-l1ldhk.jpeg"
+    },
+    {
+      "id": 1782732498844,
+      "name": "Yori Rahmad Syafiqri",
+      "role": "Kepala Bidang",
+      "division_key": "infokom",
+      "avatar": "/uploads/1784997398150-zby9i5.jpeg"
+    },
+    {
+      "id": 1782732498845,
+      "name": "Alya Shifa Zahira",
+      "role": "Sekretaris Bidang",
+      "division_key": "infokom",
+      "avatar": "/uploads/1784997419397-ha93p0.jpeg"
+    },
+    {
+      "id": 1782732498846,
+      "name": "Fatima Nayla Agusta",
+      "role": "Kepala Seksi Publikasi dan Dokumentasi",
+      "division_key": "infokom",
+      "avatar": "/uploads/1784997442044-fwm6li.jpeg"
+    },
+    {
+      "id": 1782732498847,
+      "name": "Dhafa Locky Valerio",
+      "role": "Kepala Seksi Multimedia",
+      "division_key": "infokom",
+      "avatar": "/uploads/1784997459257-4824vx.jpeg"
+    },
+    {
+      "id": 1782732498848,
+      "name": "Nazwa Syahratu",
+      "role": "Kepala Seksi Jurnalistik",
+      "division_key": "infokom",
+      "avatar": "/uploads/1784997474146-6iwd0c.jpeg"
+    },
+    {
+      "id": 1782732498849,
+      "name": "Rofiq Rahman",
+      "role": "Kepala Bidang",
+      "division_key": "olahraga",
+      "avatar": "/uploads/1784997661861-ef83es.jpeg"
+    },
+    {
+      "id": 1782732498850,
+      "name": "Syakilla Arifah",
+      "role": "Sekretaris Bidang",
+      "division_key": "olahraga",
+      "avatar": "/uploads/1784997678455-mfpsdj.jpeg"
+    },
+    {
+      "id": 1782732498851,
+      "name": "Mhd. Salahudin ",
+      "role": "Kepala Seksi Futsal",
+      "division_key": "olahraga",
+      "avatar": "/uploads/1784997695604-osvmei.jpeg"
+    },
+    {
+      "id": 1782732498852,
+      "name": "M. Faiz Alkhairi ",
+      "role": "Kepala Seksi Badminton",
+      "division_key": "olahraga",
+      "avatar": "/uploads/1784997713243-664ui4.jpeg"
+    },
+    {
+      "id": 1782732498853,
+      "name": "Muhammad Zaky Ilham",
+      "role": "Kepala Seksi E-Sport",
+      "division_key": "olahraga",
+      "avatar": "/uploads/1784997732843-fxt3qh.jpeg"
+    },
+    {
+      "id": 1782732498854,
+      "name": "Arief Maulana",
+      "role": "Kepala Bidang",
+      "division_key": "danus",
+      "avatar": "/uploads/1784997577771-lwzaeo.jpeg"
+    },
+    {
+      "id": 1782732498855,
+      "name": "Febri Claudia",
+      "role": "Sekretaris Bidang",
+      "division_key": "danus",
+      "avatar": "/uploads/1784997593835-odvm06.jpeg"
+    },
+    {
+      "id": 1782732498856,
+      "name": "Amanda Azahlia",
+      "role": "Kepala Seksi Sponsorship",
+      "division_key": "danus",
+      "avatar": "/uploads/1784997637937-f33ogg.jpeg"
+    },
+    {
+      "id": 1782732498857,
+      "name": "Ahmad Zahran",
+      "role": "Kepala Seksi Kewirausahaan",
+      "division_key": "danus",
+      "avatar": "/uploads/1784997613459-7cw5sy.jpeg"
+    },
+    {
+      "id": 1782732498858,
+      "name": "M. Zaghul Pasya",
+      "role": "Kepala Bidang",
+      "division_key": "sosroh",
+      "avatar": "/uploads/1784997503858-i33agg.jpeg"
+    },
+    {
+      "id": 1782732498859,
+      "name": "Aliyah Zahratul Salsadira",
+      "role": "Sekretaris Bidang",
+      "division_key": "sosroh",
+      "avatar": "/uploads/1784997520854-mac48h.jpeg"
+    },
+    {
+      "id": 1782732498860,
+      "name": "Ilham Fathul Tri Ikhsan",
+      "role": "Kepala Seksi Rohani",
+      "division_key": "sosroh",
+      "avatar": "/uploads/1784997538351-wyt8sd.jpeg"
+    },
+    {
+      "id": 1782732498861,
+      "name": "Husen Rahman Shaleh",
+      "role": "Kepala Seksi Rohani",
+      "division_key": "sosroh",
+      "avatar": "/uploads/1784997554945-utcy4a.jpeg"
+    },
+    {
+      "id": 1782732498862,
+      "name": "Marsha Rahma Putri",
+      "role": "Kepala Bidang",
+      "division_key": "senbudpar",
+      "avatar": "/uploads/1784997753801-b14nie.jpeg"
+    },
+    {
+      "id": 1782732498863,
+      "name": "Agistya Dwi Putri",
+      "role": "Sekretaris Bidang",
+      "division_key": "senbudpar",
+      "avatar": "/uploads/1784997772384-l0vx3g.jpeg"
+    },
+    {
+      "id": 1782732498864,
+      "name": " Belqis Arivia",
+      "role": "Kepala Seksi Seni dan Budaya",
+      "division_key": "senbudpar",
+      "avatar": "/uploads/1784997790251-zig4ko.jpeg"
+    },
+    {
+      "id": 1782732498865,
+      "name": "Ayesha Andina Putri",
+      "role": "Kepala Seksi Pariwisata dan Ekonomi Kreatif",
+      "division_key": "senbudpar",
+      "avatar": "/uploads/1784997808348-jf0dxv.jpeg"
     }
   ],
   "divisions": [
@@ -62,49 +300,49 @@
       "key": "psdm",
       "name": "Pengembangan Sumber Daya Manusia (PSDM)",
       "description": "PSDM bertanggung jawab mengoptimalkan, membina, dan mempersiapkan kader, serta fokus pada pengembangan internal, apresiasi, informasi soft skill, dan penguatan solidaritas organisasi.",
-      "avatar": "https://via.placeholder.com/1200x600?text=PSDM"
+      "avatar": "/uploads/1784996601156-d0zn5d.jpeg"
     },
     {
       "key": "kestari",
       "name": "Kesekretariatan (Kestari)",
       "description": "Bidang Kesekretariatan bertanggung jawab atas tugas umum kepengurusan IMK-UNAND, meliputi surat-menyurat, pengarsipan, inventarisasi, serta memfasilitasi penataan dan pengelolaan kegiatan organisasi agar berjalan tertib.",
-      "avatar": "https://via.placeholder.com/1200x600?text=Kestari"
+      "avatar": "/uploads/1784996635578-hacggr.jpeg"
     },
     {
       "key": "kpp",
       "name": "Konseling dan Pemberdayaan Perempuan (KPP)",
       "description": "Bidang KPP mengoordinasikan kegiatan anggota perempuan, menjaga hubungan harmonis antaranggota, serta menyediakan layanan konsultasi dan bantuan untuk penyelesaian masalah. Bidang ini terbagi menjadi dua sub-bidang:\nKonseling: Memberikan solusi atas permasalahan anggota, menjadi wadah aspirasi, dan mencari dukungan.\nPemberdayaan Perempuan: Mendukung upaya pemberdayaan anggota perempuan IMK-UNAND.",
-      "avatar": "https://via.placeholder.com/1200x600?text=KPP"
+      "avatar": "/uploads/1784996664204-yqgddz.jpeg"
     },
     {
       "key": "infokom",
       "name": "Informasi dan Komunikasi (Infokom)",
       "description": "Bidang INFOKOM bertanggung jawab untuk mengelola, menampung, dan menyampaikan informasi guna memperkuat hubungan internal maupun eksternal serta mempertahankan eksistensi IMK-UNAND di dunia maya. ",
-      "avatar": "https://via.placeholder.com/1200x600?text=Infokom"
+      "avatar": "/uploads/1784996690377-y6i3k5.jpeg"
     },
     {
       "key": "olahraga",
       "name": "Olahraga",
       "description": "Bidang Olahraga berfungsi sebagai wadah untuk mengembangkan minat dan bakat anggota IMK-UNAND. Bidang ini juga berperan sebagai sarana silaturahmi untuk mempererat ikatan persaudaraan antaranggota IMK-UNAND.",
-      "avatar": "https://via.placeholder.com/1200x600?text=Olahraga"
+      "avatar": "/uploads/1784996713738-olf1dg.jpeg"
     },
     {
       "key": "danus",
       "name": "Dana dan Usaha (Danus)",
       "description": "Bidang Danus bertanggung jawab mengelola sumber dana organisasi melalui usaha kreatif, kolaboratif, dan sponsorship. Divisi dibagi menjadi Kewirausahaan dan Sponsorship & Kemitraan, namun pelaksanaannya bersifat fleksibel dan saling mendukung.\n",
-      "avatar": "https://via.placeholder.com/1200x600?text=Danus"
+      "avatar": "/uploads/1784996739322-99fflr.jpeg"
     },
     {
       "key": "sosroh",
       "name": "Sosial dan Rohani (Sosroh)",
       "description": "Bidang Sosroh bertugas mengelola kegiatan sosial dan keagamaan untuk membangun kepedulian, memperkuat nilai rohani, serta menciptakan lingkungan organisasi yang harmonis. Fokus utamanya meliputi donasi, bakti sosial, respon bencana, serta kajian dan peringatan hari besar Islam.",
-      "avatar": "https://via.placeholder.com/1200x600?text=Sosroh"
+      "avatar": "/uploads/1784996769294-o0nfc7.jpeg"
     },
     {
       "key": "senbudpar",
       "name": "Seni Budaya dan Pariwisata (Senbudpar)",
       "description": "Bidang ini bertujuan untuk melestarikan adat, budaya, serta memperkenalkan pariwisata dan ekonomi kreatif dari Kota Sungai Penuh dan Kabupaten Kerinci kepada mahasiswa Universitas Andalas. Bidang ini terbagi menjadi dua sub-bidang:\nSeni dan Budaya: Bergerak di bidang seni kebudayaan.\nPariwisata dan Ekonomi Kreatif: Berfokus pada promosi UMKM, komoditi unggulan, dan kuliner tradisional.",
-      "avatar": "https://via.placeholder.com/1200x600?text=Senbudpar"
+      "avatar": "/uploads/1784996793690-jvenes.jpeg"
     }
   ],
   "programs": [
@@ -128,6 +366,16 @@
       "id": 1,
       "src": "/uploads/1782731131806-4zzl4v.jpeg",
       "caption": "Selamat Datang"
+    },
+    {
+      "src": "/uploads/1784999531133-ydvqln.jpeg",
+      "caption": "",
+      "id": 2
+    },
+    {
+      "src": "/uploads/1784999583747-af79ee.jpeg",
+      "caption": "Ganteng",
+      "id": 3
     }
   ],
   "finances": [
@@ -148,20 +396,40 @@
   ],
   "inventory": [
     {
-      "id": 1,
-      "name": "Sound System",
-      "quantity": 1,
-      "condition": "baik",
-      "location": ""
-    },
-    {
-      "id": 2,
-      "name": "Kamera",
+      "id": 3,
+      "name": "Speaker Advance K12D-A 12-inch (mic) ",
       "quantity": 1,
       "condition": "baik",
       "location": "",
-      "price": "100000",
-      "image": "/uploads/1783838170058-8o43zj.jpeg"
+      "price": "85000",
+      "image": "/uploads/1784617970893-pps3nl.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Speaker Baretone MAX008EB 8-inch (mic)",
+      "quantity": 1,
+      "condition": "baik",
+      "location": "",
+      "price": "50000",
+      "image": "/uploads/1784617985838-0orr0k.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Proyektor BENQ",
+      "quantity": 1,
+      "condition": "baik",
+      "location": "",
+      "price": "50000",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "Palu Sidang",
+      "quantity": 1,
+      "condition": "baik",
+      "location": "",
+      "price": "20000",
+      "image": "/uploads/1784617994127-6r8e1i.jpeg"
     }
   ],
   "anggota": [],
@@ -197,6 +465,37 @@
       "createdAt": "2026-07-12T06:37:44.096Z",
       "id": 2,
       "returnedAt": "2026-07-12T06:38:10.626Z"
+    },
+    {
+      "itemId": "2",
+      "itemName": "Kamera",
+      "name": "wrwfe",
+      "noHp": "09876543",
+      "instansi": "asdafds",
+      "startDate": "2026-07-21",
+      "endDate": "2026-07-21",
+      "totalPrice": 100000,
+      "suratUrl": "/uploads/1784612782655-u2rqn6.jpeg",
+      "buktiUrl": "/uploads/1784612782656-1cfmim.jpeg",
+      "status": "Selesai",
+      "createdAt": "2026-07-21T05:46:22.660Z",
+      "id": 3,
+      "returnedAt": "2026-07-21T05:48:03.853Z"
+    },
+    {
+      "itemId": "3",
+      "itemName": "Speaker Advance K12D-A 12-inch (mic) ",
+      "name": "hdjbfb",
+      "noHp": "08254848",
+      "instansi": "ydhbd",
+      "startDate": "2026-07-26",
+      "endDate": "2026-07-27",
+      "totalPrice": 170000,
+      "suratUrl": "/uploads/1785000188703-ft1eek.jpg",
+      "buktiUrl": "/uploads/1785000188729-i4vt31.jpg",
+      "status": "Menunggu",
+      "createdAt": "2026-07-25T17:23:08.751Z",
+      "id": 4
     }
   ]
 }

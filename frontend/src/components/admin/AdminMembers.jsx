@@ -9,6 +9,7 @@ export default function AdminMembers({ showToast, onUpdate }) {
   const [modal, setModal] = useState(null)
   const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [filterDivision, setFilterDivision] = useState('')
 
   const fetchData = async () => {
     try {
@@ -64,6 +65,10 @@ export default function AdminMembers({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
+  const filteredMembers = filterDivision 
+    ? members.filter(m => m.division_key === filterDivision)
+    : members;
+
   return (
     <>
       <div className="admin-page-header">
@@ -72,20 +77,37 @@ export default function AdminMembers({ showToast, onUpdate }) {
       </div>
 
       <div className="admin-card">
-        <div className="admin-card-header">
-          <h2>Daftar Pengurus ({members.length})</h2>
-          <button
-            className="admin-btn admin-btn-primary"
-            onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', role: '', division_key: '', avatar: '' } })}
-          >
-            ＋ Tambah Pengurus
-          </button>
+        <div className="admin-card-header" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center' }}>
+          <h2 style={{ flex: 1, margin: 0 }}>Daftar Pengurus ({filteredMembers.length})</h2>
+          
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <select
+              className="admin-input"
+              style={{ width: 'auto', margin: 0, padding: '8px 12px' }}
+              value={filterDivision}
+              onChange={(e) => setFilterDivision(e.target.value)}
+            >
+              <option value="">Semua Divisi</option>
+              <option value="inti">Pengurus Inti</option>
+              {divisions.filter(d => d.key !== 'inti').map(d => (
+                <option key={d.key} value={d.key}>{d.name}</option>
+              ))}
+            </select>
+
+            <button
+              className="admin-btn admin-btn-primary"
+              style={{ whiteSpace: 'nowrap' }}
+              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', role: '', division_key: '', avatar: '' } })}
+            >
+              ＋ Tambah Pengurus
+            </button>
+          </div>
         </div>
 
-        {members.length === 0 ? (
+        {filteredMembers.length === 0 ? (
           <div className="admin-empty">
             <div className="empty-icon">👤</div>
-            <p>Belum ada pengurus. Klik tombol di atas untuk menambahkan.</p>
+            <p>Belum ada pengurus di divisi ini.</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
@@ -100,7 +122,7 @@ export default function AdminMembers({ showToast, onUpdate }) {
                 </tr>
               </thead>
               <tbody>
-                {members.map((m) => {
+                {filteredMembers.map((m) => {
                   const div = m.division_key === 'inti' ? 'Pengurus Inti' : divisions.find(d => d.key === m.division_key)?.name || '-'
                   return (
                     <tr key={m.id}>

@@ -176,8 +176,8 @@ export default function PeminjamanPage() {
 
       {/* Modal Form Peminjaman */}
       {showModal && selectedItem && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }} onClick={handleCloseModal}>
-          <div style={{ background: '#fff', width: '100%', maxWidth: '500px', borderRadius: '16px', padding: '32px', maxHeight: '90vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '100px 16px 40px' }} onClick={handleCloseModal}>
+          <div style={{ background: '#fff', width: '100%', maxWidth: '500px', borderRadius: '16px', padding: '32px', maxHeight: 'calc(100vh - 140px)', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
             <h2 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '8px' }}>Form Peminjaman</h2>
             <p style={{ color: '#64748b', marginBottom: '24px' }}>Mengajukan peminjaman untuk <strong>{selectedItem.name}</strong></p>
 

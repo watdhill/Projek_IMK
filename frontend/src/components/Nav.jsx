@@ -5,6 +5,22 @@ export default function Nav(){
   const navigate = useNavigate()
   const location = useLocation()
   const [divisions, setDivisions] = useState([])
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null)
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+    setOpenDropdown(null)
+  }
+
+  const toggleDropdown = (e, name) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault()
+      setOpenDropdown(openDropdown === name ? null : name)
+    } else {
+      scrollToId(e, name)
+    }
+  }
 
   useEffect(() => {
     fetch('/api/divisions')
@@ -15,6 +31,7 @@ export default function Nav(){
 
   const scrollToId = (e, id) => {
     e.preventDefault()
+    closeMobileMenu()
     if (location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
@@ -37,30 +54,46 @@ export default function Nav(){
   return (
     <header className="top-nav">
       <div className="container nav-inner">
-          <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
+          <Link to="/" className="logo" style={{ textDecoration: 'none' }} onClick={closeMobileMenu}>
               {/** show image if available, otherwise fallback to text to avoid broken-icon look */}
               <LogoImage srcPath="/logo%20imk.png" />
             </Link>
-        <nav className="nav-links">
+        <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            {isMobileMenuOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </>
+            )}
+          </svg>
+        </div>
+        <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="nav-item">
-            <a className="nav-link" href="#profil" onClick={(e)=>scrollToId(e,'profil')}>Profil ▾</a>
-            <div className="dropdown-menu">
+            <a className="nav-link" href="#profil" onClick={(e)=>toggleDropdown(e,'profil')}>Profil ▾</a>
+            <div className={`dropdown-menu ${openDropdown === 'profil' ? 'show' : ''}`}>
               <a href="#visi-misi" className="dropdown-item" onClick={(e)=>scrollToId(e,'visi-misi')}>Visi dan Misi</a>
               <a href="#prestasi" className="dropdown-item" onClick={(e)=>scrollToId(e,'prestasi')}>Prestasi</a>
-              <Link to="/struktur" className="dropdown-item">Struktur Organisasi</Link>
+              <Link to="/struktur" className="dropdown-item" onClick={closeMobileMenu}>Struktur Organisasi</Link>
             </div>
           </div>
           
           <div className="nav-item">
-            <a className="nav-link" href="#divisi" onClick={(e)=>scrollToId(e,'divisi')}>Divisi ▾</a>
-            <div className="dropdown-menu">
+            <a className="nav-link" href="#divisi" onClick={(e)=>toggleDropdown(e,'divisi')}>Divisi ▾</a>
+            <div className={`dropdown-menu ${openDropdown === 'divisi' ? 'show' : ''}`}>
               {divisions.map(d => (
-                <Link key={d.key} to={`/divisi/${d.key}`} className="dropdown-item">{d.name}</Link>
+                <Link key={d.key} to={`/divisi/${d.key}`} className="dropdown-item" onClick={closeMobileMenu}>{d.name}</Link>
               ))}
             </div>
           </div>
 
-          <Link to="/peminjaman" className="nav-link">Peminjaman</Link>
+          <Link to="/peminjaman" className="nav-link" onClick={closeMobileMenu}>Peminjaman</Link>
           <a className="nav-link" href="#kontak" onClick={(e)=>scrollToId(e,'kontak')}>Kontak</a>
         </nav>
       </div>

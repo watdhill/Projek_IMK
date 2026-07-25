@@ -56,7 +56,7 @@ export default function Profile(){
       </div>
 
       {/* Visi & Misi — side by side */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 0 }}>
+      <div className="visi-misi-grid" style={{ display: 'grid', gap: 24, marginBottom: 0 }}>
         {/* Visi */}
         <div id="visi-misi" className="card">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
