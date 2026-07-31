@@ -11,7 +11,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-easy-crop": "^6.0.2",
-    "recharts": "^3.9.0"
+    "recharts": "^3.9.0",
+    "xlsx": "^0.18.5"
   },
   "optionalDependencies": {
     "react-router-dom": "^6.30.3"

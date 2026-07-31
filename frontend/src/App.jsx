@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Profile from './components/Profile'
 import Nav from './components/Nav'
 import HeroSlider from './components/HeroSlider'
@@ -9,6 +9,23 @@ import StrukturPage from './components/StrukturPage'
 import PeminjamanPage from './components/PeminjamanPage'
 import AdminLogin from './components/AdminLogin'
 import AdminDashboard from './components/AdminDashboard'
+
+function VisitorTracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    // Only track public routes, exclude admin panel routes
+    if (!location.pathname.startsWith('/admin')) {
+      fetch('/api/visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: location.pathname }),
+      }).catch(() => {})
+    }
+  }, [location.pathname])
+
+  return null
+}
 
 // Scroll reveal animation hook
 function useScrollReveal() {
@@ -182,6 +199,7 @@ function Home() {
 export default function App() {
   return (
     <div>
+      <VisitorTracker />
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<><Nav /><Home /></>} />

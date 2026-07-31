@@ -24,6 +24,19 @@ const defaultData = {
     facebook: '',
     website: '',
   },
+  users: [
+    { id: 1, username: 'admin', password: 'admin123', role: 'admin', name: 'Super Admin' },
+    { id: 2, username: 'bendahara', password: 'bendahara123', role: 'bendahara', name: 'Bendahara' },
+    { id: 3, username: 'kestari', password: 'kestari123', role: 'divisi', division_key: 'kestari', name: 'Kesekretariatan (Kestari)' },
+    { id: 4, username: 'psdm', password: 'psdm123', role: 'divisi', division_key: 'psdm', name: 'PSDM' },
+    { id: 5, username: 'kpp', password: 'kpp123', role: 'divisi', division_key: 'kpp', name: 'KPP' },
+    { id: 6, username: 'infokom', password: 'infokom123', role: 'divisi', division_key: 'infokom', name: 'Infokom' },
+    { id: 7, username: 'olahraga', password: 'olahraga123', role: 'divisi', division_key: 'olahraga', name: 'Olahraga' },
+    { id: 8, username: 'danus', password: 'danus123', role: 'divisi', division_key: 'danus', name: 'Danus' },
+    { id: 9, username: 'sosroh', password: 'sosroh123', role: 'divisi', division_key: 'sosroh', name: 'Sosroh' },
+    { id: 10, username: 'senbudpar', password: 'senbudpar123', role: 'divisi', division_key: 'senbudpar', name: 'Senbudpar' },
+    { id: 11, username: 'inti', password: 'inti123', role: 'divisi', division_key: 'inti', name: 'Pengurus Inti' }
+  ],
   members: [
     { id: 1, name: 'Nama Pengurus 1', role: 'Ketua', avatar: 'https://via.placeholder.com/96' },
     { id: 2, name: 'Nama Pengurus 2', role: 'Sekretaris', avatar: 'https://via.placeholder.com/96' },
@@ -40,8 +53,8 @@ const defaultData = {
     { key: 'senbudpar', name: 'Seni Budaya dan Pariwisata (Senbudpar)', description: 'Mengembangkan seni, budaya, dan pariwisata organisasi.', avatar: 'https://via.placeholder.com/1200x600?text=Senbudpar' },
   ],
   programs: [
-    { id: 1, title: 'Musyawarah Besar', description: 'Agenda tahunan untuk menentukan arah organisasi.', date: '2026-01-15' },
-    { id: 2, title: 'Bakti Sosial', description: 'Kegiatan sosial membantu masyarakat sekitar.', date: '2026-03-20' },
+    { id: 1, title: 'Musyawarah Besar', description: 'Agenda tahunan untuk menentukan arah organisasi.', date: '2026-01-15', status: 'terlaksana', execution_date: '2026-01-15', penanggung_jawab: 'Ketua Umum' },
+    { id: 2, title: 'Bakti Sosial', description: 'Kegiatan sosial membantu masyarakat sekitar.', date: '2026-03-20', status: 'sedang_berjalan', execution_date: '2026-03-20', penanggung_jawab: 'Kadiv Sosroh' },
   ],
   slides: [
     { id: 1, src: 'https://via.placeholder.com/1200x600?text=Slide+1', caption: 'Selamat Datang' },
@@ -51,6 +64,7 @@ const defaultData = {
   inventory: [],
   anggota: [],
   peminjaman: [],
+  visitorLogs: []
 }
 
 function loadData() {
@@ -292,47 +306,164 @@ router.delete('/admin/inventory/:id', (req, res) => {
   res.json({ success: true })
 })
 
-// Anggota
-router.get('/admin/anggota', (req, res) => {
-  res.json(data.anggota || [])
+// Users Management
+router.get('/admin/users', (req, res) => {
+  res.json(data.users || [])
 })
 
-router.post('/admin/anggota', (req, res) => {
-  const anggota = { ...req.body, id: nextId(data.anggota || []) }
-  if (!data.anggota) data.anggota = []
-  data.anggota.push(anggota)
+router.post('/admin/users', (req, res) => {
+  if (!data.users) data.users = []
+  const { username, password, role, division_key, name } = req.body
+  if (!username || !password || !role) {
+    return res.status(400).json({ error: 'Username, password, dan role wajib diisi' })
+  }
+  const existing = data.users.find(u => u.username.toLowerCase() === username.toLowerCase())
+  if (existing) {
+    return res.status(409).json({ error: 'Username sudah digunakan' })
+  }
+  const newUser = {
+    id: nextId(data.users),
+    username: username.trim(),
+    password: password.trim(),
+    role: role.trim(),
+    name: name ? name.trim() : username.trim(),
+    division_key: role === 'divisi' ? (division_key || null) : null
+  }
+  data.users.push(newUser)
   saveData(data)
-  res.status(201).json(anggota)
+  res.status(201).json(newUser)
 })
 
-router.put('/admin/anggota/:id', (req, res) => {
-  if (!data.anggota) data.anggota = []
-  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Anggota not found' })
-  data.anggota[idx] = { ...data.anggota[idx], ...req.body, id: data.anggota[idx].id }
+router.put('/admin/users/:id', (req, res) => {
+  if (!data.users) data.users = []
+  const idx = data.users.findIndex(u => String(u.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'User tidak ditemukan' })
+  const existing = data.users[idx]
+  const { username, password, role, division_key, name } = req.body
+  if (username && username.toLowerCase() !== existing.username.toLowerCase()) {
+    if (data.users.some(u => String(u.id) !== String(req.params.id) && u.username.toLowerCase() === username.toLowerCase())) {
+      return res.status(409).json({ error: 'Username sudah digunakan' })
+    }
+  }
+  data.users[idx] = {
+    ...existing,
+    ...(username ? { username: username.trim() } : {}),
+    ...(password ? { password: password.trim() } : {}),
+    ...(role ? { role: role.trim() } : {}),
+    ...(name !== undefined ? { name: name.trim() } : {}),
+    division_key: (role || existing.role) === 'divisi' ? (division_key !== undefined ? division_key : existing.division_key) : null
+  }
   saveData(data)
-  res.json(data.anggota[idx])
+  res.json(data.users[idx])
 })
 
-router.delete('/admin/anggota/:id', (req, res) => {
-  if (!data.anggota) data.anggota = []
-  data.anggota = data.anggota.filter(a => String(a.id) !== String(req.params.id))
+router.delete('/admin/users/:id', (req, res) => {
+  if (!data.users) data.users = []
+  if (String(req.params.id) === '1') {
+    return res.status(400).json({ error: 'Akun Super Admin utama tidak dapat dihapus' })
+  }
+  data.users = data.users.filter(u => String(u.id) !== String(req.params.id))
   saveData(data)
   res.json({ success: true })
 })
 
-// Peminjaman
-router.get('/admin/peminjaman', (req, res) => {
-  res.json(data.peminjaman || [])
+// Bulk Anggota Import
+router.post('/admin/anggota/bulk', (req, res) => {
+  if (!Array.isArray(req.body)) {
+    return res.status(400).json({ error: 'Body harus berupa array data anggota' })
+  }
+  if (!data.anggota) data.anggota = []
+  
+  let currentId = nextId(data.anggota)
+  const added = []
+
+  req.body.forEach(item => {
+    if (!item.name || !item.nim) return
+    const record = {
+      id: currentId++,
+      name: String(item.name).trim(),
+      nim: String(item.nim).trim(),
+      program_study: item.program_study ? String(item.program_study).trim() : '-',
+      join_year: Number(item.join_year) || new Date().getFullYear(),
+      status: item.status === 'alumni' ? 'alumni' : 'aktif'
+    }
+    data.anggota.push(record)
+    added.push(record)
+  })
+
+  saveData(data)
+  res.status(201).json({ success: true, count: added.length, added })
 })
 
-router.put('/admin/peminjaman/:id', (req, res) => {
-  if (!data.peminjaman) data.peminjaman = []
-  const idx = data.peminjaman.findIndex(p => String(p.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Peminjaman not found' })
-  data.peminjaman[idx] = { ...data.peminjaman[idx], ...req.body, id: data.peminjaman[idx].id }
+// Public endpoint for registering visitor logs
+router.post('/visit', (req, res) => {
+  if (!data.visitorLogs) data.visitorLogs = []
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1'
+  const userAgent = req.headers['user-agent'] || 'Unknown'
+  const pathName = req.body?.path || '/'
+
+  const visit = {
+    id: Date.now().toString() + '-' + Math.random().toString(36).slice(2, 6),
+    ip: String(ip).replace('::ffff:', ''),
+    path: pathName,
+    userAgent,
+    timestamp: new Date().toISOString()
+  }
+
+  data.visitorLogs.push(visit)
+
+  // Keep last 1000 logs to prevent file bloat
+  if (data.visitorLogs.length > 1000) {
+    data.visitorLogs = data.visitorLogs.slice(-1000)
+  }
+
   saveData(data)
-  res.json(data.peminjaman[idx])
+  res.json({ success: true })
+})
+
+// Admin endpoint for visitor analytics and logs
+router.get('/admin/logs', (req, res) => {
+  const logs = data.visitorLogs || []
+  const now = new Date()
+  const todayStr = now.toISOString().slice(0, 10)
+  const monthStr = now.toISOString().slice(0, 7)
+
+  const totalViews = logs.length
+  const uniqueIPs = new Set(logs.map(l => l.ip)).size
+  
+  const todayLogs = logs.filter(l => l.timestamp.startsWith(todayStr))
+  const todayViews = todayLogs.length
+  const todayUnique = new Set(todayLogs.map(l => l.ip)).size
+
+  const monthLogs = logs.filter(l => l.timestamp.startsWith(monthStr))
+  const monthViews = monthLogs.length
+
+  // Group by date for daily chart / stats (last 14 days)
+  const dailyMap = {}
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(now)
+    d.setDate(d.getDate() - i)
+    const ds = d.toISOString().slice(0, 10)
+    dailyMap[ds] = 0
+  }
+  logs.forEach(l => {
+    const ds = l.timestamp.slice(0, 10)
+    if (dailyMap[ds] !== undefined) {
+      dailyMap[ds] += 1
+    }
+  })
+
+  const dailyStats = Object.keys(dailyMap).map(date => ({ date, count: dailyMap[date] }))
+
+  res.json({
+    totalViews,
+    uniqueIPs,
+    todayViews,
+    todayUnique,
+    monthViews,
+    dailyStats,
+    recentLogs: logs.slice(-100).reverse() // last 100 logs
+  })
 })
 
 // Stats for dashboard overview
@@ -346,6 +477,7 @@ router.get('/admin/stats', (req, res) => {
     inventory: (data.inventory || []).length,
     anggota: (data.anggota || []).length,
     peminjaman: (data.peminjaman || []).length,
+    visitorViews: (data.visitorLogs || []).length
   })
 })
 
@@ -358,4 +490,14 @@ function addPeminjamanRecord(record) {
   return newRecord
 }
 
-module.exports = { router, get divisions() { return data.divisions }, addPeminjamanRecord }
+function findUser(username, password) {
+  const users = data.users || []
+  return users.find(u => u.username === username && u.password === password)
+}
+
+module.exports = { 
+  router, 
+  get divisions() { return data.divisions }, 
+  addPeminjamanRecord,
+  findUser
+}

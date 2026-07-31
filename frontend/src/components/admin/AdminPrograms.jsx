@@ -7,8 +7,10 @@ export default function AdminPrograms({ showToast, onUpdate }) {
   const [modal, setModal] = useState(null)
   const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
-
   const [divisions, setDivisions] = useState([])
+  const [statusFilter, setStatusFilter] = useState('all')
+
+  const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
 
   const fetchPrograms = async () => {
     try {
@@ -61,59 +63,112 @@ export default function AdminPrograms({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
+  const filteredPrograms = programs.filter(p => {
+    if (statusFilter === 'all') return true
+    return (p.status || 'belum_terlaksana') === statusFilter
+  })
+
+  const getStatusBadge = (status) => {
+    if (status === 'terlaksana') {
+      return <span style={{ padding: '4px 8px', borderRadius: 4, fontSize: '0.85em', fontWeight: 700, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>✓ Terlaksana</span>
+    }
+    if (status === 'sedang_berjalan') {
+      return <span style={{ padding: '4px 8px', borderRadius: 4, fontSize: '0.85em', fontWeight: 700, backgroundColor: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }}>⏳ Sedang Berjalan</span>
+    }
+    return <span style={{ padding: '4px 8px', borderRadius: 4, fontSize: '0.85em', fontWeight: 700, backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>📌 Belum Terlaksana</span>
+  }
+
   return (
     <>
       <div className="admin-page-header">
         <h1>Program Kerja</h1>
-        <p>Kelola agenda dan program kerja organisasi</p>
+        <p>Kelola agenda, status pelaksanaan, dan penanggung jawab program kerja</p>
       </div>
 
       <div className="admin-card">
-        <div className="admin-card-header">
-          <h2>Daftar Program ({programs.length})</h2>
-          <button
-            className="admin-btn admin-btn-primary"
-            onClick={() => setModal({ mode: 'add', data: { title: '', description: '', date: '', division_key: 'umum' } })}
-          >
-            ＋ Tambah Program
-          </button>
+        <div className="admin-card-header" style={{ flexWrap: 'wrap', gap: 12 }}>
+          <h2>Daftar Program ({filteredPrograms.length})</h2>
+
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+            {/* Filter Tabs */}
+            <div style={{ display: 'flex', background: '#f1f5f9', padding: 3, borderRadius: 8, gap: 2 }}>
+              <button
+                className={`admin-btn admin-btn-sm ${statusFilter === 'all' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
+                onClick={() => setStatusFilter('all')}
+              >Semua ({programs.length})</button>
+              <button
+                className={`admin-btn admin-btn-sm ${statusFilter === 'terlaksana' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
+                onClick={() => setStatusFilter('terlaksana')}
+              >Terlaksana ({programs.filter(p => p.status === 'terlaksana').length})</button>
+              <button
+                className={`admin-btn admin-btn-sm ${statusFilter === 'sedang_berjalan' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
+                onClick={() => setStatusFilter('sedang_berjalan')}
+              >Sedang Berjalan ({programs.filter(p => p.status === 'sedang_berjalan').length})</button>
+              <button
+                className={`admin-btn admin-btn-sm ${statusFilter === 'belum_terlaksana' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
+                onClick={() => setStatusFilter('belum_terlaksana')}
+              >Belum Terlaksana ({programs.filter(p => (!p.status || p.status === 'belum_terlaksana')).length})</button>
+            </div>
+
+            <button
+              className="admin-btn admin-btn-primary"
+              onClick={() => setModal({
+                mode: 'add',
+                data: {
+                  title: '',
+                  description: '',
+                  date: '',
+                  execution_date: '',
+                  penanggung_jawab: '',
+                  status: 'belum_terlaksana',
+                  division_key: loggedUser.division_key || 'umum'
+                }
+              })}
+            >
+              ＋ Tambah Program
+            </button>
+          </div>
         </div>
 
-        {programs.length === 0 ? (
+        {filteredPrograms.length === 0 ? (
           <div className="admin-empty">
             <div className="empty-icon">📋</div>
-            <p>Belum ada program kerja. Klik tombol di atas untuk menambahkan.</p>
+            <p>Tidak ada program kerja dalam kategori ini.</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
             <table className="admin-table">
               <thead>
                 <tr>
-                  <th>Judul</th>
+                  <th>Judul Program</th>
+                  <th>Status</th>
                   <th>Divisi</th>
+                  <th>Tgl Pelaksanaan</th>
+                  <th>Penanggung Jawab (PIC)</th>
                   <th>Deskripsi</th>
-                  <th>Tanggal</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                {programs.map((p) => (
+                {filteredPrograms.map((p) => (
                   <tr key={p.id}>
                     <td><strong>{p.title}</strong></td>
+                    <td>{getStatusBadge(p.status || 'belum_terlaksana')}</td>
                     <td>
                       {p.division_key === 'umum' || !p.division_key ? 'Umum' : 
                        p.division_key === 'inti' ? 'Pengurus Inti' : 
                        divisions.find(d => d.key === p.division_key)?.name || p.division_key}
                     </td>
-                    <td style={{ maxWidth: 280, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <td style={{ whiteSpace: 'nowrap' }}>{p.execution_date || p.date || '—'}</td>
+                    <td>{p.penanggung_jawab || '—'}</td>
+                    <td style={{ maxWidth: 220, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {p.description}
                     </td>
-                    <td style={{ whiteSpace: 'nowrap' }}>{p.date || '—'}</td>
                     <td>
                       <div className="actions">
                         <button
                           className="admin-btn admin-btn-ghost admin-btn-sm"
-                          onClick={() => setModal({ mode: 'edit', data: { ...p } })}
+                          onClick={() => setModal({ mode: 'edit', data: { ...p, status: p.status || 'belum_terlaksana' } })}
                         >✏️ Edit</button>
                         <button
                           className="admin-btn admin-btn-danger admin-btn-sm"
@@ -133,32 +188,52 @@ export default function AdminPrograms({ showToast, onUpdate }) {
       {modal && (
         <div className="admin-modal-overlay" onClick={() => setModal(null)}>
           <form className="admin-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleSave}>
-            <h2>{modal.mode === 'edit' ? 'Edit Program' : 'Tambah Program'}</h2>
+            <h2>{modal.mode === 'edit' ? 'Edit Program Kerja' : 'Tambah Program Kerja'}</h2>
 
             <div className="admin-form-group">
-              <label>Judul Program</label>
-              <input className="admin-input" value={modal.data.title} onChange={(e) => setField('title', e.target.value)} placeholder="Judul program" required />
+              <label>Nama Program Kerja *</label>
+              <input className="admin-input" value={modal.data.title} onChange={(e) => setField('title', e.target.value)} placeholder="Contoh: Pelatihan Soft Skill Anggota" required />
             </div>
 
             <div className="admin-form-group">
-              <label>Divisi</label>
-              <select className="admin-input" value={modal.data.division_key || 'umum'} onChange={(e) => setField('division_key', e.target.value)} required>
-                <option value="umum">Umum (Semua Divisi)</option>
-                <option value="inti">Pengurus Inti</option>
-                {divisions.map(d => (
-                  <option key={d.key} value={d.key}>{d.name}</option>
-                ))}
+              <label>Tanggal Program Kerja *</label>
+              <input className="admin-input" type="date" value={modal.data.execution_date || modal.data.date || ''} onChange={(e) => { setField('execution_date', e.target.value); setField('date', e.target.value); }} required />
+            </div>
+
+            <div className="admin-form-group">
+              <label>Penanggung Jawab Program Kerja (PIC) *</label>
+              <input className="admin-input" value={modal.data.penanggung_jawab || ''} onChange={(e) => setField('penanggung_jawab', e.target.value)} placeholder="Contoh: Ahmad Subagja (Kadiv PSDM)" required />
+            </div>
+
+            <div className="admin-form-group">
+              <label>Status Pelaksanaan</label>
+              <select className="admin-input" value={modal.data.status || 'belum_terlaksana'} onChange={(e) => setField('status', e.target.value)} required>
+                <option value="belum_terlaksana">📌 Belum Terlaksana</option>
+                <option value="sedang_berjalan">⏳ Sedang Berjalan</option>
+                <option value="terlaksana">✓ Terlaksana</option>
               </select>
             </div>
 
             <div className="admin-form-group">
-              <label>Deskripsi</label>
-              <textarea className="admin-textarea" value={modal.data.description} onChange={(e) => setField('description', e.target.value)} placeholder="Deskripsi program" />
+              <label>Divisi Penanggung Jawab</label>
+              {loggedUser.role === 'divisi' ? (
+                <div style={{ padding: '10px 14px', background: '#f1f5f9', borderRadius: 8, fontSize: 14, fontWeight: 600, color: '#334155' }}>
+                  🏢 {divisions.find(d => d.key === loggedUser.division_key)?.name || loggedUser.division_key || 'Divisi Saya'} (Terkunci Sesuai Akun Divisi Anda)
+                </div>
+              ) : (
+                <select className="admin-input" value={modal.data.division_key || 'umum'} onChange={(e) => setField('division_key', e.target.value)} required>
+                  <option value="umum">Umum (Semua Divisi)</option>
+                  <option value="inti">Pengurus Inti</option>
+                  {divisions.map(d => (
+                    <option key={d.key} value={d.key}>{d.name}</option>
+                  ))}
+                </select>
+              )}
             </div>
 
             <div className="admin-form-group">
-              <label>Tanggal</label>
-              <input className="admin-input" type="date" value={modal.data.date || ''} onChange={(e) => setField('date', e.target.value)} />
+              <label>Deskripsi Program Kerja</label>
+              <textarea className="admin-textarea" value={modal.data.description || ''} onChange={(e) => setField('description', e.target.value)} placeholder="Detail tujuan, sasaran, dan keterangan program kerja..." />
             </div>
 
             <div className="admin-modal-actions">

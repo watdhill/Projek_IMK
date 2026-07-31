@@ -40,8 +40,8 @@ const upload = multer({
 const ADMIN_USER = process.env.ADMIN_USER || 'admin'
 const ADMIN_PASS = process.env.ADMIN_PASS || 'admin123'
 
-// In-memory session tokens (good enough for a class project)
-const sessions = new Set()
+// In-memory session tokens mapped to user object
+const sessions = new Map()
 
 function generateToken() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36)
@@ -50,11 +50,36 @@ function generateToken() {
 // Login endpoint
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body
+  
+  // First check users database
+  const user = profileModule.findUser(username, password)
+  if (user) {
+    const token = generateToken()
+    const userInfo = {
+      id: user.id,
+      username: user.username,
+      name: user.name,
+      role: user.role,
+      division_key: user.division_key || null
+    }
+    sessions.set(token, userInfo)
+    return res.json({ token, user: userInfo })
+  }
+
+  // Fallback to env admin user
   if (username === ADMIN_USER && password === ADMIN_PASS) {
     const token = generateToken()
-    sessions.add(token)
-    return res.json({ token })
+    const userInfo = {
+      id: 1,
+      username: ADMIN_USER,
+      name: 'Super Admin',
+      role: 'admin',
+      division_key: null
+    }
+    sessions.set(token, userInfo)
+    return res.json({ token, user: userInfo })
   }
+
   res.status(401).json({ error: 'Username atau password salah' })
 })
 
@@ -68,6 +93,7 @@ function requireAuth(req, res, next) {
   if (!sessions.has(token)) {
     return res.status(401).json({ error: 'Invalid or expired token' })
   }
+  req.user = sessions.get(token)
   next()
 }
 

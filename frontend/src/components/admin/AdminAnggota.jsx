@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import * as XLSX from 'xlsx'
 import { apiHeaders } from '../AdminDashboard'
 import ConfirmModal from './ConfirmModal'
 
 export default function AdminAnggota({ showToast, onUpdate }) {
   const [anggota, setAnggota] = useState([])
   const [modal, setModal] = useState(null)
+  const [importModal, setImportModal] = useState(false)
+  const [importPreview, setImportPreview] = useState([])
   const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [submittingImport, setSubmittingImport] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -54,6 +58,83 @@ export default function AdminAnggota({ showToast, onUpdate }) {
     } catch { /* ignore */ }
   }
 
+  // Handle Excel file read
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = (evt) => {
+      try {
+        const bstr = evt.target.result
+        const wb = XLSX.read(bstr, { type: 'binary' })
+        const wsname = wb.SheetNames[0]
+        const ws = wb.Sheets[wsname]
+        const data = XLSX.utils.sheet_to_json(ws, { defval: '' })
+
+        // Map columns dynamically
+        const parsed = data.map((row, idx) => {
+          // Normalize object keys
+          const keys = Object.keys(row)
+          const findVal = (possibleKeys) => {
+            const match = keys.find(k => possibleKeys.some(p => k.toLowerCase().includes(p.toLowerCase())))
+            return match ? row[match] : ''
+          }
+
+          const nim = findVal(['nim', 'no anggota', 'id'])
+          const name = findVal(['nama', 'name', 'nama lengkap'])
+          const program_study = findVal(['jurusan', 'prodi', 'program studi'])
+          const join_year = findVal(['tahun', 'angkatan', 'tahun masuk', 'year'])
+          const status = findVal(['status'])
+
+          return {
+            rowNum: idx + 1,
+            nim: String(nim).trim(),
+            name: String(name).trim(),
+            program_study: String(program_study).trim() || '-',
+            join_year: Number(join_year) || new Date().getFullYear(),
+            status: String(status).toLowerCase().includes('alumni') ? 'alumni' : 'aktif'
+          }
+        }).filter(item => item.name && item.nim)
+
+        if (parsed.length === 0) {
+          alert('Tidak ditemukan data anggota yang valid dari file Excel ini. Pastikan file berisi kolom NIM dan Nama.')
+          return
+        }
+
+        setImportPreview(parsed)
+      } catch (err) {
+        alert('Gagal membaca file Excel: ' + err.message)
+      }
+    }
+    reader.readAsBinaryString(file)
+  }
+
+  const handleBulkSubmit = async () => {
+    if (importPreview.length === 0) return
+    setSubmittingImport(true)
+    try {
+      const res = await fetch('/api/admin/anggota/bulk', {
+        method: 'POST',
+        headers: apiHeaders(),
+        body: JSON.stringify(importPreview),
+      })
+      const result = await res.json()
+      if (res.ok && result.success) {
+        showToast(`Berhasil mengimpor ${result.count} data anggota`)
+        setImportModal(false)
+        setImportPreview([])
+        fetchData()
+        onUpdate?.()
+      } else {
+        alert('Gagal mengimpor data: ' + (result.error || 'Terjadi kesalahan'))
+      }
+    } catch {
+      alert('Gagal terhubung ke server')
+    }
+    setSubmittingImport(false)
+  }
+
   const setField = (field, value) => {
     setModal({ ...modal, data: { ...modal.data, [field]: value } })
   }
@@ -68,20 +149,28 @@ export default function AdminAnggota({ showToast, onUpdate }) {
       </div>
 
       <div className="admin-card">
-        <div className="admin-card-header">
+        <div className="admin-card-header" style={{ flexWrap: 'wrap', gap: 12 }}>
           <h2>Daftar Anggota ({anggota.length})</h2>
-          <button
-            className="admin-btn admin-btn-primary"
-            onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', nim: '', program_study: '', join_year: new Date().getFullYear(), status: 'aktif' } })}
-          >
-            ＋ Tambah Anggota
-          </button>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <button
+              className="admin-btn admin-btn-ghost"
+              onClick={() => { setImportPreview([]); setImportModal(true); }}
+            >
+              📊 Import Excel
+            </button>
+            <button
+              className="admin-btn admin-btn-primary"
+              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', nim: '', program_study: '', join_year: new Date().getFullYear(), status: 'aktif' } })}
+            >
+              ＋ Tambah Anggota
+            </button>
+          </div>
         </div>
 
         {anggota.length === 0 ? (
           <div className="admin-empty">
             <div className="empty-icon">👥</div>
-            <p>Belum ada data anggota. Klik tombol di atas untuk menambahkan.</p>
+            <p>Belum ada data anggota. Klik tombol di atas untuk menambahkan atau mengimpor data dari Excel.</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
@@ -132,7 +221,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
         )}
       </div>
 
-      {/* Modal */}
+      {/* Modal Add / Edit */}
       {modal && (
         <div className="admin-modal-overlay" onClick={() => setModal(null)}>
           <form className="admin-modal" onClick={(e) => e.stopPropagation()} onSubmit={handleSave}>
@@ -171,6 +260,70 @@ export default function AdminAnggota({ showToast, onUpdate }) {
               <button type="submit" className="admin-btn admin-btn-primary">💾 Simpan</button>
             </div>
           </form>
+        </div>
+      )}
+
+      {/* Modal Import Excel */}
+      {importModal && (
+        <div className="admin-modal-overlay" onClick={() => setImportModal(false)}>
+          <div className="admin-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 650 }}>
+            <h2>📊 Import Data Anggota dari Excel</h2>
+            <p style={{ fontSize: 13, color: 'var(--admin-text-dim)', marginBottom: 16 }}>
+              Pilih file file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Pastikan file Anda memiliki header seperti <strong>NIM</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, <strong>Angkatan</strong>, dan <strong>Status</strong>.
+            </p>
+
+            <div className="admin-form-group">
+              <label>Upload File Excel / CSV</label>
+              <input
+                type="file"
+                accept=".xlsx, .xls, .csv"
+                className="admin-input"
+                onChange={handleFileUpload}
+              />
+            </div>
+
+            {importPreview.length > 0 && (
+              <div style={{ marginTop: 16 }}>
+                <h3>Preview Data ({importPreview.length} Anggota Siap Diimpor)</h3>
+                <div style={{ maxHeight: 220, overflowY: 'auto', border: '1px solid #e2e8f0', borderRadius: 8, marginTop: 8 }}>
+                  <table className="admin-table" style={{ fontSize: 12 }}>
+                    <thead>
+                      <tr>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Jurusan</th>
+                        <th>Angkatan</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {importPreview.map((item, i) => (
+                        <tr key={i}>
+                          <td>{item.nim}</td>
+                          <td><strong>{item.name}</strong></td>
+                          <td>{item.program_study}</td>
+                          <td>{item.join_year}</td>
+                          <td>{item.status}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button type="button" className="admin-btn admin-btn-ghost" onClick={() => setImportModal(false)}>Batal</button>
+              <button
+                type="button"
+                className="admin-btn admin-btn-primary"
+                disabled={importPreview.length === 0 || submittingImport}
+                onClick={handleBulkSubmit}
+              >
+                {submittingImport ? 'Mengimpor...' : `🚀 Impor ${importPreview.length} Data`}
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
