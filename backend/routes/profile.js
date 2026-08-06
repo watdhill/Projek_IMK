@@ -64,7 +64,14 @@ const defaultData = {
   inventory: [],
   anggota: [],
   peminjaman: [],
-  visitorLogs: []
+  prestasiList: [],
+  visitorLogs: [],
+  gallery: [],
+  peminjamanSettings: {
+    bank: 'BNI',
+    rek: '0000000',
+    name: 'Ikatan Mahasiswa Kerinci'
+  }
 }
 
 function loadData() {
@@ -99,6 +106,22 @@ function nextId(arr) {
 
 // ── Public read endpoints ───────────────────────────────────────────
 
+router.get('/public-stats', (req, res) => {
+  res.json({
+    membersCount: (data.members || []).length,
+    divisionsCount: (data.divisions || []).length,
+    anggotaCount: (data.anggota || []).length
+  })
+})
+
+router.get('/prestasi', (req, res) => {
+  res.json(data.prestasiList || [])
+})
+
+router.get('/gallery', (req, res) => {
+  res.json(data.gallery || [])
+})
+
 router.get('/profile', (req, res) => {
   res.json(data.profile)
 })
@@ -130,7 +153,15 @@ router.get('/slides', (req, res) => {
 })
 
 router.get('/inventory', (req, res) => {
-  res.json(data.inventory || [])
+  const inventory = data.inventory || []
+  const peminjaman = data.peminjaman || []
+  
+  const mapped = inventory.map(item => {
+    const isBorrowed = peminjaman.some(p => String(p.itemId) === String(item.id) && p.status === 'Disetujui')
+    return { ...item, isBorrowed }
+  })
+  
+  res.json(mapped)
 })
 
 // ── Admin CRUD endpoints ────────────────────────────────────────────
@@ -248,6 +279,64 @@ router.delete('/admin/slides/:id', (req, res) => {
   res.json({ success: true })
 })
 
+// Prestasi
+router.get('/admin/prestasi', (req, res) => {
+  res.json(data.prestasiList || [])
+})
+
+router.post('/admin/prestasi', (req, res) => {
+  const item = { ...req.body, id: nextId(data.prestasiList || []) }
+  if (!data.prestasiList) data.prestasiList = []
+  data.prestasiList.push(item)
+  saveData(data)
+  res.status(201).json(item)
+})
+
+router.put('/admin/prestasi/:id', (req, res) => {
+  if (!data.prestasiList) data.prestasiList = []
+  const idx = data.prestasiList.findIndex(p => String(p.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Prestasi not found' })
+  data.prestasiList[idx] = { ...data.prestasiList[idx], ...req.body, id: data.prestasiList[idx].id }
+  saveData(data)
+  res.json(data.prestasiList[idx])
+})
+
+router.delete('/admin/prestasi/:id', (req, res) => {
+  if (!data.prestasiList) data.prestasiList = []
+  data.prestasiList = data.prestasiList.filter(p => String(p.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
+// Gallery
+router.get('/admin/gallery', (req, res) => {
+  res.json(data.gallery || [])
+})
+
+router.post('/admin/gallery', (req, res) => {
+  const item = { ...req.body, id: nextId(data.gallery || []) }
+  if (!data.gallery) data.gallery = []
+  data.gallery.push(item)
+  saveData(data)
+  res.status(201).json(item)
+})
+
+router.put('/admin/gallery/:id', (req, res) => {
+  if (!data.gallery) data.gallery = []
+  const idx = data.gallery.findIndex(g => String(g.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Gallery item not found' })
+  data.gallery[idx] = { ...data.gallery[idx], ...req.body, id: data.gallery[idx].id }
+  saveData(data)
+  res.json(data.gallery[idx])
+})
+
+router.delete('/admin/gallery/:id', (req, res) => {
+  if (!data.gallery) data.gallery = []
+  data.gallery = data.gallery.filter(g => String(g.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
 // Finances
 router.get('/admin/finances', (req, res) => {
   res.json(data.finances || [])
@@ -302,6 +391,27 @@ router.put('/admin/inventory/:id', (req, res) => {
 router.delete('/admin/inventory/:id', (req, res) => {
   if (!data.inventory) data.inventory = []
   data.inventory = data.inventory.filter(i => String(i.id) !== String(req.params.id))
+  saveData(data)
+  res.json({ success: true })
+})
+
+// Peminjaman
+router.get('/admin/peminjaman', (req, res) => {
+  res.json(data.peminjaman || [])
+})
+
+router.put('/admin/peminjaman/:id', (req, res) => {
+  if (!data.peminjaman) data.peminjaman = []
+  const idx = data.peminjaman.findIndex(p => String(p.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Permintaan peminjaman tidak ditemukan' })
+  data.peminjaman[idx] = { ...data.peminjaman[idx], ...req.body, id: data.peminjaman[idx].id }
+  saveData(data)
+  res.json(data.peminjaman[idx])
+})
+
+router.delete('/admin/peminjaman/:id', (req, res) => {
+  if (!data.peminjaman) data.peminjaman = []
+  data.peminjaman = data.peminjaman.filter(p => String(p.id) !== String(req.params.id))
   saveData(data)
   res.json({ success: true })
 })
@@ -466,17 +576,43 @@ router.get('/admin/logs', (req, res) => {
   })
 })
 
+// ── Peminjaman Settings ──────────────────────────────────────────────────
+router.get('/peminjaman-settings', (req, res) => {
+  res.json(data.peminjamanSettings || { bank: 'BNI', rek: '0000000', name: 'Ikatan Mahasiswa Kerinci' })
+})
+
+router.put('/admin/peminjaman-settings', (req, res) => {
+  if (req.user.role !== 'admin' && req.user.role !== 'bendahara' && req.user.division_key !== 'kestari') {
+    // Only allow admin, bendahara, or kestari
+    return res.status(403).json({ error: 'Akses ditolak' })
+  }
+  const { bank, rek, name } = req.body
+  data.peminjamanSettings = { bank, rek, name }
+  saveData(data)
+  res.json(data.peminjamanSettings)
+})
+
 // Stats for dashboard overview
 router.get('/admin/stats', (req, res) => {
+  let programsCount = data.programs.length
+  let membersCount = data.members.length
+  
+  if (req.user && req.user.role === 'divisi') {
+    programsCount = data.programs.filter(p => p.division_key === req.user.division_key).length
+    membersCount = data.members.filter(m => m.division_key === req.user.division_key).length
+  }
+
   res.json({
     divisions: data.divisions.length,
-    programs: data.programs.length,
-    members: data.members.length,
+    programs: programsCount,
+    members: membersCount,
     slides: data.slides.length,
     finances: (data.finances || []).length,
     inventory: (data.inventory || []).length,
     anggota: (data.anggota || []).length,
     peminjaman: (data.peminjaman || []).length,
+    prestasi: (data.prestasiList || []).length,
+    gallery: (data.gallery || []).length,
     visitorViews: (data.visitorLogs || []).length
   })
 })

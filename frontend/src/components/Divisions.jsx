@@ -38,24 +38,6 @@ export default function Divisions(){
 
   return (
     <div>
-      <div className="divisions-header">
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: 6,
-          background: 'var(--accent-pale)', color: 'var(--accent)',
-          fontSize: 12, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
-          padding: '6px 14px', borderRadius: 100, marginBottom: 16,
-          border: '1px solid var(--border)'
-        }}>
-          Organisasi
-        </div>
-        <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 800, letterSpacing: '-0.8px', color: 'var(--text)' }}>
-          Divisi Kami
-        </h2>
-        <p style={{ color: 'var(--text-muted)', marginTop: 10, fontSize: 16 }}>
-          Kenali lebih dekat bagian-bagian penggerak organisasi kami.
-        </p>
-      </div>
-
       {/* Divisi Inti — tengah atas */}
       {intiDiv && (
         <div className="divisions-inti-wrapper">

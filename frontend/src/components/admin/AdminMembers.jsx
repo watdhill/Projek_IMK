@@ -65,9 +65,17 @@ export default function AdminMembers({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
-  const filteredMembers = filterDivision 
-    ? members.filter(m => m.division_key === filterDivision)
-    : members;
+  const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
+
+  const filteredMembers = members.filter(m => {
+    if (loggedUser.role === 'divisi' && m.division_key !== loggedUser.division_key) {
+      return false
+    }
+    if (filterDivision && m.division_key !== filterDivision) {
+      return false
+    }
+    return true
+  })
 
   return (
     <>
@@ -97,7 +105,7 @@ export default function AdminMembers({ showToast, onUpdate }) {
             <button
               className="admin-btn admin-btn-primary"
               style={{ whiteSpace: 'nowrap' }}
-              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', role: '', division_key: '', avatar: '' } })}
+              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', role: '', division_key: loggedUser.role === 'divisi' ? loggedUser.division_key : '', avatar: '' } })}
             >
               ＋ Tambah Pengurus
             </button>
@@ -166,13 +174,19 @@ export default function AdminMembers({ showToast, onUpdate }) {
 
             <div className="admin-form-group">
               <label>Divisi</label>
-              <select className="admin-input" value={modal.data.division_key || ''} onChange={(e) => setField('division_key', e.target.value)} required>
-                <option value="" disabled>Pilih Divisi</option>
-                <option value="inti">Pengurus Inti</option>
-                {divisions.map(d => (
-                  <option key={d.key} value={d.key}>{d.name}</option>
-                ))}
-              </select>
+              {loggedUser.role === 'divisi' ? (
+                <div style={{ padding: '10px 14px', background: '#f1f5f9', borderRadius: 8, fontSize: 14, fontWeight: 600, color: '#334155' }}>
+                  🏢 {divisions.find(d => d.key === loggedUser.division_key)?.name || loggedUser.division_key || 'Divisi Saya'} (Terkunci Sesuai Akun Divisi Anda)
+                </div>
+              ) : (
+                <select className="admin-input" value={modal.data.division_key || ''} onChange={(e) => setField('division_key', e.target.value)} required>
+                  <option value="" disabled>Pilih Divisi</option>
+                  <option value="inti">Pengurus Inti</option>
+                  {divisions.map(d => (
+                    <option key={d.key} value={d.key}>{d.name}</option>
+                  ))}
+                </select>
+              )}
             </div>
 
             <div className="admin-form-group">

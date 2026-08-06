@@ -87,16 +87,6 @@ export default function AdminProfile({ showToast }) {
         </div>
 
         <div className="admin-form-group">
-          <label>Prestasi</label>
-          <textarea
-            className="admin-textarea"
-            value={form.prestasi || ''}
-            onChange={(e) => setForm({ ...form, prestasi: e.target.value })}
-            placeholder="Tuliskan daftar prestasi"
-          />
-        </div>
-
-        <div className="admin-form-group">
           <label>Struktur Organisasi</label>
           <ImageUpload
             value={form.struktur || ''}

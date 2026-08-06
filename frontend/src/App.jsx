@@ -3,10 +3,17 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Profile from './components/Profile'
 import Nav from './components/Nav'
 import HeroSlider from './components/HeroSlider'
+import Stats from './components/Stats'
 import Divisions from './components/Divisions'
+import AllDivisionsPage from './components/AllDivisionsPage'
 import DivisionPage from './components/DivisionPage'
+import PrestasiPage from './components/PrestasiPage'
+import ProgramPage from './components/ProgramPage'
 import StrukturPage from './components/StrukturPage'
+import TentangPage from './components/TentangPage'
+import GalleryPage from './components/GalleryPage'
 import PeminjamanPage from './components/PeminjamanPage'
+import PeminjamanFormPage from './components/PeminjamanFormPage'
 import AdminLogin from './components/AdminLogin'
 import AdminDashboard from './components/AdminDashboard'
 
@@ -98,9 +105,9 @@ function Home() {
           <Profile />
         </section>
 
-        {/* ── Divisions section ── */}
-        <section id="divisi" className="reveal">
-          <Divisions />
+        {/* ── Stats section ── */}
+        <section id="stats" className="reveal">
+          <Stats />
         </section>
 
         {/* ── Contact section ── */}
@@ -203,8 +210,14 @@ export default function App() {
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<><Nav /><Home /></>} />
+        <Route path="/tentang" element={<><Nav /><TentangPage /></>} />
         <Route path="/peminjaman" element={<><Nav /><PeminjamanPage /></>} />
+        <Route path="/peminjaman/form/:id" element={<><Nav /><PeminjamanFormPage /></>} />
+        <Route path="/divisi" element={<><Nav /><AllDivisionsPage /></>} />
         <Route path="/divisi/:key" element={<><Nav /><DivisionPage /></>} />
+        <Route path="/prestasi/:id" element={<><Nav /><PrestasiPage /></>} />
+        <Route path="/program/:id" element={<><Nav /><ProgramPage /></>} />
+        <Route path="/galeri" element={<><Nav /><GalleryPage /></>} />
         <Route path="/struktur" element={<><Nav /><StrukturPage /></>} />
 
         {/* Admin routes (no Nav bar) */}

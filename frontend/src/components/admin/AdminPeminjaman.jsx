@@ -4,12 +4,20 @@ import { apiHeaders } from '../AdminDashboard'
 export default function AdminPeminjaman({ showToast, onUpdate }) {
   const [requests, setRequests] = useState([])
   const [loading, setLoading] = useState(true)
+  
+  const [bankSettings, setBankSettings] = useState({ bank: '', rek: '', name: '' })
+  const [isSavingSettings, setIsSavingSettings] = useState(false)
 
   const fetchData = async () => {
     try {
       const res = await fetch('/api/admin/peminjaman', { headers: apiHeaders() })
       if (res.ok) {
         setRequests(await res.json())
+      }
+      
+      const resSettings = await fetch('/api/peminjaman-settings')
+      if (resSettings.ok) {
+        setBankSettings(await resSettings.json())
       }
     } catch { /* ignore */ }
     setLoading(false)
@@ -28,6 +36,17 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
         showToast(`Status permohonan diubah menjadi ${newStatus}`)
         fetchData()
         onUpdate?.()
+        
+        if (newStatus === 'Disetujui' && req.noHp) {
+          const formattedHp = req.noHp.replace(/\D/g, '').replace(/^0/, '62')
+          const formattedStartDate = new Date(req.startDate).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+          const originalFormattedEndDate = new Date(req.endDate).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+          const deadlineDate = new Date(req.endDate);
+          deadlineDate.setDate(deadlineDate.getDate() + 1);
+          const deadlineFormattedEndDate = deadlineDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+          const msg = encodeURIComponent(`Halo ${req.name}, kami dari IMK UNAND.\nPengajuan peminjaman inventaris Anda telah disetujui.\nDetail Peminjaman:\n* Nama Barang: *${req.itemName.trim()}*\n* Instansi: ${req.instansi}\n* Tanggal Peminjaman: ${formattedStartDate} s/d ${originalFormattedEndDate}\n* Batas Waktu Pengembalian: ${deadlineFormattedEndDate}\nSilakan ambil barangnya di sekretariat sesuai jadwal yang Anda ajukan. Terima kasih.`)
+          window.open(`https://wa.me/${formattedHp}?text=${msg}`, '_blank')
+        }
       } else {
         alert('Gagal mengubah status')
       }
@@ -44,7 +63,52 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
     <>
       <div className="admin-page-header">
         <h1>Peminjaman</h1>
-        <p>Kelola daftar permintaan peminjaman inventaris</p>
+        <p>Kelola daftar permintaan peminjaman inventaris dan pengaturan pembayaran</p>
+      </div>
+
+      <div className="admin-card" style={{ marginBottom: '24px' }}>
+        <div className="admin-card-header">
+          <h2>Pengaturan Rekening Pembayaran</h2>
+        </div>
+        <form onSubmit={async (e) => {
+          e.preventDefault()
+          setIsSavingSettings(true)
+          try {
+            const res = await fetch('/api/admin/peminjaman-settings', {
+              method: 'PUT',
+              headers: apiHeaders(),
+              body: JSON.stringify(bankSettings)
+            })
+            if (res.ok) {
+              showToast('Pengaturan rekening berhasil disimpan')
+            } else {
+              alert('Gagal menyimpan pengaturan. Pastikan Anda memiliki akses.')
+            }
+          } catch {
+            alert('Gagal terhubung ke server')
+          }
+          setIsSavingSettings(false)
+        }}>
+          <div className="admin-form-row" style={{ padding: '24px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+            <div className="admin-form-group" style={{ marginBottom: 0 }}>
+              <label>Nama Bank</label>
+              <input type="text" className="admin-input" value={bankSettings.bank} onChange={e => setBankSettings({...bankSettings, bank: e.target.value})} required placeholder="Contoh: BNI" />
+            </div>
+            <div className="admin-form-group" style={{ marginBottom: 0 }}>
+              <label>Nomor Rekening</label>
+              <input type="text" className="admin-input" value={bankSettings.rek} onChange={e => setBankSettings({...bankSettings, rek: e.target.value})} required placeholder="Contoh: 0000000" />
+            </div>
+            <div className="admin-form-group" style={{ marginBottom: 0, gridColumn: '1 / -1' }}>
+              <label>Atas Nama (a.n.)</label>
+              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                <input type="text" className="admin-input" value={bankSettings.name} onChange={e => setBankSettings({...bankSettings, name: e.target.value})} required placeholder="Contoh: Ikatan Mahasiswa Kerinci" style={{ flex: 1 }} />
+                <button type="submit" className="admin-btn admin-btn-primary" disabled={isSavingSettings} style={{ padding: '0 24px', height: '42px', alignSelf: 'stretch' }}>
+                  {isSavingSettings ? 'Menyimpan...' : 'Simpan Rekening'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
 
       <div className="admin-card">

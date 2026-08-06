@@ -78,20 +78,13 @@ export default function Nav(){
           <div className="nav-item">
             <a className="nav-link" href="#profil" onClick={(e)=>toggleDropdown(e,'profil')}>Profil ▾</a>
             <div className={`dropdown-menu ${openDropdown === 'profil' ? 'show' : ''}`}>
-              <a href="#visi-misi" className="dropdown-item" onClick={(e)=>scrollToId(e,'visi-misi')}>Visi dan Misi</a>
-              <a href="#prestasi" className="dropdown-item" onClick={(e)=>scrollToId(e,'prestasi')}>Prestasi</a>
+              <Link to="/tentang" className="dropdown-item" onClick={closeMobileMenu}>Tentang</Link>
               <Link to="/struktur" className="dropdown-item" onClick={closeMobileMenu}>Struktur Organisasi</Link>
+              <Link to="/divisi" className="dropdown-item" onClick={closeMobileMenu}>Divisi</Link>
             </div>
           </div>
           
-          <div className="nav-item">
-            <a className="nav-link" href="#divisi" onClick={(e)=>toggleDropdown(e,'divisi')}>Divisi ▾</a>
-            <div className={`dropdown-menu ${openDropdown === 'divisi' ? 'show' : ''}`}>
-              {divisions.map(d => (
-                <Link key={d.key} to={`/divisi/${d.key}`} className="dropdown-item" onClick={closeMobileMenu}>{d.name}</Link>
-              ))}
-            </div>
-          </div>
+          <Link to="/galeri" className="nav-link" onClick={closeMobileMenu}>Galeri</Link>
 
           <Link to="/peminjaman" className="nav-link" onClick={closeMobileMenu}>Peminjaman</Link>
           <a className="nav-link" href="#kontak" onClick={(e)=>scrollToId(e,'kontak')}>Kontak</a>

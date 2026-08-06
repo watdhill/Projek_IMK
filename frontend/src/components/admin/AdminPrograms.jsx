@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { apiHeaders } from '../AdminDashboard'
 import ConfirmModal from './ConfirmModal'
+import ImageUpload from './ImageUpload'
 
 export default function AdminPrograms({ showToast, onUpdate }) {
   const [programs, setPrograms] = useState([])
@@ -64,6 +65,9 @@ export default function AdminPrograms({ showToast, onUpdate }) {
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
   const filteredPrograms = programs.filter(p => {
+    if (loggedUser.role === 'divisi' && p.division_key !== loggedUser.division_key) {
+      return false
+    }
     if (statusFilter === 'all') return true
     return (p.status || 'belum_terlaksana') === statusFilter
   })
@@ -121,7 +125,8 @@ export default function AdminPrograms({ showToast, onUpdate }) {
                   execution_date: '',
                   penanggung_jawab: '',
                   status: 'belum_terlaksana',
-                  division_key: loggedUser.division_key || 'umum'
+                  division_key: loggedUser.division_key || 'umum',
+                  is_unggulan: false
                 }
               })}
             >
@@ -152,7 +157,10 @@ export default function AdminPrograms({ showToast, onUpdate }) {
               <tbody>
                 {filteredPrograms.map((p) => (
                   <tr key={p.id}>
-                    <td><strong>{p.title}</strong></td>
+                    <td>
+                      <strong>{p.title}</strong>
+                      {p.is_unggulan && <span style={{ marginLeft: 8, color: '#f59e0b', fontSize: '14px' }} title="Program Unggulan">⭐</span>}
+                    </td>
                     <td>{getStatusBadge(p.status || 'belum_terlaksana')}</td>
                     <td>
                       {p.division_key === 'umum' || !p.division_key ? 'Umum' : 
@@ -235,6 +243,18 @@ export default function AdminPrograms({ showToast, onUpdate }) {
               <label>Deskripsi Program Kerja</label>
               <textarea className="admin-textarea" value={modal.data.description || ''} onChange={(e) => setField('description', e.target.value)} placeholder="Detail tujuan, sasaran, dan keterangan program kerja..." />
             </div>
+
+            <div className="admin-form-group" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <input type="checkbox" id="is_unggulan" checked={modal.data.is_unggulan || false} onChange={(e) => setField('is_unggulan', e.target.checked)} style={{ width: 18, height: 18, accentColor: 'var(--accent)' }} />
+              <label htmlFor="is_unggulan" style={{ margin: 0, cursor: 'pointer', fontWeight: 600 }}>Jadikan Program Unggulan</label>
+            </div>
+
+            {modal.data.is_unggulan && (
+              <div className="admin-form-group">
+                <label>Foto Program (Untuk ditampilkan di Beranda)</label>
+                <ImageUpload value={modal.data.image} onChange={(url) => setField('image', url)} />
+              </div>
+            )}
 
             <div className="admin-modal-actions">
               <button type="button" className="admin-btn admin-btn-ghost" onClick={() => setModal(null)}>Batal</button>

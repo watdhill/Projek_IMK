@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function ProkerCalendar() {
+export default function ProkerCalendar({ isPublic = false }) {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [programs, setPrograms] = useState([])
   const [selectedDayProkers, setSelectedDayProkers] = useState(null)
@@ -29,9 +29,14 @@ export default function ProkerCalendar() {
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1))
   const todayMonth = () => setCurrentDate(new Date())
 
+  const loggedUser = isPublic ? {} : JSON.parse(localStorage.getItem('admin_user') || '{}')
+
   // Map programs to formatted date YYYY-MM-DD
   const prokersByDate = {}
   programs.forEach(p => {
+    if (!isPublic && loggedUser.role === 'divisi' && p.division_key !== loggedUser.division_key) {
+      return
+    }
     const rawDate = p.execution_date || p.date
     if (!rawDate) return
     const ds = rawDate.slice(0, 10)
@@ -54,22 +59,33 @@ export default function ProkerCalendar() {
   }
 
   return (
-    <div className="admin-card" style={{ marginTop: 24 }}>
+    <div className={isPublic ? "card" : "admin-card"} style={{ marginTop: 24 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>📅 Kalender Program Kerja</h2>
-          <p style={{ color: 'var(--admin-text-dim)', fontSize: 13, margin: '4px 0 0 0' }}>
+          <h2 style={{ fontSize: isPublic ? 24 : 18, fontWeight: 800, margin: 0, letterSpacing: isPublic ? '-0.5px' : 'normal' }}>
+            {isPublic ? 'Kalender Program Kerja' : '📅 Kalender Program Kerja'}
+          </h2>
+          <p style={{ color: isPublic ? 'var(--text-muted)' : 'var(--admin-text-dim)', fontSize: isPublic ? 15.5 : 13, margin: '4px 0 0 0' }}>
             Jadwal kegiatan dan program kerja organisasi bulan ini
           </p>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={prevMonth}>◀ Prev</button>
-          <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={todayMonth}>Hari Ini</button>
-          <strong style={{ minWidth: 120, textAlign: 'center', fontSize: 15 }}>
-            {monthNames[month]} {year}
-          </strong>
-          <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={nextMonth}>Next ▶</button>
-        </div>
+        
+        {isPublic ? (
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <strong style={{ fontSize: 18, color: 'var(--text)', background: 'var(--accent-pale)', color: 'var(--accent)', padding: '6px 16px', borderRadius: 100 }}>
+              {monthNames[month]} {year}
+            </strong>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={prevMonth}>◀ Prev</button>
+            <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={todayMonth}>Hari Ini</button>
+            <strong style={{ minWidth: 120, textAlign: 'center', fontSize: 15 }}>
+              {monthNames[month]} {year}
+            </strong>
+            <button className="admin-btn admin-btn-ghost admin-btn-sm" onClick={nextMonth}>Next ▶</button>
+          </div>
+        )}
       </div>
 
       {/* Legend */}
@@ -162,9 +178,21 @@ export default function ProkerCalendar() {
 
       {/* Detail Modal */}
       {selectedDayProkers && (
-        <div className="admin-modal-overlay" onClick={() => setSelectedDayProkers(null)}>
-          <div className="admin-modal" onClick={e => e.stopPropagation()} style={{ maxWidth: 500 }}>
-            <h2>Program Kerja pada {selectedDayProkers.dateStr}</h2>
+        <div 
+          className={isPublic ? "" : "admin-modal-overlay"} 
+          onClick={() => setSelectedDayProkers(null)}
+          style={isPublic ? {
+            position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 9999,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, backdropFilter: 'blur(4px)'
+          } : {}}
+        >
+          <div 
+            className={isPublic ? "card" : "admin-modal"} 
+            onClick={e => e.stopPropagation()} 
+            style={{ maxWidth: 500, width: '100%', maxHeight: '90vh', overflowY: 'auto' }}
+          >
+            <h2 style={{ margin: '0 0 16px 0', fontSize: 20, fontWeight: 700 }}>Program Kerja pada {selectedDayProkers.dateStr}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, margin: '16px 0' }}>
               {selectedDayProkers.prokers.map(p => (
                 <div key={p.id} style={{ border: '1px solid #e2e8f0', borderRadius: 8, padding: 14, background: '#f8fafc' }}>
@@ -187,8 +215,14 @@ export default function ProkerCalendar() {
                 </div>
               ))}
             </div>
-            <div className="admin-modal-actions">
-              <button className="admin-btn admin-btn-primary" onClick={() => setSelectedDayProkers(null)}>Tutup</button>
+            <div className={isPublic ? "" : "admin-modal-actions"} style={isPublic ? { marginTop: 20, textAlign: 'right' } : {}}>
+              <button 
+                className={isPublic ? "" : "admin-btn admin-btn-primary"} 
+                style={isPublic ? { padding: '8px 24px', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 600 } : {}}
+                onClick={() => setSelectedDayProkers(null)}
+              >
+                Tutup
+              </button>
             </div>
           </div>
         </div>
