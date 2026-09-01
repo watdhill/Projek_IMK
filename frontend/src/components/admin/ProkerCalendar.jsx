@@ -72,7 +72,7 @@ export default function ProkerCalendar({ isPublic = false }) {
         
         {isPublic ? (
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <strong style={{ fontSize: 18, color: 'var(--text)', background: 'var(--accent-pale)', color: 'var(--accent)', padding: '6px 16px', borderRadius: 100 }}>
+            <strong style={{ fontSize: 18, background: 'var(--accent-pale)', color: 'var(--accent)', padding: '6px 16px', borderRadius: 100 }}>
               {monthNames[month]} {year}
             </strong>
           </div>

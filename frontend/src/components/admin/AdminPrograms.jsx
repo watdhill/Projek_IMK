@@ -10,6 +10,7 @@ export default function AdminPrograms({ showToast, onUpdate }) {
   const [loading, setLoading] = useState(true)
   const [divisions, setDivisions] = useState([])
   const [statusFilter, setStatusFilter] = useState('all')
+  const [filterDivision, setFilterDivision] = useState('')
 
   const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
 
@@ -64,10 +65,25 @@ export default function AdminPrograms({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
-  const filteredPrograms = programs.filter(p => {
-    if (loggedUser.role === 'divisi' && p.division_key !== loggedUser.division_key) {
-      return false
+  // 1. Filter by division scope first (Logged-in division user or selected division filter)
+  const divisionFilteredPrograms = programs.filter(p => {
+    if (loggedUser.role === 'divisi') {
+      return p.division_key === loggedUser.division_key
     }
+    if (filterDivision) {
+      return p.division_key === filterDivision
+    }
+    return true
+  })
+
+  // 2. Dynamic counters computed strictly from divisionFilteredPrograms
+  const countSemua = divisionFilteredPrograms.length
+  const countTerlaksana = divisionFilteredPrograms.filter(p => p.status === 'terlaksana').length
+  const countSedangBerjalan = divisionFilteredPrograms.filter(p => p.status === 'sedang_berjalan').length
+  const countBelumTerlaksana = divisionFilteredPrograms.filter(p => (!p.status || p.status === 'belum_terlaksana')).length
+
+  // 3. Status filtering for display table
+  const filteredPrograms = divisionFilteredPrograms.filter(p => {
     if (statusFilter === 'all') return true
     return (p.status || 'belum_terlaksana') === statusFilter
   })
@@ -94,24 +110,41 @@ export default function AdminPrograms({ showToast, onUpdate }) {
           <h2>Daftar Program ({filteredPrograms.length})</h2>
 
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+            {/* Filter Divisi (hanya untuk Admin/Superadmin) */}
+            {loggedUser.role !== 'divisi' && (
+              <select
+                className="admin-input"
+                style={{ width: 'auto', margin: 0, padding: '6px 12px', fontSize: '0.9em' }}
+                value={filterDivision}
+                onChange={(e) => setFilterDivision(e.target.value)}
+              >
+                <option value="">Semua Divisi</option>
+                <option value="umum">Umum</option>
+                <option value="inti">Pengurus Inti</option>
+                {divisions.map(d => (
+                  <option key={d.key} value={d.key}>{d.name}</option>
+                ))}
+              </select>
+            )}
+
             {/* Filter Tabs */}
             <div style={{ display: 'flex', background: '#f1f5f9', padding: 3, borderRadius: 8, gap: 2 }}>
               <button
                 className={`admin-btn admin-btn-sm ${statusFilter === 'all' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
                 onClick={() => setStatusFilter('all')}
-              >Semua ({programs.length})</button>
+              >Semua ({countSemua})</button>
               <button
                 className={`admin-btn admin-btn-sm ${statusFilter === 'terlaksana' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
                 onClick={() => setStatusFilter('terlaksana')}
-              >Terlaksana ({programs.filter(p => p.status === 'terlaksana').length})</button>
+              >Terlaksana ({countTerlaksana})</button>
               <button
                 className={`admin-btn admin-btn-sm ${statusFilter === 'sedang_berjalan' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
                 onClick={() => setStatusFilter('sedang_berjalan')}
-              >Sedang Berjalan ({programs.filter(p => p.status === 'sedang_berjalan').length})</button>
+              >Sedang Berjalan ({countSedangBerjalan})</button>
               <button
                 className={`admin-btn admin-btn-sm ${statusFilter === 'belum_terlaksana' ? 'admin-btn-primary' : 'admin-btn-ghost'}`}
                 onClick={() => setStatusFilter('belum_terlaksana')}
-              >Belum Terlaksana ({programs.filter(p => (!p.status || p.status === 'belum_terlaksana')).length})</button>
+              >Belum Terlaksana ({countBelumTerlaksana})</button>
             </div>
 
             <button
@@ -125,7 +158,7 @@ export default function AdminPrograms({ showToast, onUpdate }) {
                   execution_date: '',
                   penanggung_jawab: '',
                   status: 'belum_terlaksana',
-                  division_key: loggedUser.division_key || 'umum',
+                  division_key: loggedUser.role === 'divisi' ? (loggedUser.division_key || 'umum') : (filterDivision || 'umum'),
                   is_unggulan: false
                 }
               })}

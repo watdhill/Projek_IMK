@@ -5,18 +5,29 @@ import ConfirmModal from './ConfirmModal'
 
 export default function AdminAnggota({ showToast, onUpdate }) {
   const [anggota, setAnggota] = useState([])
+  const [divisions, setDivisions] = useState([])
   const [modal, setModal] = useState(null)
   const [importModal, setImportModal] = useState(false)
   const [importPreview, setImportPreview] = useState([])
   const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
   const [submittingImport, setSubmittingImport] = useState(false)
+  const [filterDivision, setFilterDivision] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
 
   const fetchData = async () => {
     try {
-      const res = await fetch('/api/admin/anggota', { headers: apiHeaders() })
-      if (res.ok) {
-        setAnggota(await res.json())
+      const [resAnggota, resDivisions] = await Promise.all([
+        fetch('/api/admin/anggota', { headers: apiHeaders() }),
+        fetch('/api/divisions')
+      ])
+      if (resAnggota.ok) {
+        setAnggota(await resAnggota.json())
+      }
+      if (resDivisions.ok) {
+        setDivisions(await resDivisions.json())
       }
     } catch { /* ignore */ }
     setLoading(false)
@@ -26,7 +37,10 @@ export default function AdminAnggota({ showToast, onUpdate }) {
 
   const handleSave = async (e) => {
     e.preventDefault()
-    const d = modal.data
+    let d = { ...modal.data }
+    if (loggedUser.role === 'divisi') {
+      d.division_key = loggedUser.division_key
+    }
     const isEdit = modal.mode === 'edit'
     const url = isEdit ? `/api/admin/anggota/${d.id}` : '/api/admin/anggota'
     const method = isEdit ? 'PUT' : 'POST'
@@ -74,7 +88,6 @@ export default function AdminAnggota({ showToast, onUpdate }) {
 
         // Map columns dynamically
         const parsed = data.map((row, idx) => {
-          // Normalize object keys
           const keys = Object.keys(row)
           const findVal = (possibleKeys) => {
             const match = keys.find(k => possibleKeys.some(p => k.toLowerCase().includes(p.toLowerCase())))
@@ -93,7 +106,8 @@ export default function AdminAnggota({ showToast, onUpdate }) {
             name: String(name).trim(),
             program_study: String(program_study).trim() || '-',
             join_year: Number(join_year) || new Date().getFullYear(),
-            status: String(status).toLowerCase().includes('alumni') ? 'alumni' : 'aktif'
+            status: String(status).toLowerCase().includes('alumni') ? 'alumni' : 'aktif',
+            division_key: loggedUser.role === 'divisi' ? loggedUser.division_key : (filterDivision || '')
           }
         }).filter(item => item.name && item.nim)
 
@@ -141,6 +155,22 @@ export default function AdminAnggota({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
+  const filteredAnggota = anggota.filter(m => {
+    if (loggedUser.role === 'divisi' && m.division_key && m.division_key !== loggedUser.division_key) {
+      return false
+    }
+    if (filterDivision && m.division_key !== filterDivision) {
+      return false
+    }
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase()
+      if (!(m.name || '').toLowerCase().includes(term)) {
+        return false
+      }
+    }
+    return true
+  })
+
   return (
     <>
       <div className="admin-page-header">
@@ -149,9 +179,35 @@ export default function AdminAnggota({ showToast, onUpdate }) {
       </div>
 
       <div className="admin-card">
-        <div className="admin-card-header" style={{ flexWrap: 'wrap', gap: 12 }}>
-          <h2>Daftar Anggota ({anggota.length})</h2>
-          <div style={{ display: 'flex', gap: 8 }}>
+        <div className="admin-card-header" style={{ flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+          <h2 style={{ flex: 1, margin: 0 }}>Daftar Anggota ({filteredAnggota.length})</h2>
+          
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+            <input
+              type="text"
+              className="admin-input"
+              style={{ width: '220px', margin: 0, padding: '8px 12px' }}
+              placeholder="🔍 Cari nama anggota..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+
+            {loggedUser.role !== 'divisi' && (
+              <select
+                className="admin-input"
+                style={{ width: 'auto', margin: 0, padding: '8px 12px' }}
+                value={filterDivision}
+                onChange={(e) => setFilterDivision(e.target.value)}
+              >
+                <option value="">Semua Divisi</option>
+                <option value="umum">Umum</option>
+                <option value="inti">Pengurus Inti</option>
+                {divisions.map(d => (
+                  <option key={d.key} value={d.key}>{d.name}</option>
+                ))}
+              </select>
+            )}
+
             <button
               className="admin-btn admin-btn-ghost"
               onClick={() => { setImportPreview([]); setImportModal(true); }}
@@ -160,14 +216,25 @@ export default function AdminAnggota({ showToast, onUpdate }) {
             </button>
             <button
               className="admin-btn admin-btn-primary"
-              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', nim: '', program_study: '', join_year: new Date().getFullYear(), status: 'aktif' } })}
+              onClick={() => setModal({
+                mode: 'add',
+                data: {
+                  id: Date.now().toString(),
+                  name: '',
+                  nim: '',
+                  program_study: '',
+                  join_year: new Date().getFullYear(),
+                  status: 'aktif',
+                  division_key: loggedUser.role === 'divisi' ? loggedUser.division_key : (filterDivision || '')
+                }
+              })}
             >
               ＋ Tambah Anggota
             </button>
           </div>
         </div>
 
-        {anggota.length === 0 ? (
+        {filteredAnggota.length === 0 ? (
           <div className="admin-empty">
             <div className="empty-icon">👥</div>
             <p>Belum ada data anggota. Klik tombol di atas untuk menambahkan atau mengimpor data dari Excel.</p>
@@ -179,6 +246,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
                 <tr>
                   <th>NIM</th>
                   <th>Nama Lengkap</th>
+                  <th>Divisi</th>
                   <th>Jurusan</th>
                   <th>Tahun Masuk</th>
                   <th>Status</th>
@@ -186,35 +254,39 @@ export default function AdminAnggota({ showToast, onUpdate }) {
                 </tr>
               </thead>
               <tbody>
-                {anggota.sort((a, b) => b.join_year - a.join_year).map((m) => (
-                  <tr key={m.id}>
-                    <td>{m.nim}</td>
-                    <td><strong>{m.name}</strong></td>
-                    <td>{m.program_study}</td>
-                    <td>{m.join_year}</td>
-                    <td>
-                      <span style={{
-                        padding: '4px 8px', borderRadius: 4, fontSize: '0.85em', fontWeight: 'bold',
-                        backgroundColor: m.status === 'aktif' ? 'rgba(59, 130, 246, 0.1)' : 'rgba(107, 114, 128, 0.1)',
-                        color: m.status === 'aktif' ? '#3b82f6' : '#6b7280'
-                      }}>
-                        {m.status === 'aktif' ? 'Aktif' : 'Alumni'}
-                      </span>
-                    </td>
-                    <td>
-                      <div className="actions">
-                        <button
-                          className="admin-btn admin-btn-ghost admin-btn-sm"
-                          onClick={() => setModal({ mode: 'edit', data: { ...m } })}
-                        >✏️ Edit</button>
-                        <button
-                          className="admin-btn admin-btn-danger admin-btn-sm"
-                          onClick={() => setDeleteId(m.id)}
-                        >🗑️</button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                {filteredAnggota.sort((a, b) => b.join_year - a.join_year).map((m) => {
+                  const div = m.division_key === 'inti' ? 'Pengurus Inti' : (divisions.find(d => d.key === m.division_key)?.name || (m.division_key === 'umum' ? 'Umum' : '-'))
+                  return (
+                    <tr key={m.id}>
+                      <td>{m.nim}</td>
+                      <td><strong>{m.name}</strong></td>
+                      <td>{div}</td>
+                      <td>{m.program_study}</td>
+                      <td>{m.join_year}</td>
+                      <td>
+                        <span style={{
+                          padding: '4px 8px', borderRadius: 4, fontSize: '0.85em', fontWeight: 'bold',
+                          backgroundColor: m.status === 'aktif' ? 'rgba(59, 130, 246, 0.1)' : 'rgba(107, 114, 128, 0.1)',
+                          color: m.status === 'aktif' ? '#3b82f6' : '#6b7280'
+                        }}>
+                          {m.status === 'aktif' ? 'Aktif' : 'Alumni'}
+                        </span>
+                      </td>
+                      <td>
+                        <div className="actions">
+                          <button
+                            className="admin-btn admin-btn-ghost admin-btn-sm"
+                            onClick={() => setModal({ mode: 'edit', data: { ...m } })}
+                          >✏️ Edit</button>
+                          <button
+                            className="admin-btn admin-btn-danger admin-btn-sm"
+                            onClick={() => setDeleteId(m.id)}
+                          >🗑️</button>
+                        </div>
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
@@ -235,6 +307,23 @@ export default function AdminAnggota({ showToast, onUpdate }) {
             <div className="admin-form-group">
               <label>NIM</label>
               <input className="admin-input" value={modal.data.nim} onChange={(e) => setField('nim', e.target.value)} required />
+            </div>
+
+            <div className="admin-form-group">
+              <label>Divisi</label>
+              {loggedUser.role === 'divisi' ? (
+                <div style={{ padding: '10px 14px', background: '#f1f5f9', borderRadius: 8, fontSize: 14, fontWeight: 600, color: '#334155' }}>
+                  🏢 {divisions.find(d => d.key === loggedUser.division_key)?.name || loggedUser.division_key || 'Divisi Saya'} (Terkunci Sesuai Akun Divisi Anda)
+                </div>
+              ) : (
+                <select className="admin-input" value={modal.data.division_key || ''} onChange={(e) => setField('division_key', e.target.value)}>
+                  <option value="">Umum (Tanpa Divisi Khusus)</option>
+                  <option value="inti">Pengurus Inti</option>
+                  {divisions.map(d => (
+                    <option key={d.key} value={d.key}>{d.name}</option>
+                  ))}
+                </select>
+              )}
             </div>
 
             <div className="admin-form-group">
@@ -269,7 +358,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
           <div className="admin-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 650 }}>
             <h2>📊 Import Data Anggota dari Excel</h2>
             <p style={{ fontSize: 13, color: 'var(--admin-text-dim)', marginBottom: 16 }}>
-              Pilih file file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Pastikan file Anda memiliki header seperti <strong>NIM</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, <strong>Angkatan</strong>, dan <strong>Status</strong>.
+              Pilih file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Pastikan file Anda memiliki header seperti <strong>NIM</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, <strong>Angkatan</strong>, dan <strong>Status</strong>.
             </p>
 
             <div className="admin-form-group">

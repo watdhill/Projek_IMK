@@ -439,7 +439,9 @@
       "title": "Musyawarah Besar",
       "description": "Agenda tahunan untuk menentukan arah organisasi.",
       "date": "2026-01-15",
-      "division_key": "psdm"
+      "division_key": "psdm",
+      "status": "terlaksana",
+      "penanggung_jawab": "Rahil"
     },
     {
       "id": 2,
@@ -736,6 +738,21 @@
       "createdAt": "2026-08-05T16:14:07.286Z",
       "id": 12,
       "returnedAt": "2026-08-05T16:14:54.573Z"
+    },
+    {
+      "itemId": "3",
+      "itemName": "Speaker Advance K12D-A 12-inch (mic) ",
+      "name": "riva cantik banget",
+      "noHp": "081272735172537",
+      "instansi": "BEM Univ ",
+      "startDate": "2026-08-18",
+      "endDate": "2026-08-20",
+      "totalPrice": 255000,
+      "suratUrl": "/uploads/1786013434398-5mnpgm.pdf",
+      "buktiUrl": "/uploads/1786013434406-c7wicg.png",
+      "status": "Disetujui",
+      "createdAt": "2026-08-06T10:50:34.455Z",
+      "id": 13
     }
   ],
   "prestasiList": [
@@ -2691,9 +2708,345 @@
       "path": "/",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
       "timestamp": "2026-08-06T09:15:29.663Z"
+    },
+    {
+      "id": "1786012385995-u850",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:05.995Z"
+    },
+    {
+      "id": "1786012386038-mk56",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:06.038Z"
+    },
+    {
+      "id": "1786012419920-xo5r",
+      "ip": "::1",
+      "path": "/prestasi/1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:39.920Z"
+    },
+    {
+      "id": "1786012422483-oik2",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:42.483Z"
+    },
+    {
+      "id": "1786012424211-vujw",
+      "ip": "::1",
+      "path": "/prestasi/2",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:44.211Z"
+    },
+    {
+      "id": "1786012426665-tk8a",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:46.665Z"
+    },
+    {
+      "id": "1786012430339-s55x",
+      "ip": "::1",
+      "path": "/program/3",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:50.339Z"
+    },
+    {
+      "id": "1786012432935-ri6m",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:33:52.935Z"
+    },
+    {
+      "id": "1786012449155-ff16",
+      "ip": "::1",
+      "path": "/struktur",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:09.155Z"
+    },
+    {
+      "id": "1786012456490-kx7p",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:16.490Z"
+    },
+    {
+      "id": "1786012457493-1s5w",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:17.493Z"
+    },
+    {
+      "id": "1786012458765-7u0j",
+      "ip": "::1",
+      "path": "/divisi",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:18.766Z"
+    },
+    {
+      "id": "1786012462575-6tej",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:22.575Z"
+    },
+    {
+      "id": "1786012479158-5iu6",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:34:39.158Z"
+    },
+    {
+      "id": "1786013001346-glbk",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:43:21.346Z"
+    },
+    {
+      "id": "1786013001361-8b6l",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:43:21.361Z"
+    },
+    {
+      "id": "1786013353960-mb62",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:49:13.960Z"
+    },
+    {
+      "id": "1786013353981-c0dg",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:49:13.981Z"
+    },
+    {
+      "id": "1786013355495-tnrq",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:49:15.495Z"
+    },
+    {
+      "id": "1786013359762-uym5",
+      "ip": "::1",
+      "path": "/peminjaman/form/3",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:49:19.762Z"
+    },
+    {
+      "id": "1786013437484-q5xg",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "timestamp": "2026-08-06T10:50:37.484Z"
+    },
+    {
+      "id": "1788251513458-wmyt",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:31:53.458Z"
+    },
+    {
+      "id": "1788251513473-p97b",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:31:53.473Z"
+    },
+    {
+      "id": "1788251634501-51gr",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:33:54.501Z"
+    },
+    {
+      "id": "1788251634519-ynke",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:33:54.519Z"
+    },
+    {
+      "id": "1788251643039-l5u4",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:34:03.039Z"
+    },
+    {
+      "id": "1788252504842-8b31",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:48:24.842Z"
+    },
+    {
+      "id": "1788252504859-33bv",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:48:24.859Z"
+    },
+    {
+      "id": "1788252574664-4nbq",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:49:34.664Z"
+    },
+    {
+      "id": "1788252583255-ld2i",
+      "ip": "::1",
+      "path": "/dashboard",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:49:43.255Z"
+    },
+    {
+      "id": "1788252583257-ka4c",
+      "ip": "::1",
+      "path": "/dashboard",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:49:43.257Z"
+    },
+    {
+      "id": "1788252695570-o3ky",
+      "ip": "::1",
+      "path": "/tentang",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:51:35.570Z"
+    },
+    {
+      "id": "1788252700269-ny09",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:51:40.269Z"
+    },
+    {
+      "id": "1788253012405-8me5",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:56:52.405Z"
+    },
+    {
+      "id": "1788253012435-4fic",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:56:52.435Z"
+    },
+    {
+      "id": "1788253014268-ptos",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T08:56:54.268Z"
+    },
+    {
+      "id": "1788253206711-6h52",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:00:06.711Z"
+    },
+    {
+      "id": "1788253442641-7t11",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:04:02.641Z"
+    },
+    {
+      "id": "1788253442650-v220",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:04:02.650Z"
+    },
+    {
+      "id": "1788253443515-lf52",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:04:03.515Z"
+    },
+    {
+      "id": "1788253445032-wfcj",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:04:05.032Z"
+    },
+    {
+      "id": "1788253525626-ekbk",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:05:25.626Z"
+    },
+    {
+      "id": "1788253525630-0k42",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:05:25.630Z"
+    },
+    {
+      "id": "1788253676377-c0zh",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:07:56.377Z"
+    },
+    {
+      "id": "1788253676380-iu3j",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+      "timestamp": "2026-09-01T09:07:56.380Z"
     }
   ],
-  "gallery": [],
+  "gallery": [
+    {
+      "title": "Pengmas 2026",
+      "description": "",
+      "coverImage": "/uploads/1788253469111-owxh8k.jpeg",
+      "date": "",
+      "photos": [
+        {
+          "id": 1788253496939,
+          "url": "/uploads/1788253495546-ifs2ey.jpeg",
+          "caption": "hari ini"
+        },
+        {
+          "id": 1788253513425,
+          "url": "/uploads/1788253507666-6yul2r.jpeg",
+          "caption": ""
+        }
+      ],
+      "image": "/uploads/1788253469111-owxh8k.jpeg",
+      "id": 1
+    }
+  ],
   "peminjamanSettings": {
     "bank": "BNI",
     "rek": "00000001",

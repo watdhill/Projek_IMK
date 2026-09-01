@@ -182,26 +182,52 @@ router.put('/admin/contact', (req, res) => {
 
 // Members
 router.get('/admin/members', (req, res) => {
-  res.json(data.members)
+  let members = data.members || []
+  if (req.user && req.user.role === 'divisi') {
+    members = members.filter(m => m.division_key === req.user.division_key)
+  }
+  res.json(members)
 })
 
 router.post('/admin/members', (req, res) => {
-  const member = { ...req.body, id: nextId(data.members) }
+  const isDivisi = req.user && req.user.role === 'divisi'
+  const divKey = isDivisi ? req.user.division_key : (req.body.division_key || '')
+  const member = { ...req.body, division_key: divKey, id: nextId(data.members || []) }
+  if (!data.members) data.members = []
   data.members.push(member)
   saveData(data)
   res.status(201).json(member)
 })
 
 router.put('/admin/members/:id', (req, res) => {
+  if (!data.members) data.members = []
   const idx = data.members.findIndex(m => String(m.id) === String(req.params.id))
   if (idx === -1) return res.status(404).json({ error: 'Member not found' })
-  data.members[idx] = { ...data.members[idx], ...req.body, id: data.members[idx].id }
+
+  const existing = data.members[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Pengurus dari divisi lain tidak dapat diubah.' })
+  }
+
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : existing.division_key)
+  data.members[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
   saveData(data)
   res.json(data.members[idx])
 })
 
 router.delete('/admin/members/:id', (req, res) => {
-  data.members = data.members.filter(m => String(m.id) !== String(req.params.id))
+  if (!data.members) data.members = []
+  const idx = data.members.findIndex(m => String(m.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Member not found' })
+
+  const existing = data.members[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Pengurus dari divisi lain tidak dapat dihapus.' })
+  }
+
+  data.members.splice(idx, 1)
   saveData(data)
   res.json({ success: true })
 })
@@ -237,7 +263,9 @@ router.delete('/admin/divisions/:key', (req, res) => {
 
 // Programs
 router.post('/admin/programs', (req, res) => {
-  const program = { ...req.body, id: nextId(data.programs) }
+  const isDivisi = req.user && req.user.role === 'divisi'
+  const divKey = isDivisi ? req.user.division_key : (req.body.division_key || 'umum')
+  const program = { ...req.body, division_key: divKey, id: nextId(data.programs) }
   data.programs.push(program)
   saveData(data)
   res.status(201).json(program)
@@ -246,13 +274,26 @@ router.post('/admin/programs', (req, res) => {
 router.put('/admin/programs/:id', (req, res) => {
   const idx = data.programs.findIndex(p => String(p.id) === String(req.params.id))
   if (idx === -1) return res.status(404).json({ error: 'Program not found' })
-  data.programs[idx] = { ...data.programs[idx], ...req.body, id: data.programs[idx].id }
+  const existing = data.programs[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Program dari divisi lain tidak dapat diubah.' })
+  }
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : existing.division_key)
+  data.programs[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
   saveData(data)
   res.json(data.programs[idx])
 })
 
 router.delete('/admin/programs/:id', (req, res) => {
-  data.programs = data.programs.filter(p => String(p.id) !== String(req.params.id))
+  const idx = data.programs.findIndex(p => String(p.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Program not found' })
+  const existing = data.programs[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Program dari divisi lain tidak dapat dihapus.' })
+  }
+  data.programs.splice(idx, 1)
   saveData(data)
   res.json({ success: true })
 })
@@ -308,13 +349,20 @@ router.delete('/admin/prestasi/:id', (req, res) => {
   res.json({ success: true })
 })
 
-// Gallery
+// Gallery (Album)
 router.get('/admin/gallery', (req, res) => {
   res.json(data.gallery || [])
 })
 
 router.post('/admin/gallery', (req, res) => {
-  const item = { ...req.body, id: nextId(data.gallery || []) }
+  if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
+    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
+  }
+  const item = {
+    ...req.body,
+    id: nextId(data.gallery || []),
+    photos: req.body.photos || []
+  }
   if (!data.gallery) data.gallery = []
   data.gallery.push(item)
   saveData(data)
@@ -322,6 +370,9 @@ router.post('/admin/gallery', (req, res) => {
 })
 
 router.put('/admin/gallery/:id', (req, res) => {
+  if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
+    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
+  }
   if (!data.gallery) data.gallery = []
   const idx = data.gallery.findIndex(g => String(g.id) === String(req.params.id))
   if (idx === -1) return res.status(404).json({ error: 'Gallery item not found' })
@@ -331,6 +382,9 @@ router.put('/admin/gallery/:id', (req, res) => {
 })
 
 router.delete('/admin/gallery/:id', (req, res) => {
+  if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
+    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
+  }
   if (!data.gallery) data.gallery = []
   data.gallery = data.gallery.filter(g => String(g.id) !== String(req.params.id))
   saveData(data)
@@ -477,6 +531,62 @@ router.delete('/admin/users/:id', (req, res) => {
   res.json({ success: true })
 })
 
+// Anggota CRUD
+router.get('/admin/anggota', (req, res) => {
+  let list = data.anggota || []
+  if (req.user && req.user.role === 'divisi') {
+    list = list.filter(a => a.division_key === req.user.division_key)
+  }
+  res.json(list)
+})
+
+router.post('/admin/anggota', (req, res) => {
+  if (!data.anggota) data.anggota = []
+  const isDivisi = req.user && req.user.role === 'divisi'
+  const divKey = isDivisi ? req.user.division_key : (req.body.division_key || '')
+  const record = {
+    ...req.body,
+    division_key: divKey,
+    id: nextId(data.anggota)
+  }
+  data.anggota.push(record)
+  saveData(data)
+  res.status(201).json(record)
+})
+
+router.put('/admin/anggota/:id', (req, res) => {
+  if (!data.anggota) data.anggota = []
+  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
+
+  const existing = data.anggota[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Data anggota divisi lain tidak dapat diubah.' })
+  }
+
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : (existing.division_key || ''))
+  data.anggota[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
+  saveData(data)
+  res.json(data.anggota[idx])
+})
+
+router.delete('/admin/anggota/:id', (req, res) => {
+  if (!data.anggota) data.anggota = []
+  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
+  if (idx === -1) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
+
+  const existing = data.anggota[idx]
+  const isDivisi = req.user && req.user.role === 'divisi'
+  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak. Data anggota divisi lain tidak dapat dihapus.' })
+  }
+
+  data.anggota.splice(idx, 1)
+  saveData(data)
+  res.json({ success: true })
+})
+
 // Bulk Anggota Import
 router.post('/admin/anggota/bulk', (req, res) => {
   if (!Array.isArray(req.body)) {
@@ -484,18 +594,21 @@ router.post('/admin/anggota/bulk', (req, res) => {
   }
   if (!data.anggota) data.anggota = []
   
+  const isDivisi = req.user && req.user.role === 'divisi'
   let currentId = nextId(data.anggota)
   const added = []
 
   req.body.forEach(item => {
     if (!item.name || !item.nim) return
+    const divKey = isDivisi ? req.user.division_key : (item.division_key || '')
     const record = {
       id: currentId++,
       name: String(item.name).trim(),
       nim: String(item.nim).trim(),
       program_study: item.program_study ? String(item.program_study).trim() : '-',
       join_year: Number(item.join_year) || new Date().getFullYear(),
-      status: item.status === 'alumni' ? 'alumni' : 'aktif'
+      status: item.status === 'alumni' ? 'alumni' : 'aktif',
+      division_key: divKey
     }
     data.anggota.push(record)
     added.push(record)

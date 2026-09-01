@@ -4,6 +4,7 @@ import { apiHeaders } from '../AdminDashboard'
 export default function AdminPeminjaman({ showToast, onUpdate }) {
   const [requests, setRequests] = useState([])
   const [loading, setLoading] = useState(true)
+  const [previewDoc, setPreviewDoc] = useState(null)
   
   const [bankSettings, setBankSettings] = useState({ bank: '', rek: '', name: '' })
   const [isSavingSettings, setIsSavingSettings] = useState(false)
@@ -24,6 +25,15 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
   }
 
   useEffect(() => { fetchData() }, [])
+
+  // Close preview modal on ESC key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setPreviewDoc(null)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   const handleUpdateStatus = async (req, newStatus) => {
     try {
@@ -168,8 +178,34 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
                     </td>
                     <td>
                       <div style={{ display: 'flex', gap: '4px', flexDirection: 'column' }}>
-                        <a href={req.suratUrl} target="_blank" rel="noreferrer" className="admin-btn admin-btn-ghost admin-btn-sm" style={{ padding: '4px' }}>📄 Surat</a>
-                        <a href={req.buktiUrl} target="_blank" rel="noreferrer" className="admin-btn admin-btn-ghost admin-btn-sm" style={{ padding: '4px' }}>💳 Bukti TF</a>
+                        {req.suratUrl ? (
+                          <button
+                            type="button"
+                            className="admin-btn admin-btn-ghost admin-btn-sm"
+                            style={{ padding: '4px 8px', fontSize: '0.85em' }}
+                            onClick={() => setPreviewDoc({
+                              title: `Surat Peminjaman - ${req.name}`,
+                              url: req.suratUrl,
+                              isPdf: req.suratUrl.toLowerCase().endsWith('.pdf')
+                            })}
+                          >
+                            📄 Surat
+                          </button>
+                        ) : null}
+                        {req.buktiUrl ? (
+                          <button
+                            type="button"
+                            className="admin-btn admin-btn-ghost admin-btn-sm"
+                            style={{ padding: '4px 8px', fontSize: '0.85em' }}
+                            onClick={() => setPreviewDoc({
+                              title: `Bukti Transfer - ${req.name}`,
+                              url: req.buktiUrl,
+                              isPdf: req.buktiUrl.toLowerCase().endsWith('.pdf')
+                            })}
+                          >
+                            💳 Bukti TF
+                          </button>
+                        ) : null}
                       </div>
                     </td>
                     <td>
@@ -229,6 +265,69 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
           </div>
         )}
       </div>
+
+      {/* Document Preview Modal with prominent Back/Close button */}
+      {previewDoc && (
+        <div 
+          className="admin-modal-overlay" 
+          onClick={() => setPreviewDoc(null)}
+          style={{ zIndex: 10000, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(4px)' }}
+        >
+          <div 
+            className="admin-modal" 
+            onClick={(e) => e.stopPropagation()} 
+            style={{ maxWidth: '800px', width: '90%', maxHeight: '90vh', display: 'flex', flexDirection: 'column', padding: '20px' }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid #e2e8f0', paddingBottom: '12px' }}>
+              <h2 style={{ fontSize: '1.2em', fontWeight: 700, margin: 0 }}>{previewDoc.title}</h2>
+              <button 
+                type="button"
+                className="admin-btn admin-btn-ghost admin-btn-sm" 
+                onClick={() => setPreviewDoc(null)}
+                style={{ fontSize: '0.95em', fontWeight: 700, padding: '6px 14px', background: '#e2e8f0', borderRadius: '6px', color: '#1e293b', cursor: 'pointer' }}
+              >
+                ← Kembali / Tutup ✖
+              </button>
+            </div>
+
+            <div style={{ flex: 1, overflowY: 'auto', textAlign: 'center', background: '#f8fafc', padding: '16px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {previewDoc.isPdf ? (
+                <iframe 
+                  src={previewDoc.url} 
+                  style={{ width: '100%', height: '65vh', border: 'none', borderRadius: '8px' }} 
+                  title={previewDoc.title}
+                />
+              ) : (
+                <img 
+                  src={previewDoc.url} 
+                  alt={previewDoc.title} 
+                  style={{ maxWidth: '100%', maxHeight: '65vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} 
+                />
+              )}
+            </div>
+
+            <div className="admin-modal-actions" style={{ marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <a 
+                href={previewDoc.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="admin-btn admin-btn-ghost"
+                style={{ textDecoration: 'none', fontSize: '0.9em' }}
+              >
+                ↗ Buka di Tab Baru
+              </a>
+              <button 
+                type="button" 
+                className="admin-btn admin-btn-primary" 
+                onClick={() => setPreviewDoc(null)}
+                style={{ padding: '8px 24px', fontWeight: 600 }}
+              >
+                ← Kembali
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

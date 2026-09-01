@@ -108,6 +108,9 @@ export default function AdminDashboard() {
       if (user.division_key === 'kestari') {
         return ALL_PANELS.filter(p => ['programs', 'members', 'anggota', 'inventory', 'peminjaman'].includes(p.key))
       }
+      if (user.division_key === 'infokom') {
+        return ALL_PANELS.filter(p => ['programs', 'members', 'anggota', 'gallery', 'slides'].includes(p.key))
+      }
       return ALL_PANELS.filter(p => ['programs', 'members', 'anggota'].includes(p.key))
     }
     return ALL_PANELS

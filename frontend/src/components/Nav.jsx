@@ -75,6 +75,20 @@ export default function Nav(){
           </svg>
         </div>
         <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
+          <Link 
+            to="/" 
+            className="nav-link" 
+            onClick={(e) => {
+              closeMobileMenu()
+              if (location.pathname === '/') {
+                e.preventDefault()
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }
+            }}
+          >
+            Beranda
+          </Link>
+
           <div className="nav-item">
             <a className="nav-link" href="#profil" onClick={(e)=>toggleDropdown(e,'profil')}>Profil ▾</a>
             <div className={`dropdown-menu ${openDropdown === 'profil' ? 'show' : ''}`}>

@@ -10,11 +10,12 @@ export default function AdminMembers({ showToast, onUpdate }) {
   const [deleteId, setDeleteId] = useState(null)
   const [loading, setLoading] = useState(true)
   const [filterDivision, setFilterDivision] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
 
   const fetchData = async () => {
     try {
       const [resMembers, resDivisions] = await Promise.all([
-        fetch('/api/members'),
+        fetch('/api/admin/members', { headers: apiHeaders() }),
         fetch('/api/divisions')
       ])
       setMembers(await resMembers.json())
@@ -25,9 +26,14 @@ export default function AdminMembers({ showToast, onUpdate }) {
 
   useEffect(() => { fetchData() }, [])
 
+  const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
+
   const handleSave = async (e) => {
     e.preventDefault()
-    const d = modal.data
+    let d = { ...modal.data }
+    if (loggedUser.role === 'divisi') {
+      d.division_key = loggedUser.division_key
+    }
     const isEdit = modal.mode === 'edit'
     const url = isEdit ? `/api/admin/members/${d.id}` : '/api/admin/members'
     const method = isEdit ? 'PUT' : 'POST'
@@ -65,14 +71,18 @@ export default function AdminMembers({ showToast, onUpdate }) {
 
   if (loading) return <div className="admin-card"><p>Memuat...</p></div>
 
-  const loggedUser = JSON.parse(localStorage.getItem('admin_user') || '{}')
-
   const filteredMembers = members.filter(m => {
     if (loggedUser.role === 'divisi' && m.division_key !== loggedUser.division_key) {
       return false
     }
     if (filterDivision && m.division_key !== filterDivision) {
       return false
+    }
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase()
+      const matchName = (m.name || '').toLowerCase().includes(term)
+      const matchRole = (m.role || '').toLowerCase().includes(term)
+      if (!matchName && !matchRole) return false
     }
     return true
   })
@@ -88,24 +98,44 @@ export default function AdminMembers({ showToast, onUpdate }) {
         <div className="admin-card-header" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center' }}>
           <h2 style={{ flex: 1, margin: 0 }}>Daftar Pengurus ({filteredMembers.length})</h2>
           
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <select
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <input
+              type="text"
               className="admin-input"
-              style={{ width: 'auto', margin: 0, padding: '8px 12px' }}
-              value={filterDivision}
-              onChange={(e) => setFilterDivision(e.target.value)}
-            >
-              <option value="">Semua Divisi</option>
-              <option value="inti">Pengurus Inti</option>
-              {divisions.filter(d => d.key !== 'inti').map(d => (
-                <option key={d.key} value={d.key}>{d.name}</option>
-              ))}
-            </select>
+              style={{ width: '220px', margin: 0, padding: '8px 12px' }}
+              placeholder="🔍 Cari nama / jabatan..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+
+            {loggedUser.role !== 'divisi' && (
+              <select
+                className="admin-input"
+                style={{ width: 'auto', margin: 0, padding: '8px 12px' }}
+                value={filterDivision}
+                onChange={(e) => setFilterDivision(e.target.value)}
+              >
+                <option value="">Semua Divisi</option>
+                <option value="inti">Pengurus Inti</option>
+                {divisions.filter(d => d.key !== 'inti').map(d => (
+                  <option key={d.key} value={d.key}>{d.name}</option>
+                ))}
+              </select>
+            )}
 
             <button
               className="admin-btn admin-btn-primary"
               style={{ whiteSpace: 'nowrap' }}
-              onClick={() => setModal({ mode: 'add', data: { id: Date.now().toString(), name: '', role: '', division_key: loggedUser.role === 'divisi' ? loggedUser.division_key : '', avatar: '' } })}
+              onClick={() => setModal({
+                mode: 'add',
+                data: {
+                  id: Date.now().toString(),
+                  name: '',
+                  role: '',
+                  division_key: loggedUser.role === 'divisi' ? loggedUser.division_key : (filterDivision || 'inti'),
+                  avatar: ''
+                }
+              })}
             >
               ＋ Tambah Pengurus
             </button>
