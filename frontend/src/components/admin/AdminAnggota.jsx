@@ -84,24 +84,41 @@ export default function AdminAnggota({ showToast, onUpdate }) {
         const wb = XLSX.read(bstr, { type: 'binary' })
         const wsname = wb.SheetNames[0]
         const ws = wb.Sheets[wsname]
-        const data = XLSX.utils.sheet_to_json(ws, { defval: '' })
+        const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' })
+        const normalizeHeader = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, '')
+        const findColumn = (headers, aliases) => headers.findIndex(header => aliases.includes(normalizeHeader(header)))
+        const headerRowIndex = rows.findIndex(row => {
+          const headers = row.map(normalizeHeader)
+          return findColumn(headers, ['nama', 'namalengkap', 'name']) >= 0 &&
+            findColumn(headers, ['jurusan', 'prodi', 'programstudi']) >= 0 &&
+            findColumn(headers, ['angkatan', 'tahun', 'tahunmasuk', 'year']) >= 0
+        })
 
-        // Map columns dynamically
-        const parsed = data.map((row, idx) => {
-          const keys = Object.keys(row)
-          const findVal = (possibleKeys) => {
-            const match = keys.find(k => possibleKeys.some(p => k.toLowerCase().includes(p.toLowerCase())))
-            return match ? row[match] : ''
-          }
+        if (headerRowIndex < 0) {
+          alert('Header tabel tidak ditemukan. Pastikan file memiliki kolom Nama, Jurusan, dan Angkatan.')
+          return
+        }
 
-          const nim = findVal(['nim', 'no anggota', 'id'])
-          const name = findVal(['nama', 'name', 'nama lengkap'])
-          const program_study = findVal(['jurusan', 'prodi', 'program studi'])
-          const join_year = findVal(['tahun', 'angkatan', 'tahun masuk', 'year'])
-          const status = findVal(['status'])
+        const headers = rows[headerRowIndex].map(normalizeHeader)
+        const columns = {
+          nim: findColumn(headers, ['nim', 'noanggota', 'id']),
+          number: findColumn(headers, ['no', 'nomor', 'nomorurut']),
+          name: findColumn(headers, ['nama', 'namalengkap', 'name']),
+          program_study: findColumn(headers, ['jurusan', 'prodi', 'programstudi']),
+          join_year: findColumn(headers, ['angkatan', 'tahun', 'tahunmasuk', 'year']),
+          status: findColumn(headers, ['status'])
+        }
+        const getValue = (row, column) => column >= 0 ? row[column] : ''
+
+        const parsed = rows.slice(headerRowIndex + 1).map((row, idx) => {
+          const nim = getValue(row, columns.nim) || getValue(row, columns.number)
+          const name = getValue(row, columns.name)
+          const program_study = getValue(row, columns.program_study)
+          const join_year = getValue(row, columns.join_year)
+          const status = getValue(row, columns.status)
 
           return {
-            rowNum: idx + 1,
+            rowNum: headerRowIndex + idx + 2,
             nim: String(nim).trim(),
             name: String(name).trim(),
             program_study: String(program_study).trim() || '-',
@@ -112,7 +129,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
         }).filter(item => item.name && item.nim)
 
         if (parsed.length === 0) {
-          alert('Tidak ditemukan data anggota yang valid dari file Excel ini. Pastikan file berisi kolom NIM dan Nama.')
+          alert('Tidak ditemukan data anggota yang valid. Pastikan ada kolom Nama serta NIM atau No.')
           return
         }
 
@@ -254,7 +271,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
                 </tr>
               </thead>
               <tbody>
-                {filteredAnggota.sort((a, b) => b.join_year - a.join_year).map((m) => {
+                {filteredAnggota.sort((a, b) => a.join_year - b.join_year).map((m) => {
                   const div = m.division_key === 'inti' ? 'Pengurus Inti' : (divisions.find(d => d.key === m.division_key)?.name || (m.division_key === 'umum' ? 'Umum' : '-'))
                   return (
                     <tr key={m.id}>
@@ -358,7 +375,7 @@ export default function AdminAnggota({ showToast, onUpdate }) {
           <div className="admin-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 650 }}>
             <h2>📊 Import Data Anggota dari Excel</h2>
             <p style={{ fontSize: 13, color: 'var(--admin-text-dim)', marginBottom: 16 }}>
-              Pilih file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Pastikan file Anda memiliki header seperti <strong>NIM</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, <strong>Angkatan</strong>, dan <strong>Status</strong>.
+              Pilih file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Header dapat berada setelah judul tabel. Kolom yang didukung: <strong>NIM atau No</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, dan <strong>Angkatan</strong>.
             </p>
 
             <div className="admin-form-group">

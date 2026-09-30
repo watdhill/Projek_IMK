@@ -546,7 +546,5084 @@
       "image": "/uploads/1784617994127-6r8e1i.jpeg"
     }
   ],
-  "anggota": [],
+  "anggota": [
+    {
+      "id": 1,
+      "name": "ADITIA NOFRIANTO",
+      "nim": "1",
+      "program_study": "AGROEKOTEKNOLOGI",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 2,
+      "name": "AINA NURSIDA",
+      "nim": "2",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 3,
+      "name": "AINUR RAHMI",
+      "nim": "3",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 4,
+      "name": "ALVINA AYU MARINI",
+      "nim": "4",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 5,
+      "name": "ANINDYA RATU PRADIPTA",
+      "nim": "5",
+      "program_study": "EKONOMI PEMBANGUNAN",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 6,
+      "name": "ENDAH TRI WAHYUNU",
+      "nim": "6",
+      "program_study": "ILMU TANAH",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 7,
+      "name": "ILHAM AKBAR",
+      "nim": "7",
+      "program_study": "SISTEM KOMPUTER",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 8,
+      "name": "M. HIFZON FADHLIKA",
+      "nim": "8",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 9,
+      "name": "MILYA SIRYATI",
+      "nim": "9",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 10,
+      "name": "MUTHMAINNAH",
+      "nim": "10",
+      "program_study": "FISIKA",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 11,
+      "name": "SINTA MUTIA KARNEVA",
+      "nim": "11",
+      "program_study": "MATEMATIKA",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 12,
+      "name": "YUDRIZA SOLIHIN",
+      "nim": "12",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2015,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 13,
+      "name": "ALA YOLANDA",
+      "nim": "13",
+      "program_study": "PETERNAKAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 14,
+      "name": "BAYU AJI",
+      "nim": "14",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 15,
+      "name": "DANI PRYOGA",
+      "nim": "15",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 16,
+      "name": "DESRINA",
+      "nim": "16",
+      "program_study": "KIMIA",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 17,
+      "name": "FADELALEAN",
+      "nim": "17",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 18,
+      "name": "FARIDATUL HASANAH",
+      "nim": "18",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 19,
+      "name": "GHINDA",
+      "nim": "19",
+      "program_study": "TEKNIK SIPIL (PNP)",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 20,
+      "name": "HERDY WIJAYA",
+      "nim": "20",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 21,
+      "name": "MICE AFRILIA",
+      "nim": "21",
+      "program_study": "ILMU SEJARAH",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 22,
+      "name": "MIRA GUSNITA",
+      "nim": "22",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 23,
+      "name": "MONICA AULIA",
+      "nim": "23",
+      "program_study": "TEKNOLOGI HASIL PERTANIAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 24,
+      "name": "MUHAMMAD IKHSAN",
+      "nim": "24",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 25,
+      "name": "MUHAMMAD OKGI",
+      "nim": "25",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 26,
+      "name": "MULKI APRIL SAFITRI",
+      "nim": "26",
+      "program_study": "PETERNAKAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 27,
+      "name": "NADIA KUSUMA SARI",
+      "nim": "27",
+      "program_study": "AKUNTANSI",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 28,
+      "name": "NELSA MITIA SARI",
+      "nim": "28",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 29,
+      "name": "PEKY RAPANDRA",
+      "nim": "29",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 30,
+      "name": "PUTRI",
+      "nim": "30",
+      "program_study": "PETERNAKAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 31,
+      "name": "RAHMA DIANTI",
+      "nim": "31",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 32,
+      "name": "RATIH",
+      "nim": "32",
+      "program_study": "SASTRA DAERAH MINANG KABAU",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 33,
+      "name": "ROLLY ANGGARA",
+      "nim": "33",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 34,
+      "name": "SINTYA",
+      "nim": "34",
+      "program_study": "MANAJEMEN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 35,
+      "name": "TRI EGHO WIRANATA",
+      "nim": "35",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 36,
+      "name": "YESICA",
+      "nim": "36",
+      "program_study": "FARMASI",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 37,
+      "name": "YUNINDA WESI SAPUTRI",
+      "nim": "37",
+      "program_study": "PETERNAKAN",
+      "join_year": 2016,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 38,
+      "name": "AFIF MIFTAHUL JANNAH",
+      "nim": "38",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 39,
+      "name": "ALAWIYAH DERAJAH",
+      "nim": "39",
+      "program_study": "FISIKA",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 40,
+      "name": "ATIKA LERSIA",
+      "nim": "40",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 41,
+      "name": "CHENDY TATA LESTARI",
+      "nim": "41",
+      "program_study": "ILMU GIZI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 42,
+      "name": "DONNY ARDIANSYAH",
+      "nim": "42",
+      "program_study": "TEKNOLOGI HASIL PERTANIAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 43,
+      "name": "ELISA PRIANTI",
+      "nim": "43",
+      "program_study": "MATEMATIKA",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 44,
+      "name": "EVANDA EKA PUTRA",
+      "nim": "44",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 45,
+      "name": "FANNYSIA HALIM",
+      "nim": "45",
+      "program_study": "KEBIDANAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 46,
+      "name": "FIZA ISOLPIA",
+      "nim": "46",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 47,
+      "name": "GUFRON",
+      "nim": "47",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 48,
+      "name": "IKHWAN FIKRI",
+      "nim": "48",
+      "program_study": "FISIKA",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 49,
+      "name": "ILSA MELSY PRIMAGISKA",
+      "nim": "49",
+      "program_study": "ILMU GIZI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 50,
+      "name": "KRISNA FEBRIAN",
+      "nim": "50",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 51,
+      "name": "LARA GUSTI YONICA",
+      "nim": "51",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 52,
+      "name": "M. CADILLAC",
+      "nim": "52",
+      "program_study": "PETERNAKAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 53,
+      "name": "MUHAZIR RAHENDRA",
+      "nim": "53",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 54,
+      "name": "NABILA HANUN",
+      "nim": "54",
+      "program_study": "AKUNTANSI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 55,
+      "name": "NAUFAL HANIF ANDI",
+      "nim": "55",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 56,
+      "name": "NURUL MELIZA ULFA",
+      "nim": "56",
+      "program_study": "ILMU GIZI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 57,
+      "name": "OVY NANDA PUTRI",
+      "nim": "57",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 58,
+      "name": "PUTRI MELIANDA SARI",
+      "nim": "58",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 59,
+      "name": "RENDRA AL-MURTHADO",
+      "nim": "59",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 60,
+      "name": "RIZKA RAHMAYANI",
+      "nim": "60",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 61,
+      "name": "SUCI NUR AFELAN",
+      "nim": "61",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 62,
+      "name": "TITIN NEFIA LESTARI",
+      "nim": "62",
+      "program_study": "AKUNTANSI INTERNASIONAL",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 63,
+      "name": "TRISNA MONALIA",
+      "nim": "63",
+      "program_study": "AGROEKOTEKNOLOGI",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 64,
+      "name": "VONY ADREZA",
+      "nim": "64",
+      "program_study": "KEBIDANAN",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 65,
+      "name": "ZARA AULIA",
+      "nim": "65",
+      "program_study": "KIMIA",
+      "join_year": 2017,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 66,
+      "name": "ABILEO FARDAN FADLAN",
+      "nim": "66",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 67,
+      "name": "AHMAD MADANI",
+      "nim": "67",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 68,
+      "name": "ALHABIB RAHMANDA NOVTA",
+      "nim": "68",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 69,
+      "name": "ANDINI PUTRI MUSTIKA",
+      "nim": "69",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 70,
+      "name": "ANJAS DESTIA RAMADHAN",
+      "nim": "70",
+      "program_study": "PETERNAKAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 71,
+      "name": "ARIF HERMAWAN",
+      "nim": "71",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 72,
+      "name": "AZHARI",
+      "nim": "72",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 73,
+      "name": "BELINDA SALSABILLA",
+      "nim": "73",
+      "program_study": "KIMIA",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 74,
+      "name": "BEVI RANILZA ASYIFA",
+      "nim": "74",
+      "program_study": "TEKNOLOGI HASIL PERTANIAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 75,
+      "name": "BUNGA TRI ANDARA",
+      "nim": "75",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 76,
+      "name": "DANIL HERDI",
+      "nim": "76",
+      "program_study": "PETERNAKAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 77,
+      "name": "DIDI KURNIA SANDI",
+      "nim": "77",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 78,
+      "name": "DOHAN PRAMUDIA",
+      "nim": "78",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 79,
+      "name": "DYNRUM YENDAR FAHLUZI",
+      "nim": "79",
+      "program_study": "AGROEKOTEKNOLOGI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 80,
+      "name": "DZAKWAN ADIB",
+      "nim": "80",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 81,
+      "name": "EVITA PRATIWI",
+      "nim": "81",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 82,
+      "name": "FAJAR ARYA PRATAMA",
+      "nim": "82",
+      "program_study": "FARMASI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 83,
+      "name": "FAYAT KRISMA ARSALAN",
+      "nim": "83",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 84,
+      "name": "FIKRI",
+      "nim": "84",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 85,
+      "name": "FILLIYA AZZURA",
+      "nim": "85",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 86,
+      "name": "FITRI MEIRIANI",
+      "nim": "86",
+      "program_study": "FARMASI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 87,
+      "name": "FLORENCIA TRI ANGELLIKA",
+      "nim": "87",
+      "program_study": "KIMIA",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 88,
+      "name": "HAFIZ AL-MA’ARIJ",
+      "nim": "88",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 89,
+      "name": "HANIFAH PUTRI NABILA",
+      "nim": "89",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 90,
+      "name": "INDAH FITRIALITA",
+      "nim": "90",
+      "program_study": "MATEMATIKA",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 91,
+      "name": "JELLA WISESA",
+      "nim": "91",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 92,
+      "name": "LENSI RISPANELI",
+      "nim": "92",
+      "program_study": "ILMU GIZI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 93,
+      "name": "MAYA DWI ANDESTI",
+      "nim": "93",
+      "program_study": "AKUNTANSI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 94,
+      "name": "NADELLA MAHARANI H",
+      "nim": "94",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 95,
+      "name": "NADIF SYAFWAT",
+      "nim": "95",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 96,
+      "name": "NURUL WAFIQAH",
+      "nim": "96",
+      "program_study": "FARMASI",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 97,
+      "name": "PERY PRAJA",
+      "nim": "97",
+      "program_study": "MANAJEMEN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 98,
+      "name": "PUTRI AYU NELA SARI",
+      "nim": "98",
+      "program_study": "PETERNAKAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 99,
+      "name": "RACHMAT ISMAWAN",
+      "nim": "99",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 100,
+      "name": "RATU DARA ALKA",
+      "nim": "100",
+      "program_study": "ILMU TANAH",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 101,
+      "name": "RESTU SASALBILA",
+      "nim": "101",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 102,
+      "name": "ROMEL NANDO",
+      "nim": "102",
+      "program_study": "SISTEM KOMPUTER",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 103,
+      "name": "SEPTIAN JOSKI CLADINO",
+      "nim": "103",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 104,
+      "name": "SUCI DWI SETIAWATI",
+      "nim": "104",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 105,
+      "name": "VALENCIA PERDANA RIZAL",
+      "nim": "105",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 106,
+      "name": "WIDYA NOVITA SARI",
+      "nim": "106",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 107,
+      "name": "WIRANDA ERZA PRATAMA",
+      "nim": "107",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 108,
+      "name": "YOVANZA AMILTA",
+      "nim": "108",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2018,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 109,
+      "name": "ADLI FADHLAN",
+      "nim": "109",
+      "program_study": "BIOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 110,
+      "name": "AIDIL PUTRA",
+      "nim": "110",
+      "program_study": "TEKNOLOGI INDUSTRI PERTANIAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 111,
+      "name": "ALMA SHAFIRA ANUGRAH",
+      "nim": "111",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 112,
+      "name": "ANDINI VERONICA",
+      "nim": "112",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 113,
+      "name": "ANISA LATIFA",
+      "nim": "113",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 114,
+      "name": "ANITA PUTRI",
+      "nim": "114",
+      "program_study": "ILMU TANAH",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 115,
+      "name": "ARETA ARDININGRUM",
+      "nim": "115",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 116,
+      "name": "ARRUM PURI A",
+      "nim": "116",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 117,
+      "name": "AZIE EMIL YAMI",
+      "nim": "117",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 118,
+      "name": "AZZAHRA PUTRI FANICA",
+      "nim": "118",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 119,
+      "name": "BELLA ANDRIANI",
+      "nim": "119",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 120,
+      "name": "BINTANG ZALLY PRATAMA",
+      "nim": "120",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 121,
+      "name": "CHANTIKA RATU P",
+      "nim": "121",
+      "program_study": "KIMIA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 122,
+      "name": "DINDA SEPTIA NINGRUM",
+      "nim": "122",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 123,
+      "name": "DINDA TITA FARIKA",
+      "nim": "123",
+      "program_study": "FARMASI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 124,
+      "name": "DITYA KESUMANINGRUM",
+      "nim": "124",
+      "program_study": "FARMASI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 125,
+      "name": "ELGA ARIF WIRANATA",
+      "nim": "125",
+      "program_study": "PETERNAKAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 126,
+      "name": "FAUZAN DZAKWAN",
+      "nim": "126",
+      "program_study": "SOSIAL EKONOMI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 127,
+      "name": "FELDISA SEKA WULANDARI",
+      "nim": "127",
+      "program_study": "SEJARAH",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 128,
+      "name": "FIDHIA GHINA ZANAWANA",
+      "nim": "128",
+      "program_study": "FISIKA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 129,
+      "name": "FIDHIA HANISTI",
+      "nim": "129",
+      "program_study": "FISIKA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 130,
+      "name": "FIRHAN HUSAMAD",
+      "nim": "130",
+      "program_study": "TEKNIK INDUSTRI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 131,
+      "name": "FRANS ATHTHORIQ",
+      "nim": "131",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 132,
+      "name": "GIRZA TITA CAHYA",
+      "nim": "132",
+      "program_study": "PENDIDIKAN DOKTER GIGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 133,
+      "name": "IHWANUL IHZA",
+      "nim": "133",
+      "program_study": "ADMINISTRASI PUBLIK",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 134,
+      "name": "ILHAM",
+      "nim": "134",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 135,
+      "name": "IRMA MELATI",
+      "nim": "135",
+      "program_study": "AKUNTANSI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 136,
+      "name": "JEFRIAL",
+      "nim": "136",
+      "program_study": "BIOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 137,
+      "name": "JOKO PRASETYO",
+      "nim": "137",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 138,
+      "name": "KHAIRUNNISA HAZIRA",
+      "nim": "138",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 139,
+      "name": "KRISNA WANANDA PUTRA",
+      "nim": "139",
+      "program_study": "MANAJEMEN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 140,
+      "name": "LALA SYAIFA",
+      "nim": "140",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 141,
+      "name": "LARAS PUTRI ADHILA",
+      "nim": "141",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 142,
+      "name": "MEKI ANGGARA",
+      "nim": "142",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 143,
+      "name": "MELATI KIRANA MAHARANI",
+      "nim": "143",
+      "program_study": "ILMU SEJARAH",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 144,
+      "name": "MONIKA DIARA PUTRI",
+      "nim": "144",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 145,
+      "name": "MUHAMMAD DWI OLGA",
+      "nim": "145",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 146,
+      "name": "MUHAMMAD SYAFIQ A",
+      "nim": "146",
+      "program_study": "SISTEM KOMPUTER",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 147,
+      "name": "NAHDA AMPIA MAULANI",
+      "nim": "147",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 148,
+      "name": "NIKEN AYU PUTRI E",
+      "nim": "148",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 149,
+      "name": "OVINA AISYAH",
+      "nim": "149",
+      "program_study": "FISIKA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 150,
+      "name": "PRIMA WIDITIA LEONI",
+      "nim": "150",
+      "program_study": "AKUNTANSI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 151,
+      "name": "PUTI ASMA BARI AH",
+      "nim": "151",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 152,
+      "name": "PUTRI MARTESSYA YUSNI",
+      "nim": "152",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 153,
+      "name": "RACHMA YULIA PUTRI",
+      "nim": "153",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 154,
+      "name": "RAHMA WAHYUNI",
+      "nim": "154",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 155,
+      "name": "RAHMAT FIQIH FAZIKRI",
+      "nim": "155",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 156,
+      "name": "RAHMAT IQBAL",
+      "nim": "156",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 157,
+      "name": "RAHMAT ZIKRI",
+      "nim": "157",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 158,
+      "name": "RANGGIT SETIAWAN",
+      "nim": "158",
+      "program_study": "PETERNAKAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 159,
+      "name": "RIDHO ADYA TAMA",
+      "nim": "159",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 160,
+      "name": "RIDHO ALIFRA DONSKY",
+      "nim": "160",
+      "program_study": "IIMU KOMUNIKASI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 161,
+      "name": "ROSKI PERNAMA",
+      "nim": "161",
+      "program_study": "PETERNAKAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 162,
+      "name": "SAMDES JATENDRA",
+      "nim": "162",
+      "program_study": "PETERNAKAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 163,
+      "name": "SENTIA NENGSIH",
+      "nim": "163",
+      "program_study": "ILMU GIZI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 164,
+      "name": "SHAPUTRA TRI HIDAYAT",
+      "nim": "164",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 165,
+      "name": "SILVIA AZNI",
+      "nim": "165",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 166,
+      "name": "SINTIA FEBUANI",
+      "nim": "166",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 167,
+      "name": "SONIA HARDIKA PUTRI",
+      "nim": "167",
+      "program_study": "ILMU GIZI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 168,
+      "name": "SONIA PERMATA INTAN",
+      "nim": "168",
+      "program_study": "PETERNAKAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 169,
+      "name": "SRI RIZKI MARTIANA",
+      "nim": "169",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 170,
+      "name": "SRI TETI FIRNELDA",
+      "nim": "170",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 171,
+      "name": "TIARA NURIZKI ANNIDA",
+      "nim": "171",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 172,
+      "name": "TRILIZA AVRIANI",
+      "nim": "172",
+      "program_study": "FARMASI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 173,
+      "name": "VIONA FRISCILA",
+      "nim": "173",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 174,
+      "name": "WINDI",
+      "nim": "174",
+      "program_study": "TEKNIK INDUSTRI",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 175,
+      "name": "WINDI PANGESTI",
+      "nim": "175",
+      "program_study": "MATEMATIKA",
+      "join_year": 2019,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 176,
+      "name": "ADITYA LUTHFIAN DZAKY",
+      "nim": "176",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 177,
+      "name": "AKSEL IRFAN",
+      "nim": "177",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 178,
+      "name": "ALIFTO AGRA",
+      "nim": "178",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 179,
+      "name": "ANJELY NAFIZA INDANI",
+      "nim": "179",
+      "program_study": "PENYULUHAN PERTANIAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 180,
+      "name": "ANNISA FEBRY MAHARANI",
+      "nim": "180",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 181,
+      "name": "ARIFWAN FATWA DINATA",
+      "nim": "181",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 182,
+      "name": "ARYATI PUTRI MAHARANI",
+      "nim": "182",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 183,
+      "name": "AULIA SILSADILA",
+      "nim": "183",
+      "program_study": "FARMASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 184,
+      "name": "AZRA NUR ZANIRA",
+      "nim": "184",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 185,
+      "name": "CANTICHA AULIA PRAMESWARY",
+      "nim": "185",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 186,
+      "name": "DANI PRAMANA PUTRA",
+      "nim": "186",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 187,
+      "name": "DESI FITRIANI",
+      "nim": "187",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 188,
+      "name": "DIAN SYALSABILA",
+      "nim": "188",
+      "program_study": "BIOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 189,
+      "name": "DINDA ARDESTI MAHARANI",
+      "nim": "189",
+      "program_study": "PENDIDIKAN DOKTER GIGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 190,
+      "name": "DINDA DWI PUTRI",
+      "nim": "190",
+      "program_study": "KEBIDANAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 191,
+      "name": "DWI TATA AZIZAH",
+      "nim": "191",
+      "program_study": "PENYULUHAN PERTANIAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 192,
+      "name": "ELSA MARETA",
+      "nim": "192",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 193,
+      "name": "FADHILLA KURNIA SAVITRI",
+      "nim": "193",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 194,
+      "name": "FAHRUL DWI ANUGRAH",
+      "nim": "194",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 195,
+      "name": "FAIRIZIA FITHRI ADISA",
+      "nim": "195",
+      "program_study": "KEBIDANAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 196,
+      "name": "FAKHRI DWI AULIA",
+      "nim": "196",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 197,
+      "name": "FIQRI HIDAYAT",
+      "nim": "197",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 198,
+      "name": "GABRIEL SEPTIAN HENDRA",
+      "nim": "198",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 199,
+      "name": "GHANIYYAH HANA",
+      "nim": "199",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 200,
+      "name": "HASYA SYAKIRA",
+      "nim": "200",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 201,
+      "name": "IFAZUL MUHAMAD",
+      "nim": "201",
+      "program_study": "EKONOMI PEMBANGUNAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 202,
+      "name": "IFWA NETOSA UTAMI",
+      "nim": "202",
+      "program_study": "ILMU TANAH",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 203,
+      "name": "IKRAM PRATAMA",
+      "nim": "203",
+      "program_study": "ILMU TANAH",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 204,
+      "name": "ILHAM JASRIAL",
+      "nim": "204",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 205,
+      "name": "INDAH AGUSTIANOV",
+      "nim": "205",
+      "program_study": "KEBIDANAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 206,
+      "name": "INDAH MAYYUNI PUTRI",
+      "nim": "206",
+      "program_study": "ILMU ADMINISTRASI PUBLIK",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 207,
+      "name": "INES EVIRA",
+      "nim": "207",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 208,
+      "name": "KHAIRUNNISA HAZIRA",
+      "nim": "208",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 209,
+      "name": "LAISYATIFA GISTARIZA",
+      "nim": "209",
+      "program_study": "AKUNTANSI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 210,
+      "name": "M.TORY PRASETYA",
+      "nim": "210",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 211,
+      "name": "MUHAMMAD FARHAN RIFQI",
+      "nim": "211",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 212,
+      "name": "MUHAMMAD SALIM IKHWAN",
+      "nim": "212",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 213,
+      "name": "MUHAMMAD SALMAN IKHSAN",
+      "nim": "213",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 214,
+      "name": "MUTHI’AH KHAIRUNNISA",
+      "nim": "214",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 215,
+      "name": "NADIATUL AULIA ZAHARA RIZKI",
+      "nim": "215",
+      "program_study": "FARMASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 216,
+      "name": "NASHSALA QADRA YAFANI",
+      "nim": "216",
+      "program_study": "MANAJEMEN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 217,
+      "name": "NATASYA WULANDARI",
+      "nim": "217",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 218,
+      "name": "NAURA SALSABILA",
+      "nim": "218",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 219,
+      "name": "NELVIA OKTA YOSA",
+      "nim": "219",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 220,
+      "name": "NEZA PUTRI KARENINA",
+      "nim": "220",
+      "program_study": "ILMU SEJARAH",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 221,
+      "name": "NURUL AFADAH",
+      "nim": "221",
+      "program_study": "ILMU GIZI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 222,
+      "name": "NURUL AFIFI Z.",
+      "nim": "222",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 223,
+      "name": "NUZULA YULIANTI",
+      "nim": "223",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 224,
+      "name": "OCHA DEFRITA PUTRI",
+      "nim": "224",
+      "program_study": "ILMU TANAH",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 225,
+      "name": "OKTA PUTRI RAHAYU",
+      "nim": "225",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 226,
+      "name": "RAHMA DIATHUL HUSNA",
+      "nim": "226",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 227,
+      "name": "RAHMA FITRI",
+      "nim": "227",
+      "program_study": "ANTROPOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 228,
+      "name": "RENDRIANA ELSYAFIRA",
+      "nim": "228",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 229,
+      "name": "RESTU RAHMI TAZKIYA",
+      "nim": "229",
+      "program_study": "KIMIA",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 230,
+      "name": "REVI  AMALIA",
+      "nim": "230",
+      "program_study": "ILMU GIZI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 231,
+      "name": "RIAN HIJRIANDA",
+      "nim": "231",
+      "program_study": "TEKNIK PERTANIAN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 232,
+      "name": "RINDA BENITA",
+      "nim": "232",
+      "program_study": "ILMU BUDAYA",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 233,
+      "name": "RIZKI FADHILA",
+      "nim": "233",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 234,
+      "name": "ROZAN ARSILIAN PRATAMA",
+      "nim": "234",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 235,
+      "name": "SALWA AZAHRA",
+      "nim": "235",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 236,
+      "name": "SELLY OKTAHANI",
+      "nim": "236",
+      "program_study": "FISIKA",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 237,
+      "name": "SHABIL FADHAN DEZA",
+      "nim": "237",
+      "program_study": "FARMASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 238,
+      "name": "SYAFIQA FELICIANI",
+      "nim": "238",
+      "program_study": "MANAJEMEN",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 239,
+      "name": "SYIFA KHAIRANI FADILLAH",
+      "nim": "239",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 240,
+      "name": "TASYA ANISA",
+      "nim": "240",
+      "program_study": "FISIKA",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 241,
+      "name": "TASYA ARDHINA",
+      "nim": "241",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 242,
+      "name": "TESSA RAHMA PUTRI",
+      "nim": "242",
+      "program_study": "SASTRA MINANGKABAU",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 243,
+      "name": "VIRA AYU PRADINI",
+      "nim": "243",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 244,
+      "name": "WARIN AMALIA UTAMI",
+      "nim": "244",
+      "program_study": "FARMASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 245,
+      "name": "WINANDA AFRILIA HARISYA",
+      "nim": "245",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 246,
+      "name": "WINDA WAPIKAH",
+      "nim": "246",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 247,
+      "name": "ZAFIRA AZZAHRA",
+      "nim": "247",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2020,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 248,
+      "name": "AFDAL DINUL HAQ",
+      "nim": "248",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 249,
+      "name": "AFDHAL DINDA PUTRA",
+      "nim": "249",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 250,
+      "name": "AIZA OSWIN",
+      "nim": "250",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 251,
+      "name": "ALFAJRI NURHUDA YUDIVA",
+      "nim": "251",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 252,
+      "name": "ALLYA DWI MALIKA",
+      "nim": "252",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 253,
+      "name": "ALLYSA FIRZITULLAH",
+      "nim": "253",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 254,
+      "name": "ALVIN ANDREKE DWI PUTRA",
+      "nim": "254",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 255,
+      "name": "ALYA DWI PRAMESTI",
+      "nim": "255",
+      "program_study": "ADMINISTRASI PUBLIK",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 256,
+      "name": "AMANDA AULYA GAYO",
+      "nim": "256",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 257,
+      "name": "AMELIA PUTRI ARWANDA",
+      "nim": "257",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 258,
+      "name": "AMELIA RAHMAYANTI",
+      "nim": "258",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 259,
+      "name": "ANA LATIFA SRI RAHAYU",
+      "nim": "259",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 260,
+      "name": "ANDI AISYAH FARRA",
+      "nim": "260",
+      "program_study": "KEDOKTERAN GIGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 261,
+      "name": "ANDO ALAN KARA",
+      "nim": "261",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 262,
+      "name": "ANILSI ANSARI",
+      "nim": "262",
+      "program_study": "GIZI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 263,
+      "name": "ANISSA LEDITA",
+      "nim": "263",
+      "program_study": "FISIKA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 264,
+      "name": "ANNISA AYU GRACE",
+      "nim": "264",
+      "program_study": "-",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 265,
+      "name": "ANNISA DWI CITRA",
+      "nim": "265",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 266,
+      "name": "ANNISA PUTRI WILIS",
+      "nim": "266",
+      "program_study": "KEBIDANAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 267,
+      "name": "ATHAYA SHOLEHA",
+      "nim": "267",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 268,
+      "name": "AULIYA ASYIFA YEZA",
+      "nim": "268",
+      "program_study": "FARMASI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 269,
+      "name": "BAGAS OLISMAN",
+      "nim": "269",
+      "program_study": "MANAJEMEN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 270,
+      "name": "BINTANG GALAHERANG",
+      "nim": "270",
+      "program_study": "MANAJEMEN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 271,
+      "name": "CHOYRIA NINGSIH",
+      "nim": "271",
+      "program_study": "FARMASI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 272,
+      "name": "CINDYLA LAURENZA",
+      "nim": "272",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 273,
+      "name": "DIMAS ARDIWINATA",
+      "nim": "273",
+      "program_study": "SASTRA MINANGKABAU",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 274,
+      "name": "DOETA RIZAWAN MILAL",
+      "nim": "274",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 275,
+      "name": "ELLAN TRI SAPUTRA",
+      "nim": "275",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 276,
+      "name": "ENA SIARY",
+      "nim": "276",
+      "program_study": "EKONOMI PEMBANGUNAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 277,
+      "name": "FADLI LEFRANDI",
+      "nim": "277",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 278,
+      "name": "FAJRI DWIYANTARA",
+      "nim": "278",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 279,
+      "name": "FARREL RAMADHAN HENDRA",
+      "nim": "279",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 280,
+      "name": "FAUZAN RAKHA ARDIANTO",
+      "nim": "280",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 281,
+      "name": "FAUZI ISYRIN APRIDAL",
+      "nim": "281",
+      "program_study": "TEKNOLOGI REKAYASA PERANGKAT LUNAK",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 282,
+      "name": "FAZIRA SYARLINDA",
+      "nim": "282",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 283,
+      "name": "FEBI DELVIA YOLANDA",
+      "nim": "283",
+      "program_study": "ILMU TANAH",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 284,
+      "name": "FELYA AZHARA",
+      "nim": "284",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 285,
+      "name": "FERDIANSYAH RAZAQ",
+      "nim": "285",
+      "program_study": "-",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 286,
+      "name": "FIKRI RIDWAN PRATAMA",
+      "nim": "286",
+      "program_study": "KIMIA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 287,
+      "name": "HAGIA SOFYA HAYATI",
+      "nim": "287",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 288,
+      "name": "HANA NAURAH MUNIFAH",
+      "nim": "288",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 289,
+      "name": "HANIF HAIDAR",
+      "nim": "289",
+      "program_study": "KIMIA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 290,
+      "name": "HAZYA UZMA LAIL HANIFA",
+      "nim": "290",
+      "program_study": "PENYULUHAN PERTANIAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 291,
+      "name": "IBRA PRAKASA",
+      "nim": "291",
+      "program_study": "TEKNIK INDUSTRI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 292,
+      "name": "IRZA MEILINA DINITA",
+      "nim": "292",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 293,
+      "name": "JESI PEBRINA SALWA",
+      "nim": "293",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 294,
+      "name": "KESI PERMATASARI",
+      "nim": "294",
+      "program_study": "AKUTANSI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 295,
+      "name": "LEFRIANDI ARIF RAHMAN",
+      "nim": "295",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 296,
+      "name": "M GUNTUR GAZALLY",
+      "nim": "296",
+      "program_study": "PETERNAKAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 297,
+      "name": "MAZELLA THIA SANOVA",
+      "nim": "297",
+      "program_study": "KEBIDANAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 298,
+      "name": "MHD. ABIGHOIL ATHALLAHRIQ RISWANDI",
+      "nim": "298",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 299,
+      "name": "MHD. FAZLY AKHRAM",
+      "nim": "299",
+      "program_study": "SOSIAL EKONOMI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 300,
+      "name": "MOHAMMAD ABSYA RIPASADA",
+      "nim": "300",
+      "program_study": "ILMU HUBUNGAN INTERNASIONAL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 301,
+      "name": "MUHAMMAD ILHAM BASGORO",
+      "nim": "301",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 302,
+      "name": "MUHAMMAD ILHAM RAMADHAN",
+      "nim": "302",
+      "program_study": "ILMU EKONOMI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 303,
+      "name": "MUHAMMAD IQBAL",
+      "nim": "303",
+      "program_study": "FISIKA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 304,
+      "name": "MUHAMMAD IQBAL AL-AZHFARIY",
+      "nim": "304",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 305,
+      "name": "MUHAMMAD ROBITH ALBANNA",
+      "nim": "305",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 306,
+      "name": "NABILAH RAHMACHILA AZURA",
+      "nim": "306",
+      "program_study": "BIOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 307,
+      "name": "NADIA HEMALIA PUTRI",
+      "nim": "307",
+      "program_study": "PETERNAKAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 308,
+      "name": "NADYA SRI WAHYUNI",
+      "nim": "308",
+      "program_study": "TEKNIK INDUSTRI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 309,
+      "name": "NALANG ELTIA",
+      "nim": "309",
+      "program_study": "KEBIDANAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 310,
+      "name": "NURUL PUTRI NABILA",
+      "nim": "310",
+      "program_study": "PETERNAKAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 311,
+      "name": "OTI MUDIA PUSPA",
+      "nim": "311",
+      "program_study": "FARMASI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 312,
+      "name": "RATU SABINA PUTRI",
+      "nim": "312",
+      "program_study": "MATEMATIKA",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 313,
+      "name": "RIAN BASRI",
+      "nim": "313",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 314,
+      "name": "RIFKI RAMADHAN",
+      "nim": "314",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 315,
+      "name": "RIKA YULIFARMA",
+      "nim": "315",
+      "program_study": "BIOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 316,
+      "name": "RIZKA HANIFA KHAIRANY",
+      "nim": "316",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 317,
+      "name": "RYAN CANDRA GUSTI",
+      "nim": "317",
+      "program_study": "PETERNAKAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 318,
+      "name": "RYAN TRI SAVEGA",
+      "nim": "318",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 319,
+      "name": "SADDAM AHMAD HUSEIN",
+      "nim": "319",
+      "program_study": "PETERNAKAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 320,
+      "name": "SAGITA PUTRA KIRANA",
+      "nim": "320",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 321,
+      "name": "SINTIA PUTRI",
+      "nim": "321",
+      "program_study": "ILMU HUKUM",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 322,
+      "name": "SOFIARNI EKA JUJU",
+      "nim": "322",
+      "program_study": "BIOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 323,
+      "name": "SUNDARI ANISA ANGELICA",
+      "nim": "323",
+      "program_study": "FARMASI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 324,
+      "name": "SYAHDA PERMATA ARDELIA",
+      "nim": "324",
+      "program_study": "FARMASI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 325,
+      "name": "SYAHIRA RAMADHANI KHARISMA",
+      "nim": "325",
+      "program_study": "MANAJEMEN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 326,
+      "name": "TRY MEISYA RAFLUS",
+      "nim": "326",
+      "program_study": "ILMU TANAH",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 327,
+      "name": "WENY DIANTI",
+      "nim": "327",
+      "program_study": "D3 TEKNIK SIPIL",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 328,
+      "name": "YUYUN APRILLONZA",
+      "nim": "328",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 329,
+      "name": "ZAKY EL-KARIM",
+      "nim": "329",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 330,
+      "name": "ZIKRA RAHMADHINI",
+      "nim": "330",
+      "program_study": "KEBIDANAN",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 331,
+      "name": "ZUL RAHMAN DANI",
+      "nim": "331",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2021,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 332,
+      "name": "KANDA SAMIE ALKHAFIDH",
+      "nim": "332",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 333,
+      "name": "KRISTA ORIEN RAMANDITA NASRUL",
+      "nim": "333",
+      "program_study": "FISIKA",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 334,
+      "name": "NAGITA DESRI MUNALTI",
+      "nim": "334",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 335,
+      "name": "MUZAKI ADITYA DWI TAMA",
+      "nim": "335",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 336,
+      "name": "ZIANA SINTIA",
+      "nim": "336",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 337,
+      "name": "ABID WAFI MEINICA",
+      "nim": "337",
+      "program_study": "PETERNAKAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 338,
+      "name": "SYIFA SHAFIRA",
+      "nim": "338",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 339,
+      "name": "NOVIA RAHMI RAMADHANI",
+      "nim": "339",
+      "program_study": "KEBIDANAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 340,
+      "name": "LALA SYAHRANI",
+      "nim": "340",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 341,
+      "name": "SAUSAN DHINDA AMALLIA",
+      "nim": "341",
+      "program_study": "KEBIDANAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 342,
+      "name": "NOVTRAH AKBAR NUGROHO",
+      "nim": "342",
+      "program_study": "ILMU TANAH",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 343,
+      "name": "ISMA SYAHIRA",
+      "nim": "343",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 344,
+      "name": "TASYA FITRI ANDRIANI",
+      "nim": "344",
+      "program_study": "ADMINISTRASI PUBLIK",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 345,
+      "name": "DARA HELDA QUDRATI",
+      "nim": "345",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 346,
+      "name": "SANGGARI VINA WINANTA",
+      "nim": "346",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 347,
+      "name": "NABILA AGUSTARINA",
+      "nim": "347",
+      "program_study": "ILMU KEPERAWATAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 348,
+      "name": "MHD. GUFRON",
+      "nim": "348",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 349,
+      "name": "M. RIFQI ANUGRAH",
+      "nim": "349",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 350,
+      "name": "MUHAMMAD ALVEN PUTRA",
+      "nim": "350",
+      "program_study": "PETERNAKAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 351,
+      "name": "MUHAMMAD SYAHWA",
+      "nim": "351",
+      "program_study": "SASTRA MINANGKABAU",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 352,
+      "name": "NADA NAZWA SUPARMAN",
+      "nim": "352",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 353,
+      "name": "STELA MEDI CANDINI",
+      "nim": "353",
+      "program_study": "KIMIA",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 354,
+      "name": "ROJA RIFANI MAIZARDI",
+      "nim": "354",
+      "program_study": "HUKUM",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 355,
+      "name": "ALIFA RACHMA FADILA",
+      "nim": "355",
+      "program_study": "AKUNTANSI INTERNASIONAL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 356,
+      "name": "FIDELLA KHAIRINNISA",
+      "nim": "356",
+      "program_study": "KEDOKTERAN GIGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 357,
+      "name": "FAUZIA MUHAMMAD",
+      "nim": "357",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 358,
+      "name": "DHIYA GUSTITA AQILA",
+      "nim": "358",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 359,
+      "name": "YUNI PRATIWI",
+      "nim": "359",
+      "program_study": "FARMASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 360,
+      "name": "WINGSIALFAJRI",
+      "nim": "360",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 361,
+      "name": "ULFIAH MEALTI HUMAIROH",
+      "nim": "361",
+      "program_study": "MANAJMEN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 362,
+      "name": "ATHASYA AULIA MUFIDAH",
+      "nim": "362",
+      "program_study": "PRODI GIZI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 363,
+      "name": "NABILA.R",
+      "nim": "363",
+      "program_study": "AKUNTANSI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 364,
+      "name": "AGNESYA MAHARANI",
+      "nim": "364",
+      "program_study": "FARMASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 365,
+      "name": "IVAN ADANI",
+      "nim": "365",
+      "program_study": "HUKUM",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 366,
+      "name": "MICKI INDRA MAULANA",
+      "nim": "366",
+      "program_study": "HUKUM",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 367,
+      "name": "SHADIKA WAHYU PRATAMA",
+      "nim": "367",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 368,
+      "name": "RAYOSAMA M RAHESHY",
+      "nim": "368",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 369,
+      "name": "IGOR THENEGER",
+      "nim": "369",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 370,
+      "name": "RATU PERMATA KANDISKA",
+      "nim": "370",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 371,
+      "name": "FIRMAN TRI NUGRAHA",
+      "nim": "371",
+      "program_study": "MANAJEMEN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 372,
+      "name": "MELANY SILVANA PUTRI",
+      "nim": "372",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 373,
+      "name": "PRESILIA AURA AZHARI",
+      "nim": "373",
+      "program_study": "GIZI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 374,
+      "name": "MARELDA HARSYA AZZAHRA",
+      "nim": "374",
+      "program_study": "PENDIDIKAN DOKTER GIGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 375,
+      "name": "FADHILA RAHMADIANI FASYA",
+      "nim": "375",
+      "program_study": "HUKUM",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 376,
+      "name": "DARA HELDA QUDRATI",
+      "nim": "376",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 377,
+      "name": "ANJLI PUTRI",
+      "nim": "377",
+      "program_study": "PETERNAKAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 378,
+      "name": "LAILATUL BADRIYAH",
+      "nim": "378",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 379,
+      "name": "IKHSAN RAMADANI",
+      "nim": "379",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 380,
+      "name": "AFDHOL OKTA PRIANDA",
+      "nim": "380",
+      "program_study": "PETERNAKAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 381,
+      "name": "SYAKIRA NAJLA ADINDA",
+      "nim": "381",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 382,
+      "name": "ADELIA OKTAVIANA PUTRI",
+      "nim": "382",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 383,
+      "name": "PANJI OKTA",
+      "nim": "383",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 384,
+      "name": "JOVANKA DWI AURELIA",
+      "nim": "384",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 385,
+      "name": "NAZILA HIFZILIA",
+      "nim": "385",
+      "program_study": "FARMASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 386,
+      "name": "RAHMAT WILTRA GUSNALDI",
+      "nim": "386",
+      "program_study": "ILMU EKONOMI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 387,
+      "name": "METHA RAFELIANDINI",
+      "nim": "387",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 388,
+      "name": "ASSYIFA AURELLIA",
+      "nim": "388",
+      "program_study": "ILMU BIOMEDIS",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 389,
+      "name": "FELISHA ALIYAH SEPTIPANI",
+      "nim": "389",
+      "program_study": "GIZI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 390,
+      "name": "MUHAMMAD ALFATH",
+      "nim": "390",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 391,
+      "name": "DINDA AZAHRA",
+      "nim": "391",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 392,
+      "name": "BESTIUS ANGGRAINI",
+      "nim": "392",
+      "program_study": "KEBIDANAN",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 393,
+      "name": "NASYWA OKTARINA HARVI",
+      "nim": "393",
+      "program_study": "KEDOKTERAN GIGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 394,
+      "name": "RAHMALIA AZIRA PERTIWI",
+      "nim": "394",
+      "program_study": "AKUNTANSI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 395,
+      "name": "YULI SETIA MARCHELY",
+      "nim": "395",
+      "program_study": "BIOLOGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 396,
+      "name": "SHERLY AFTIKA PUTRI",
+      "nim": "396",
+      "program_study": "BIOLOGI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 397,
+      "name": "AINI KHURYATI",
+      "nim": "397",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 398,
+      "name": "MUHAMMAD MUZHAFFAR IZZUDDIN",
+      "nim": "398",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 399,
+      "name": "NAZIFA ZAHARANI",
+      "nim": "399",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 400,
+      "name": "ALIF AFDOL JOHORI",
+      "nim": "400",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 401,
+      "name": "GINNAURRIZKY NURFITRI",
+      "nim": "401",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2022,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 402,
+      "name": "ADEM KASRI",
+      "nim": "402",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 403,
+      "name": "ADINDA ABELIA PUTRI",
+      "nim": "403",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 404,
+      "name": "ADINDA PRATIWI",
+      "nim": "404",
+      "program_study": "BIOLOGI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 405,
+      "name": "ADITYA WARMAN",
+      "nim": "405",
+      "program_study": "ILMU POLITIK",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 406,
+      "name": "AFIFA SAQIFA",
+      "nim": "406",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 407,
+      "name": "AHMAD DANY HIDAYATULLAH",
+      "nim": "407",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 408,
+      "name": "AHMAD DHANI PRASETYA",
+      "nim": "408",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 409,
+      "name": "AHMAD IQBAL RAMADHAN",
+      "nim": "409",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 410,
+      "name": "AHMAD SYUKRON",
+      "nim": "410",
+      "program_study": "ADMINISTRASI PUBLIK",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 411,
+      "name": "AISYAH KHAIRUNNISA RAMADHANI",
+      "nim": "411",
+      "program_study": "MATEMATIKA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 412,
+      "name": "ALDIKRI VERTA ADIMA",
+      "nim": "412",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 413,
+      "name": "ALLIF ICHSAN LAURELLE",
+      "nim": "413",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 414,
+      "name": "ALYA SHIFA ZAHIRA",
+      "nim": "414",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 415,
+      "name": "AMELIA PUTRI",
+      "nim": "415",
+      "program_study": "SASTRA DAERAH MINANG KABAU",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 416,
+      "name": "ANDRE DEKAPRI",
+      "nim": "416",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 417,
+      "name": "ANISA DIAN RAHAYU",
+      "nim": "417",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 418,
+      "name": "ANINDYA SADIRA KHOIRUNNISA",
+      "nim": "418",
+      "program_study": "AKUNTANSI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 419,
+      "name": "APRILYA NURAINI AQILA GUSMADI",
+      "nim": "419",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 420,
+      "name": "APRILLIA SHOFWA ZAHRA",
+      "nim": "420",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 421,
+      "name": "AQILAH AZZAHRA GEMA PUTRI",
+      "nim": "421",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 422,
+      "name": "ARIEF FATURAHMAN",
+      "nim": "422",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 423,
+      "name": "ARRIVAL RINCE PUTRI",
+      "nim": "423",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 424,
+      "name": "ASSALWA SASKIA",
+      "nim": "424",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 425,
+      "name": "ASTI AMANDA",
+      "nim": "425",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 426,
+      "name": "ATIQAH ALYA PUTRI",
+      "nim": "426",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 427,
+      "name": "AULIA FADHILAH",
+      "nim": "427",
+      "program_study": "MATEMATIKA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 428,
+      "name": "AULIA SYARIFA",
+      "nim": "428",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 429,
+      "name": "AURELLIA SALSABILA",
+      "nim": "429",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 430,
+      "name": "AZZAHRA VEGA ALIM PUTRI",
+      "nim": "430",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 431,
+      "name": "BAIQ NURSYAFIQA",
+      "nim": "431",
+      "program_study": "MANAJEMEN REKAYASA KONSTRUIKSI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 432,
+      "name": "BAYU PRADIPA",
+      "nim": "432",
+      "program_study": "MATEMATIKA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 433,
+      "name": "BUNGA MENTARI",
+      "nim": "433",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 434,
+      "name": "DANDEI RAMA OFRA",
+      "nim": "434",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 435,
+      "name": "DINA SABRINA NASYWA",
+      "nim": "435",
+      "program_study": "TEKNIK INDUSTRI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 436,
+      "name": "EMA NOVIA SARI",
+      "nim": "436",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 437,
+      "name": "ERSYA SYAHIRA",
+      "nim": "437",
+      "program_study": "AKUNTANSI INTERNASIONAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 438,
+      "name": "FADILLA AYU BRILIANT",
+      "nim": "438",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 439,
+      "name": "FAHREZI ABDULLAH MUZAKI HESA",
+      "nim": "439",
+      "program_study": "AKUNTANSI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 440,
+      "name": "FARHAN LEFITRA",
+      "nim": "440",
+      "program_study": "MANAJEMEN (KAMPUS 2 PAYAKUMBUH )",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 441,
+      "name": "FAROS",
+      "nim": "441",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 442,
+      "name": "FAUZIAH ZAIN",
+      "nim": "442",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 443,
+      "name": "FITRI WULANDARI",
+      "nim": "443",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 444,
+      "name": "FITRI YASIN FADILLAH",
+      "nim": "444",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 445,
+      "name": "HAFIZA CAHYANI PUTRI",
+      "nim": "445",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 446,
+      "name": "HAANIYAH  ULAYYA",
+      "nim": "446",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 447,
+      "name": "HASTI AMANDA",
+      "nim": "447",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 448,
+      "name": "HUMAYRA",
+      "nim": "448",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 449,
+      "name": "IKHSAN ADILGA ILHAM",
+      "nim": "449",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 450,
+      "name": "INDAH DWI LESTARI",
+      "nim": "450",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 451,
+      "name": "KEYSA NAYLA PUTRI",
+      "nim": "451",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 452,
+      "name": "LADIVA SYAIRA",
+      "nim": "452",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 453,
+      "name": "LAISYA ARRAHMI SYAQILLA",
+      "nim": "453",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 454,
+      "name": "LATIVA AZZAHRA",
+      "nim": "454",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 455,
+      "name": "LAYNUR SYAHRA",
+      "nim": "455",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 456,
+      "name": "LISA ELNI PUTRI",
+      "nim": "456",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 457,
+      "name": "M FARIQ FIJRATULLAH",
+      "nim": "457",
+      "program_study": "SASTRA INDONESIA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 458,
+      "name": "MICHEL",
+      "nim": "458",
+      "program_study": "ILMU EKONOMI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 459,
+      "name": "MUHAMMAD FADIL",
+      "nim": "459",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 460,
+      "name": "MUHAMMAD HAIRIL",
+      "nim": "460",
+      "program_study": "GIZI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 461,
+      "name": "MUHAMMAD KAPRI ALZIKRA",
+      "nim": "461",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 462,
+      "name": "MUTIA YOHANA",
+      "nim": "462",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 463,
+      "name": "MELISA PUTRI ASMI",
+      "nim": "463",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 464,
+      "name": "NAILA RAMADHANI",
+      "nim": "464",
+      "program_study": "FISIKA",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 465,
+      "name": "NAJMA NABILA, US",
+      "nim": "465",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 466,
+      "name": "NASYWA",
+      "nim": "466",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 467,
+      "name": "NAURA AKHWATUNISSA",
+      "nim": "467",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 468,
+      "name": "NUFIKHA FISHURI RICHSKY",
+      "nim": "468",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 469,
+      "name": "RAHMA ZAKIA JADE",
+      "nim": "469",
+      "program_study": "AKUNTANSI INTERNASIONAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 470,
+      "name": "RAHMAT FAUZAN",
+      "nim": "470",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 471,
+      "name": "RAHIL AKRAM HAMMAD",
+      "nim": "471",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 472,
+      "name": "RATU AZZAHRA",
+      "nim": "472",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 473,
+      "name": "RAYHAN ALQINDA",
+      "nim": "473",
+      "program_study": "SEJARAH",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 474,
+      "name": "RAYHAN REYDINATA",
+      "nim": "474",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 475,
+      "name": "REFA AFRIANRA",
+      "nim": "475",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 476,
+      "name": "ROFIQ KHAIRON",
+      "nim": "476",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 477,
+      "name": "ROLI ARIANDI",
+      "nim": "477",
+      "program_study": "TEKNIK LISTRIK",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 478,
+      "name": "SHONIA MANETA",
+      "nim": "478",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 479,
+      "name": "SHUCI NUR AZURA",
+      "nim": "479",
+      "program_study": "-",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 480,
+      "name": "SIGIT IBNU SULISTIAN",
+      "nim": "480",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 481,
+      "name": "TITANIA ANNISA",
+      "nim": "481",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 482,
+      "name": "TIO RAMADHAN HANIF",
+      "nim": "482",
+      "program_study": "PETERNAKAN",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 483,
+      "name": "WINISYA FAHIRA",
+      "nim": "483",
+      "program_study": "HUKUM",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 484,
+      "name": "YORI RAHMAD SYAFIQRI",
+      "nim": "484",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 485,
+      "name": "ZAHRA ALIFFA GHANY",
+      "nim": "485",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 486,
+      "name": "ZAKI ALHAZBI",
+      "nim": "486",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2023,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 487,
+      "name": "AGISTIA DWI PUTRI",
+      "nim": "487",
+      "program_study": "PERBANKAN DAN KEUANGAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": "infokom"
+    },
+    {
+      "id": 488,
+      "name": "AHMAD FACHRY SHUNNAR",
+      "nim": "488",
+      "program_study": "ILMU TANAH",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 489,
+      "name": "AHMAD HAFIZRI",
+      "nim": "489",
+      "program_study": "SASTRA INGGRIS",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 490,
+      "name": "AHMAD ZAHRAN",
+      "nim": "490",
+      "program_study": "INFORMATIKA",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 491,
+      "name": "AL ISYA ZAHRA ARAFAH",
+      "nim": "491",
+      "program_study": "MANAJEMEN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 492,
+      "name": "ALFARIZI SUDIRMAN",
+      "nim": "492",
+      "program_study": "TEKNIK ELEKTO",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 493,
+      "name": "ALIYAH ZAHRATUL SASLSA",
+      "nim": "493",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 494,
+      "name": "AMANDA AZAHLIA",
+      "nim": "494",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 495,
+      "name": "ANINDIA FADHILATUNNISA",
+      "nim": "495",
+      "program_study": "PSIKOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 496,
+      "name": "AQUEEN YANZA UTAMI",
+      "nim": "496",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 497,
+      "name": "ARIEF MAULANA",
+      "nim": "497",
+      "program_study": "MANAJEMEN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 498,
+      "name": "ASA FIT",
+      "nim": "498",
+      "program_study": "MATEMATIKA",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 499,
+      "name": "AURA VIANTIKA",
+      "nim": "499",
+      "program_study": "SEJARAH",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 500,
+      "name": "AYESHA ANDINA PUTRI",
+      "nim": "500",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 501,
+      "name": "AZKIA PRIMADIA NADIRA",
+      "nim": "501",
+      "program_study": "FARMASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 502,
+      "name": "BINTANG SYAHNUR EM",
+      "nim": "502",
+      "program_study": "GIZI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 503,
+      "name": "BUNGA DETA AYU PRATAMA",
+      "nim": "503",
+      "program_study": "KEBIDANAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 504,
+      "name": "CALISTA LARASATI",
+      "nim": "504",
+      "program_study": "TEKNIK PERTANIAN DAN BIOSISTEM",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 505,
+      "name": "DAMARA LATHIFA WINZINI",
+      "nim": "505",
+      "program_study": "FARMASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 506,
+      "name": "DEA SHAHIRA",
+      "nim": "506",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 507,
+      "name": "DELLA CIRA MUSTIKA",
+      "nim": "507",
+      "program_study": "PENYULUHAN PERTANIAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 508,
+      "name": "DHAFA LOCKY VALERIO",
+      "nim": "508",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 509,
+      "name": "DILANG ZALDI",
+      "nim": "509",
+      "program_study": "MANAJEMEN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 510,
+      "name": "ELVARETTA TRI RAMA",
+      "nim": "510",
+      "program_study": "KEPERAWATAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 511,
+      "name": "FAREL ADITIA",
+      "nim": "511",
+      "program_study": "SASTRA MINANG",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 512,
+      "name": "FATHIR AHMAD DEANDI",
+      "nim": "512",
+      "program_study": "HUKUM",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 513,
+      "name": "FATIMA NAYLA AGUSTA",
+      "nim": "513",
+      "program_study": "HUBUNGAN INTERNAIONAL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 514,
+      "name": "FEBRI CLAUDIA",
+      "nim": "514",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 515,
+      "name": "FIRYAL FUZIAH GHINA",
+      "nim": "515",
+      "program_study": "KEEHATAN MASYARAKAT",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 516,
+      "name": "FITRI AGUSTIA",
+      "nim": "516",
+      "program_study": "ILMU KESEHATAN MASYARAKAT",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 517,
+      "name": "GEFIRA ZISKINDA",
+      "nim": "517",
+      "program_study": "ANTROPOLOGI SOSIAL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 518,
+      "name": "GIVANI KHAIRUNISA",
+      "nim": "518",
+      "program_study": "ADMINISTRASI PUBLIK",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 519,
+      "name": "HABIBI IKRAMUL HUDA",
+      "nim": "519",
+      "program_study": "INFORMATIKA",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 520,
+      "name": "HANIFAH NUR AZIZAH",
+      "nim": "520",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 521,
+      "name": "HUSEN RAHMAN SHALEH",
+      "nim": "521",
+      "program_study": "TEKNIK MESIN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 522,
+      "name": "ILHAM FATHUL TRI IKHSAN",
+      "nim": "522",
+      "program_study": "ILMU TANAH",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 523,
+      "name": "KANIA FADHILA RAHMATHIRA",
+      "nim": "523",
+      "program_study": "KEDOKTERAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 524,
+      "name": "KEVIN AUREL HENDRA",
+      "nim": "524",
+      "program_study": "MANAJEMEN PEMASARAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 525,
+      "name": "LARASATI FAJAR AYU",
+      "nim": "525",
+      "program_study": "PETERNAKAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 526,
+      "name": "LARISA ALIFIA HANDINI",
+      "nim": "526",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 527,
+      "name": "LATIFA HIKMATIA",
+      "nim": "527",
+      "program_study": "KEDOKTERAN GIGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 528,
+      "name": "M. TAUFIQRIANYAH",
+      "nim": "528",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 529,
+      "name": "M.FAIZ ALKHIAIRI",
+      "nim": "529",
+      "program_study": "HUKUM",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 530,
+      "name": "MARSHA RAHMA PUTRI",
+      "nim": "530",
+      "program_study": "HUBUNGAN INTERNASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 531,
+      "name": "MHD ZAGUL PASYA",
+      "nim": "531",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 532,
+      "name": "MHD.SALAHUDIN",
+      "nim": "532",
+      "program_study": "ANTROPOLOGI  SOSIAL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 533,
+      "name": "MUHAMMAD ZAKI I ILHAM",
+      "nim": "533",
+      "program_study": "TEKNIK KOMPUTER",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 534,
+      "name": "MUHAMMAD ZAKIAL FIRMAN",
+      "nim": "534",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 535,
+      "name": "MUHAMMAD ZIKRI ASYI",
+      "nim": "535",
+      "program_study": "HUBUNGAN INTERNASIONAL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 536,
+      "name": "NADA DWI MAHARANI",
+      "nim": "536",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 537,
+      "name": "NADHIFA PUTRI SALWA",
+      "nim": "537",
+      "program_study": "ILMU KOMUNIKASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 538,
+      "name": "NAJWA BAHIRA ADVILIA",
+      "nim": "538",
+      "program_study": "AKUNTANSI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 539,
+      "name": "NANDA AKBAR ALFARIBI",
+      "nim": "539",
+      "program_study": "MANAJEMEN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 540,
+      "name": "NAYLA AZZAHRA PUTRI",
+      "nim": "540",
+      "program_study": "TEKNIK LINGKUNGAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 541,
+      "name": "NAYLA PUSPIT SARI",
+      "nim": "541",
+      "program_study": "SISTEM INFORMASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 542,
+      "name": "NAZILATIL AFWA",
+      "nim": "542",
+      "program_study": "KIMIA",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 543,
+      "name": "NURDHIYANA SYAFFIA",
+      "nim": "543",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 544,
+      "name": "NURHIDAYAH",
+      "nim": "544",
+      "program_study": "SASTRA JEPANG",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 545,
+      "name": "NURUL IZZATY",
+      "nim": "545",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 546,
+      "name": "OCHA RAHMADNI",
+      "nim": "546",
+      "program_study": "AGROTEKNOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 547,
+      "name": "OKTA RAHMAN CAHYUR",
+      "nim": "547",
+      "program_study": "SOSIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 548,
+      "name": "PAULIN DONA AGNESYA",
+      "nim": "548",
+      "program_study": "ILMU TANAH",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 549,
+      "name": "RAFI ALYA PUTRI",
+      "nim": "549",
+      "program_study": "TEKNOLOGI INDUSTRI PERTANIAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 550,
+      "name": "RAHMAT FAJAR",
+      "nim": "550",
+      "program_study": "TEKNIK SIPIL",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 551,
+      "name": "RATU FATHIKA RAMADHANI",
+      "nim": "551",
+      "program_study": "ILMU TANAH",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 552,
+      "name": "REFIZA KHAIRUNNISA",
+      "nim": "552",
+      "program_study": "FISIKA",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 553,
+      "name": "RESI AULIA AZZAHRA",
+      "nim": "553",
+      "program_study": "KEBIDANAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 554,
+      "name": "RONAL SURYA DINATA",
+      "nim": "554",
+      "program_study": "PENYULUHAN PERTANIAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 555,
+      "name": "ROYAN FIRDAUS",
+      "nim": "555",
+      "program_study": "PROTEKSI TANAMAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 556,
+      "name": "RYANDITHA KHARISSA ARRAFA",
+      "nim": "556",
+      "program_study": "FARMASI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 557,
+      "name": "SALWA MAHARANI RONZA",
+      "nim": "557",
+      "program_study": "PENDIDIKAN DOKTER",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 558,
+      "name": "SARA UKHTI SULISTYA",
+      "nim": "558",
+      "program_study": "PETERNAKAN",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 559,
+      "name": "SITI BADRIYAH AFIFH",
+      "nim": "559",
+      "program_study": "GIZI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 560,
+      "name": "SYAKILLA ARIFAH",
+      "nim": "560",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 561,
+      "name": "VHIRA RIZKY DWI PUTRI",
+      "nim": "561",
+      "program_study": "TEKNIK ELEKTRO",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 562,
+      "name": "WIFA AZALIA",
+      "nim": "562",
+      "program_study": "KESEHATAN MASYARAKAT",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 563,
+      "name": "WITA YULISYA",
+      "nim": "563",
+      "program_study": "AGRIBISNIS",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    },
+    {
+      "id": 564,
+      "name": "ZAHIRA IMANA",
+      "nim": "564",
+      "program_study": "BIOLOGI",
+      "join_year": 2024,
+      "status": "aktif",
+      "division_key": ""
+    }
+  ],
   "peminjaman": [
     {
       "itemId": "1",
@@ -3023,6 +8100,146 @@
       "path": "/galeri",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
       "timestamp": "2026-09-01T09:07:56.380Z"
+    },
+    {
+      "id": "1790773360893-rcl0",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:02:40.893Z"
+    },
+    {
+      "id": "1790773360917-zfmw",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:02:40.917Z"
+    },
+    {
+      "id": "1790773365668-wmdq",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:02:45.668Z"
+    },
+    {
+      "id": "1790773365683-hbea",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:02:45.683Z"
+    },
+    {
+      "id": "1790773390821-dlja",
+      "ip": "::1",
+      "path": "/login",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:03:10.821Z"
+    },
+    {
+      "id": "1790773390828-phgv",
+      "ip": "::1",
+      "path": "/login",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:03:10.828Z"
+    },
+    {
+      "id": "1790773397575-kojk",
+      "ip": "::1",
+      "path": "/login",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:03:17.575Z"
+    },
+    {
+      "id": "1790773397579-xxu7",
+      "ip": "::1",
+      "path": "/login",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:03:17.579Z"
+    },
+    {
+      "id": "1790774744866-thry",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:25:44.866Z"
+    },
+    {
+      "id": "1790774745195-jo9i",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T13:25:45.195Z"
+    },
+    {
+      "id": "1790777731101-vuig",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:15:31.101Z"
+    },
+    {
+      "id": "1790777731126-a6tm",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:15:31.126Z"
+    },
+    {
+      "id": "1790778285513-4i20",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:24:45.513Z"
+    },
+    {
+      "id": "1790778578686-w45o",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:29:38.686Z"
+    },
+    {
+      "id": "1790778578695-ee3q",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:29:38.695Z"
+    },
+    {
+      "id": "1790779050508-skf1",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:37:30.508Z"
+    },
+    {
+      "id": "1790779050518-z8gc",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:37:30.518Z"
+    },
+    {
+      "id": "1790779065423-6h6x",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:37:45.423Z"
+    },
+    {
+      "id": "1790779090743-11db",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:38:10.743Z"
+    },
+    {
+      "id": "1790779090749-mcd9",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
+      "timestamp": "2026-09-30T14:38:10.749Z"
     }
   ],
   "gallery": [

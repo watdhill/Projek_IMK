@@ -163,7 +163,7 @@ export default function AdminDashboard() {
       <aside className={`admin-sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
           <div className="sidebar-brand">
-            <div className="sidebar-brand-icon">{IC.settings}</div>
+            <img className="sidebar-brand-logo" src="/logo%20imk.png" alt="Logo IMK-UNAND" />
             <div>
               <div className="sidebar-brand-text">{currentUser?.name || currentUser?.username || 'Admin Panel'}</div>
               <div className="sidebar-brand-sub">IMK-UNAND</div>
