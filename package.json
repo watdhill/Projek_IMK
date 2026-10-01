@@ -1,0 +1,7 @@
+{
+  "name": "proyek-imk-deployment",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend run build"
+  }
+}
