@@ -31,6 +31,10 @@ cd backend
 2. Serve `frontend/dist` from the configured HTTPS frontend origin.
 3. Proxy `/api` and `/uploads` to the backend, or configure the hosting platform equivalently.
 
+## Size limit
+
+Do not upload `.git`, `frontend/node_modules`, or source files after the frontend build. The production payload is approximately 157 MB with the current uploads. Use `package_deploy.ps1` to create a reduced package; install backend dependencies on the server with `npm install --omit=dev`.
+
 ## Final verification
 
 - Login and logout work.

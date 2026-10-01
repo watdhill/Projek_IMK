@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "audit:uploads": "node audit_uploads.js",
     "migrate:private-documents": "node migrate_private_documents.js"
   },
   "dependencies": {
