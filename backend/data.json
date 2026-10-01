@@ -9,7 +9,7 @@
   "contact": {
     "email": "imkunand18@gmail.com",
     "phone": "085212619866",
-    "address": "Padang",
+    "address": "Binuang Kamp. Dalam, Pauh, Padang 25162",
     "instagram": "@imkunand_",
     "facebook": "",
     "website": ""
@@ -18,21 +18,21 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "admin123",
+      "password": "scrypt$ef41495cdaad99122726f94f46f52847$4c96b9ba238f0d84d573b16f1551056e2c26dadf9c90a25e88ee13cf8270284b5c15461a59f74d5fad21fbe2f994705b536446f37eb8ab6b99ec463372b6945d",
       "role": "admin",
       "name": "Super Admin"
     },
     {
       "id": 2,
       "username": "bendahara",
-      "password": "bendahara123",
+      "password": "scrypt$fe505389289791573bae8191fa00095e$75aa27da238ba06ec4b07119888ff8759ce1ddd6ae2998c375ab3bbfef5ce42ff61d6b42f5e1fb06f4f03ddb62594a2ea0e72fb5775dc7168d8c27aa87a45927",
       "role": "bendahara",
       "name": "Bendahara"
     },
     {
       "id": 3,
       "username": "kestari",
-      "password": "kestari123",
+      "password": "scrypt$c55f73142a745cac677dd78fbc51bce1$5ee49fc23674eb811ea596a0a97c76e1dace7cbd9294b2801a9a197d05ae5ae478c9e5c0e5e069ddc888944eaf7240925757c4173aa43d5fef55f46f0007d42d",
       "role": "divisi",
       "division_key": "kestari",
       "name": "Kesekretariatan (Kestari)"
@@ -40,7 +40,7 @@
     {
       "id": 4,
       "username": "psdm",
-      "password": "psdm123",
+      "password": "scrypt$5a7dd0405684d7123a5b6aed3f32a5a2$a5a3552cea00e83a43067676eab215fccdf623ef8e48b58d369f5353da04bcc223bc754946c34cbe4452b8be1dc3f393162cc6c387d22d58ec0fa7953f911c0c",
       "role": "divisi",
       "division_key": "psdm",
       "name": "PSDM"
@@ -48,7 +48,7 @@
     {
       "id": 5,
       "username": "kpp",
-      "password": "kpp123",
+      "password": "scrypt$a3e7951f72e2e053ae8236320b5552a0$5c44ad5bea0ca179844e986ae80edc9fb83679db91b58e6d978ca4f1e38f3e3bdab004f27bdb4f4769a4d3264e63048e5d8c62b92e0d638c645abc4de2d9bd6f",
       "role": "divisi",
       "division_key": "kpp",
       "name": "KPP"
@@ -56,7 +56,7 @@
     {
       "id": 6,
       "username": "infokom",
-      "password": "infokom123",
+      "password": "scrypt$d9117eabcd3487d4976fc111bcca2a02$0350fdaa6b870b8efe1b1d2acd3a7a94b7a6d4e4a306389c72ed395cfd689e0ff434efbbfeb40ca85d4b93f87aeab0e81df962fe6ea3a37e1ba90f85bff2b629",
       "role": "divisi",
       "division_key": "infokom",
       "name": "Infokom"
@@ -64,7 +64,7 @@
     {
       "id": 7,
       "username": "olahraga",
-      "password": "olahraga123",
+      "password": "scrypt$15ce0c84802b0533aff97fae3cd862b3$83e7ee0bd2a2505e7e3eb4a6fe4361ee52f01815d138639acefb38bf38d50f8f433914fd336ec2635f9263ecf4600854f551d67a4a7337e580889a13d528d089",
       "role": "divisi",
       "division_key": "olahraga",
       "name": "Olahraga"
@@ -72,7 +72,7 @@
     {
       "id": 8,
       "username": "danus",
-      "password": "danus123",
+      "password": "scrypt$a9ee179621d0876b03605d679b569cb0$e8f0af0ff14bc17c54c56cc0391b219c98258162badc3f0a5573b913e00bee6f946e42445c1383ff69b05d0bd610cabde01456012c2b75d3dbc8f90a9cf39b94",
       "role": "divisi",
       "division_key": "danus",
       "name": "Danus"
@@ -80,7 +80,7 @@
     {
       "id": 9,
       "username": "sosroh",
-      "password": "sosroh123",
+      "password": "scrypt$9da00d7b403cf65c377554f391ccbbe9$933d34b33062230b74ab4150d1f6cdb9ccd678fe21d2bc40f3def1110edd2b735c21ed8ef590c21ae520a4d5b1b99a73e81f83c474eeae09e0d5cad1ac6c1e1d",
       "role": "divisi",
       "division_key": "sosroh",
       "name": "Sosroh"
@@ -88,7 +88,7 @@
     {
       "id": 10,
       "username": "senbudpar",
-      "password": "senbudpar123",
+      "password": "scrypt$a6405ec5f6367d1a3097e18aefe0ea19$915ac0dc9852044c98695ab6b1ddad54347fc452635e0c696ebb64142fe2fac37d8c688ec475a9ee8e3ee876285419bde81e2073103128159948dc1c729f3764",
       "role": "divisi",
       "division_key": "senbudpar",
       "name": "Senbudpar"
@@ -96,7 +96,7 @@
     {
       "id": 11,
       "username": "inti",
-      "password": "inti123",
+      "password": "scrypt$61f0c62dbd290c432a3cde5586a9e703$14ffcb14a30d1c8e341387a6f6b10bd3acf8b0f00ebe1748fcfbcebb0871d5fa1fbee96dc61a8eefe657ad078d8cefe904df22918e249ef031fd51fd0d13b2c8",
       "role": "divisi",
       "division_key": "inti",
       "name": "Pengurus Inti"
@@ -438,41 +438,78 @@
       "id": 1,
       "title": "Musyawarah Besar",
       "description": "Agenda tahunan untuk menentukan arah organisasi.",
-      "date": "2026-01-15",
+      "date": "2026-10-17",
       "division_key": "psdm",
-      "status": "terlaksana",
-      "penanggung_jawab": "Rahil"
-    },
-    {
-      "id": 2,
-      "title": "Bakti Sosial",
-      "description": "Kegiatan sosial membantu masyarakat sekitar.",
-      "date": "2026-03-20",
-      "division_key": "sosroh"
+      "status": "belum_terlaksana",
+      "penanggung_jawab": "PSDM"
     },
     {
       "title": "KERIS",
-      "description": "",
-      "date": "2026-08-07",
+      "description": "Kerinci Education Roadshow (KERIS) merupakan program tahunan IMK-UNAND yang berfokus pada pemberian edukasi dan informasi mengenai pendidikan tinggi kepada siswa SMA/sederajat di Kabupaten Kerinci dan Kota Sungai Penuh. Kegiatan ini juga bertujuan untuk memberikan motivasi serta gambaran kepada siswa mengenai kehidupan perkuliahan dan membantu mereka mempersiapkan diri untuk melanjutkan pendidikan ke perguruan tinggi, khususnya Universitas Andalas.\n\nDalam pelaksanaannya, KERIS menghadirkan berbagai rangkaian kegiatan seperti sosialisasi kampus, bedah kampus, try out, seminar, campus fair, dan mentoring kampus. Kegiatan ini menjadi salah satu bentuk kontribusi IMK-UNAND dalam meningkatkan akses informasi dan literasi pendidikan bagi generasi muda di Kerinci dan Sungai Penuh.\n\nKERIS juga menjadi salah satu program unggulan IMK-UNAND karena telah dilaksanakan secara konsisten selama lebih dari satu dekade.",
+      "date": "2026-01-31",
       "execution_date": "",
-      "penanggung_jawab": "Rahil",
-      "status": "belum_terlaksana",
+      "penanggung_jawab": "PSDM",
+      "status": "terlaksana",
       "division_key": "psdm",
       "is_unggulan": true,
       "id": 3,
-      "image": "/uploads/1785954810694-gv3tpe.jpeg"
+      "image": "/uploads/1790856584748-3t4r0w.jpeg"
     },
     {
       "title": "PENGMAS",
-      "description": "",
+      "description": "Pengabdian kepada Masyarakat (Pengmas) IMK-UNAND merupakan program kerja yang menjadi bentuk kontribusi nyata IMK-UNAND kepada masyarakat. Kegiatan ini dilaksanakan dengan melibatkan mahasiswa secara langsung dalam berbagai aktivitas sosial, edukasi, dan pemberdayaan masyarakat sesuai dengan kebutuhan daerah yang menjadi lokasi pengabdian.\n\nSelain memberikan manfaat kepada masyarakat, Pengmas juga menjadi sarana bagi anggota IMK-UNAND untuk mengembangkan kepedulian sosial, kemampuan berkomunikasi, bekerja sama, dan mengimplementasikan ilmu yang diperoleh selama berada di perguruan tinggi. Program ini sekaligus memperkuat peran IMK-UNAND sebagai organisasi mahasiswa yang tidak hanya berfokus pada internal organisasi, tetapi juga memberikan dampak bagi masyarakat.",
       "date": "2026-08-07",
       "execution_date": "",
-      "penanggung_jawab": "Rahil",
-      "status": "belum_terlaksana",
+      "penanggung_jawab": "Sosroh",
+      "status": "terlaksana",
       "division_key": "sosroh",
       "is_unggulan": true,
       "id": 4,
-      "image": "/uploads/1785954834719-bfybt8.jpeg"
+      "image": "/uploads/1790856657642-ubng1w.jpeg"
+    },
+    {
+      "title": "Badminton",
+      "description": "",
+      "date": "2026-09-30",
+      "execution_date": "",
+      "penanggung_jawab": "Olahraga",
+      "status": "terlaksana",
+      "division_key": "olahraga",
+      "is_unggulan": false,
+      "id": 5
+    },
+    {
+      "title": "Cooking Day",
+      "description": "",
+      "date": "2026-10-02",
+      "execution_date": "",
+      "penanggung_jawab": "KPP",
+      "status": "terlaksana",
+      "division_key": "kpp",
+      "is_unggulan": false,
+      "id": 6
+    },
+    {
+      "title": "Syukuran Wisuda",
+      "description": "",
+      "date": "2026-10-02",
+      "execution_date": "",
+      "penanggung_jawab": "PSDM",
+      "status": "terlaksana",
+      "division_key": "psdm",
+      "is_unggulan": false,
+      "id": 7
+    },
+    {
+      "title": "Pelatihan Sidang",
+      "description": "",
+      "date": "2026-10-10",
+      "execution_date": "",
+      "penanggung_jawab": "PSDM",
+      "status": "belum_terlaksana",
+      "division_key": "psdm",
+      "is_unggulan": false,
+      "id": 8
     }
   ],
   "slides": [
@@ -5827,23 +5864,30 @@
       "totalPrice": 255000,
       "suratUrl": "/uploads/1786013434398-5mnpgm.pdf",
       "buktiUrl": "/uploads/1786013434406-c7wicg.png",
-      "status": "Disetujui",
+      "status": "Selesai",
       "createdAt": "2026-08-06T10:50:34.455Z",
-      "id": 13
+      "id": 13,
+      "returnedAt": "2026-10-01T12:14:31.356Z"
     }
   ],
   "prestasiList": [
     {
-      "title": "Ganteng 1",
-      "description": "Pengurus HMSI 2 Periode dan Stay sebagai Staf PSSDM",
-      "image": "/uploads/1785951805515-8tfdo2.jpeg",
+      "title": "HIMADA of the Year & Most Social Contributive HIMADA of the Year",
+      "description": "Pada AGA 2022, IMK-UNAND kembali mencatatkan prestasi sebagai HIMADA of the Year dan juga memperoleh penghargaan Most Social Contributive HIMADA of the Year. Pencapaian ini menunjukkan bahwa kontribusi IMK-UNAND tidak hanya dinilai dari aktivitas organisasi, tetapi juga dari kontribusi sosialnya.",
+      "image": "/uploads/1790855296510-owvs9r.jpeg",
       "id": 1
     },
     {
-      "title": "Ganteng 2",
-      "description": "IMK UNAND 2 periode awalnya Kasi Rohani sekarang jadi Waketum Eksternal",
-      "image": "/uploads/1786006345169-c0xlyu.jpeg",
+      "title": "HIMADA of the Year & Most Contributive HIMADA of the Year",
+      "description": "Pada AGA 2023, IMK-UNAND kembali memperoleh penghargaan HIMADA of the Year dan Most Contributive HIMADA of the Year, melanjutkan rekam jejak prestasinya di ajang AGA.",
+      "image": "/uploads/1790855921617-yf4cb4.jpeg",
       "id": 2
+    },
+    {
+      "title": "HIMADA of the Year & Human Resources and Development HIMADA of the Year",
+      "description": "Pada AGA 2025, IMK-UNAND kembali meraih HIMADA of the Year serta Human Resources and Development HIMADA of the Year. Pencapaian ini memperlihatkan keberlanjutan prestasi IMK-UNAND, baik dalam kontribusi organisasi maupun pengembangan sumber daya manusia.",
+      "image": "/uploads/1790856075094-q4bwfr.jpeg",
+      "id": 3
     }
   ],
   "visitorLogs": [
@@ -8240,32 +8284,347 @@
       "path": "/",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.139.1 Chrome/150.0.7871.250 Electron/43.6.0 Safari/537.36",
       "timestamp": "2026-09-30T14:38:10.749Z"
+    },
+    {
+      "id": "1790788168068-qvo6",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:28.068Z"
+    },
+    {
+      "id": "1790788168089-p6g3",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:28.089Z"
+    },
+    {
+      "id": "1790788169673-jdul",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:29.673Z"
+    },
+    {
+      "id": "1790788169688-fl7t",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:29.688Z"
+    },
+    {
+      "id": "1790788171078-xc7n",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:31.078Z"
+    },
+    {
+      "id": "1790788171094-289g",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:09:31.094Z"
+    },
+    {
+      "id": "1790788316609-562l",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:11:56.609Z"
+    },
+    {
+      "id": "1790788326222-vdm2",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-09-30T17:12:06.222Z"
+    },
+    {
+      "id": "1790854950775-drvk",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T11:42:30.775Z"
+    },
+    {
+      "id": "1790854950793-lv7w",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T11:42:30.793Z"
+    },
+    {
+      "id": "1790855925956-cwpe",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T11:58:45.956Z"
+    },
+    {
+      "id": "1790855925969-a2bw",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T11:58:45.969Z"
+    },
+    {
+      "id": "1790856121217-xw2v",
+      "ip": "::1",
+      "path": "/program/3",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:02:01.217Z"
+    },
+    {
+      "id": "1790856127354-1enu",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:02:07.354Z"
+    },
+    {
+      "id": "1790856662085-yrpj",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:11:02.085Z"
+    },
+    {
+      "id": "1790856662095-75cn",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:11:02.095Z"
+    },
+    {
+      "id": "1790856666427-6r7f",
+      "ip": "::1",
+      "path": "/program/4",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:11:06.427Z"
+    },
+    {
+      "id": "1790856670617-ajrv",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:11:10.617Z"
+    },
+    {
+      "id": "1790856734048-k3gj",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:12:14.048Z"
+    },
+    {
+      "id": "1790856734056-pg2f",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:12:14.056Z"
+    },
+    {
+      "id": "1790856841152-chtx",
+      "ip": "::1",
+      "path": "/tentang",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:01.152Z"
+    },
+    {
+      "id": "1790856845491-qk9w",
+      "ip": "::1",
+      "path": "/struktur",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:05.491Z"
+    },
+    {
+      "id": "1790856851257-fhmq",
+      "ip": "::1",
+      "path": "/divisi",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:11.257Z"
+    },
+    {
+      "id": "1790856855480-jwuy",
+      "ip": "::1",
+      "path": "/divisi/inti",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:15.480Z"
+    },
+    {
+      "id": "1790856858082-9ra2",
+      "ip": "::1",
+      "path": "/divisi",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:18.082Z"
+    },
+    {
+      "id": "1790856859425-qg7c",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:19.425Z"
+    },
+    {
+      "id": "1790856864535-shyg",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:24.536Z"
+    },
+    {
+      "id": "1790856882299-o7c4",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:42.299Z"
+    },
+    {
+      "id": "1790856882303-4whi",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:14:42.303Z"
+    },
+    {
+      "id": "1790856918460-4s2m",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:15:18.460Z"
+    },
+    {
+      "id": "1790857335415-0fbn",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:22:15.415Z"
+    },
+    {
+      "id": "1790857335419-opxu",
+      "ip": "::1",
+      "path": "/galeri",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:22:15.419Z"
+    },
+    {
+      "id": "1790857344265-m96d",
+      "ip": "::1",
+      "path": "/peminjaman",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:22:24.266Z"
+    },
+    {
+      "id": "1790857586995-5v98",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:26:26.995Z"
+    },
+    {
+      "id": "1790857660046-zlil",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:27:40.046Z"
+    },
+    {
+      "id": "1790857660053-9o5a",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:27:40.053Z"
+    },
+    {
+      "id": "1790857761313-aom3",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:29:21.313Z"
+    },
+    {
+      "id": "1790857761324-q3cg",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:29:21.324Z"
+    },
+    {
+      "id": "1790857838733-m1ah",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:30:38.733Z"
+    },
+    {
+      "id": "1790857838740-3ovp",
+      "ip": "::1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "timestamp": "2026-10-01T12:30:38.740Z"
     }
   ],
   "gallery": [
     {
       "title": "Pengmas 2026",
       "description": "",
-      "coverImage": "/uploads/1788253469111-owxh8k.jpeg",
+      "coverImage": "/uploads/1790857196216-nl54jl.jpeg",
       "date": "",
       "photos": [
         {
-          "id": 1788253496939,
-          "url": "/uploads/1788253495546-ifs2ey.jpeg",
-          "caption": "hari ini"
+          "id": 1790857236828,
+          "url": "/uploads/1790857235356-1gnggv.jpeg",
+          "caption": ""
         },
         {
-          "id": 1788253513425,
-          "url": "/uploads/1788253507666-6yul2r.jpeg",
+          "id": 1790857250770,
+          "url": "/uploads/1790857247565-kp3von.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857263447,
+          "url": "/uploads/1790857261771-5r0wjx.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857277294,
+          "url": "/uploads/1790857275619-dzydtb.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857287886,
+          "url": "/uploads/1790857285886-oyjl80.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857300997,
+          "url": "/uploads/1790857298484-lybnas.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857311161,
+          "url": "/uploads/1790857309578-i2rsdy.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857319871,
+          "url": "/uploads/1790857317711-8ft9bf.jpeg",
+          "caption": ""
+        },
+        {
+          "id": 1790857329340,
+          "url": "/uploads/1790857326523-8uija8.jpeg",
           "caption": ""
         }
       ],
-      "image": "/uploads/1788253469111-owxh8k.jpeg",
+      "image": "/uploads/1790857196216-nl54jl.jpeg",
       "id": 1
     }
   ],
   "peminjamanSettings": {
-    "bank": "BNI",
+    "bank": "BRI",
     "rek": "00000001",
     "name": "Ikatan Mahasiswa Kerinci"
   }

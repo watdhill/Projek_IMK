@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import * as XLSX from 'xlsx'
+import readXlsxFile from 'read-excel-file/browser'
 import { apiHeaders } from '../AdminDashboard'
 import ConfirmModal from './ConfirmModal'
 
@@ -72,19 +72,40 @@ export default function AdminAnggota({ showToast, onUpdate }) {
     } catch { /* ignore */ }
   }
 
-  // Handle Excel file read
-  const handleFileUpload = (e) => {
+  // Handle XLSX/CSV file read
+  const handleFileUpload = async (e) => {
     const file = e.target.files[0]
     if (!file) return
 
-    const reader = new FileReader()
-    reader.onload = (evt) => {
-      try {
-        const bstr = evt.target.result
-        const wb = XLSX.read(bstr, { type: 'binary' })
-        const wsname = wb.SheetNames[0]
-        const ws = wb.Sheets[wsname]
-        const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' })
+    const extension = file.name.toLowerCase().split('.').pop()
+    if (!['xlsx', 'csv'].includes(extension) || file.size > 5 * 1024 * 1024) {
+      alert('File harus berupa XLSX atau CSV dengan ukuran maksimal 5 MB.')
+      e.target.value = ''
+      return
+    }
+
+    try {
+      let rows
+      if (extension === 'xlsx') {
+        rows = await readXlsxFile(file)
+      } else {
+        const csv = await file.text()
+        rows = csv.split(/\r?\n/).filter(Boolean).map(line => {
+          const values = []
+          let value = ''
+          let quoted = false
+          for (let i = 0; i < line.length; i += 1) {
+            const char = line[i]
+            if (char === '"' && line[i + 1] === '"') { value += '"'; i += 1 }
+            else if (char === '"') quoted = !quoted
+            else if (char === ',' && !quoted) { values.push(value); value = '' }
+            else value += char
+          }
+          values.push(value)
+          return values
+        })
+      }
+
         const normalizeHeader = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, '')
         const findColumn = (headers, aliases) => headers.findIndex(header => aliases.includes(normalizeHeader(header)))
         const headerRowIndex = rows.findIndex(row => {
@@ -134,11 +155,10 @@ export default function AdminAnggota({ showToast, onUpdate }) {
         }
 
         setImportPreview(parsed)
-      } catch (err) {
-        alert('Gagal membaca file Excel: ' + err.message)
-      }
+    } catch (err) {
+      alert('Gagal membaca file spreadsheet: ' + err.message)
     }
-    reader.readAsBinaryString(file)
+    e.target.value = ''
   }
 
   const handleBulkSubmit = async () => {
@@ -375,14 +395,14 @@ export default function AdminAnggota({ showToast, onUpdate }) {
           <div className="admin-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 650 }}>
             <h2>📊 Import Data Anggota dari Excel</h2>
             <p style={{ fontSize: 13, color: 'var(--admin-text-dim)', marginBottom: 16 }}>
-              Pilih file Excel (<strong>.xlsx</strong>, <strong>.xls</strong>, atau <strong>.csv</strong>). Header dapat berada setelah judul tabel. Kolom yang didukung: <strong>NIM atau No</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, dan <strong>Angkatan</strong>.
+              Pilih file Excel (<strong>.xlsx</strong> atau <strong>.csv</strong>). Header dapat berada setelah judul tabel. Kolom yang didukung: <strong>NIM atau No</strong>, <strong>Nama</strong>, <strong>Jurusan</strong>, dan <strong>Angkatan</strong>.
             </p>
 
             <div className="admin-form-group">
               <label>Upload File Excel / CSV</label>
               <input
                 type="file"
-                accept=".xlsx, .xls, .csv"
+                accept=".xlsx, .csv"
                 className="admin-input"
                 onChange={handleFileUpload}
               />

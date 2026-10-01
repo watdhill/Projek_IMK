@@ -75,49 +75,6 @@ export default function AdminLogin() {
           {loading ? 'Memproses...' : 'Masuk'}
         </button>
 
-        {/* Quick Demo Login Presets */}
-        <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid #e2e8f0', textAlign: 'center' }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
-            ⚡ Login Cepat Uji Coba Akses:
-          </div>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button
-              type="button"
-              style={{ padding: '4px 10px', fontSize: 12, borderRadius: 6, border: '1px solid #cbd5e1', background: '#f8fafc', cursor: 'pointer' }}
-              onClick={() => { setUsername('admin'); setPassword('admin123'); }}
-            >
-              👑 Admin
-            </button>
-            <button
-              type="button"
-              style={{ padding: '4px 10px', fontSize: 12, borderRadius: 6, border: '1px solid #10b981', background: '#ecfdf5', color: '#047857', fontWeight: 600, cursor: 'pointer' }}
-              onClick={() => { setUsername('bendahara'); setPassword('bendahara123'); }}
-            >
-              💰 Bendahara
-            </button>
-            <button
-              type="button"
-              style={{ padding: '4px 10px', fontSize: 12, borderRadius: 6, border: '1px solid #3b82f6', background: '#eff6ff', color: '#1d4ed8', fontWeight: 600, cursor: 'pointer' }}
-              onClick={() => { setUsername('psdm'); setPassword('psdm123'); }}
-            >
-              🏢 PSDM
-            </button>
-            <button
-              type="button"
-              style={{ padding: '4px 10px', fontSize: 12, borderRadius: 6, border: '1px solid #3b82f6', background: '#eff6ff', color: '#1d4ed8', fontWeight: 600, cursor: 'pointer' }}
-              onClick={() => { setUsername('infokom'); setPassword('infokom123'); }}
-            >
-              🏢 Infokom
-            </button>
-            <button
-              type="button"
-              style={{ padding: '4px 10px', fontSize: 12, borderRadius: 6, border: '1px solid #3b82f6', background: '#eff6ff', color: '#1d4ed8', fontWeight: 600, cursor: 'pointer' }}
-              onClick={() => { setUsername('kestari'); setPassword('kestari123'); }}
-            >
-              🏢 Kestari
-            </button>
-          </div>
-        </div>
       </form>
     </div>
   )

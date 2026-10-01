@@ -222,7 +222,7 @@ export default function AdminUsers({ showToast, onUpdate }) {
                 value={modal.data.password}
                 onChange={(e) => setField('password', e.target.value)}
                 placeholder="Masukkan password baru"
-                required
+                required={modal.mode === 'add'}
               />
             </div>
 

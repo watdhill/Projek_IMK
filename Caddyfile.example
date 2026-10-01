@@ -1,0 +1,19 @@
+# Rename to Caddyfile and replace the domain before deployment.
+# Caddy will obtain and renew the HTTPS certificate automatically.
+
+imk.example.com {
+    root * C:\Users\ASUS\Projek IMK\frontend\dist
+
+    handle /api/* {
+        reverse_proxy 127.0.0.1:4000
+    }
+
+    handle /uploads/* {
+        reverse_proxy 127.0.0.1:4000
+    }
+
+    handle {
+        try_files {path} /index.html
+        file_server
+    }
+}

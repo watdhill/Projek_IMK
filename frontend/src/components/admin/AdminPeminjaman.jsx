@@ -35,6 +35,17 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
+  const openDocument = async (request, type, title, url) => {
+    try {
+      const res = await fetch(url, { headers: apiHeaders() })
+      if (!res.ok) throw new Error('Dokumen tidak dapat dibuka')
+      const blobUrl = URL.createObjectURL(await res.blob())
+      setPreviewDoc({ title, url: blobUrl, isPdf: url.toLowerCase().endsWith('.pdf') })
+    } catch {
+      alert('Dokumen tidak dapat dibuka')
+    }
+  }
+
   const handleUpdateStatus = async (req, newStatus) => {
     try {
       const res = await fetch(`/api/admin/peminjaman/${req.id}`, {
@@ -183,11 +194,7 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
                             type="button"
                             className="admin-btn admin-btn-ghost admin-btn-sm"
                             style={{ padding: '4px 8px', fontSize: '0.85em' }}
-                            onClick={() => setPreviewDoc({
-                              title: `Surat Peminjaman - ${req.name}`,
-                              url: req.suratUrl,
-                              isPdf: req.suratUrl.toLowerCase().endsWith('.pdf')
-                            })}
+                            onClick={() => openDocument(req, 'surat', `Surat Peminjaman - ${req.name}`, req.suratUrl)}
                           >
                             📄 Surat
                           </button>
@@ -197,11 +204,7 @@ export default function AdminPeminjaman({ showToast, onUpdate }) {
                             type="button"
                             className="admin-btn admin-btn-ghost admin-btn-sm"
                             style={{ padding: '4px 8px', fontSize: '0.85em' }}
-                            onClick={() => setPreviewDoc({
-                              title: `Bukti Transfer - ${req.name}`,
-                              url: req.buktiUrl,
-                              isPdf: req.buktiUrl.toLowerCase().endsWith('.pdf')
-                            })}
+                            onClick={() => openDocument(req, 'bukti', `Bukti Transfer - ${req.name}`, req.buktiUrl)}
                           >
                             💳 Bukti TF
                           </button>

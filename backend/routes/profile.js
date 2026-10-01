@@ -1,164 +1,76 @@
 const express = require('express')
-const fs = require('fs')
-const path = require('path')
 const router = express.Router()
-
-// ── Data persistence ────────────────────────────────────────────────
-const DATA_FILE = path.join(__dirname, '..', 'data.json')
-
-const defaultData = {
-  profile: {
-    name: 'Ikatan Mahasiswa Kerinci - Universitas Andalas',
-    description: 'Organisasi ini bergerak di bidang pendidikan dan pemberdayaan masyarakat.',
-    visi: '',
-    misi: '',
-    visiMisi: '',
-    prestasi: '',
-    struktur: ''
-  },
-  contact: {
-    email: 'contact@organisasi.example',
-    phone: '+62 812-3456-7890',
-    address: 'Jalan Contoh No. 1, Kota',
-    instagram: '',
-    facebook: '',
-    website: '',
-  },
-  users: [
-    { id: 1, username: 'admin', password: 'admin123', role: 'admin', name: 'Super Admin' },
-    { id: 2, username: 'bendahara', password: 'bendahara123', role: 'bendahara', name: 'Bendahara' },
-    { id: 3, username: 'kestari', password: 'kestari123', role: 'divisi', division_key: 'kestari', name: 'Kesekretariatan (Kestari)' },
-    { id: 4, username: 'psdm', password: 'psdm123', role: 'divisi', division_key: 'psdm', name: 'PSDM' },
-    { id: 5, username: 'kpp', password: 'kpp123', role: 'divisi', division_key: 'kpp', name: 'KPP' },
-    { id: 6, username: 'infokom', password: 'infokom123', role: 'divisi', division_key: 'infokom', name: 'Infokom' },
-    { id: 7, username: 'olahraga', password: 'olahraga123', role: 'divisi', division_key: 'olahraga', name: 'Olahraga' },
-    { id: 8, username: 'danus', password: 'danus123', role: 'divisi', division_key: 'danus', name: 'Danus' },
-    { id: 9, username: 'sosroh', password: 'sosroh123', role: 'divisi', division_key: 'sosroh', name: 'Sosroh' },
-    { id: 10, username: 'senbudpar', password: 'senbudpar123', role: 'divisi', division_key: 'senbudpar', name: 'Senbudpar' },
-    { id: 11, username: 'inti', password: 'inti123', role: 'divisi', division_key: 'inti', name: 'Pengurus Inti' }
-  ],
-  members: [
-    { id: 1, name: 'Nama Pengurus 1', role: 'Ketua', avatar: 'https://via.placeholder.com/96' },
-    { id: 2, name: 'Nama Pengurus 2', role: 'Sekretaris', avatar: 'https://via.placeholder.com/96' },
-  ],
-  divisions: [
-    { key: 'inti', name: 'Inti', description: 'Pengurus inti organisasi.', avatar: 'https://via.placeholder.com/1200x600?text=Inti' },
-    { key: 'psdm', name: 'Pengembangan Sumber Daya Manusia (PSDM)', description: 'Mengelola pelatihan, pengembangan, dan kapasitas anggota.', avatar: 'https://via.placeholder.com/1200x600?text=PSDM' },
-    { key: 'kestari', name: 'Kesekretariatan (Kestari)', description: 'Menangani administrasi dan dokumentasi organisasi.', avatar: 'https://via.placeholder.com/1200x600?text=Kestari' },
-    { key: 'kpp', name: 'Konseling dan Pemberdayaan Perempuan (KPP)', description: 'Program konseling dan pemberdayaan wanita.', avatar: 'https://via.placeholder.com/1200x600?text=KPP' },
-    { key: 'infokom', name: 'Informasi dan Komunikasi (Infokom)', description: 'Mengurus komunikasi, media, dan publikasi.', avatar: 'https://via.placeholder.com/1200x600?text=Infokom' },
-    { key: 'olahraga', name: 'Olahraga', description: 'Menyelenggarakan kegiatan olahraga dan kebugaran.', avatar: 'https://via.placeholder.com/1200x600?text=Olahraga' },
-    { key: 'danus', name: 'Dana dan Usaha (Danus)', description: 'Mengelola dana, sponsor, dan usaha organisasi.', avatar: 'https://via.placeholder.com/1200x600?text=Danus' },
-    { key: 'sosroh', name: 'Sosial dan Rohani (Sosroh)', description: 'Program sosial dan kegiatan keagamaan/rohani.', avatar: 'https://via.placeholder.com/1200x600?text=Sosroh' },
-    { key: 'senbudpar', name: 'Seni Budaya dan Pariwisata (Senbudpar)', description: 'Mengembangkan seni, budaya, dan pariwisata organisasi.', avatar: 'https://via.placeholder.com/1200x600?text=Senbudpar' },
-  ],
-  programs: [
-    { id: 1, title: 'Musyawarah Besar', description: 'Agenda tahunan untuk menentukan arah organisasi.', date: '2026-01-15', status: 'terlaksana', execution_date: '2026-01-15', penanggung_jawab: 'Ketua Umum' },
-    { id: 2, title: 'Bakti Sosial', description: 'Kegiatan sosial membantu masyarakat sekitar.', date: '2026-03-20', status: 'sedang_berjalan', execution_date: '2026-03-20', penanggung_jawab: 'Kadiv Sosroh' },
-  ],
-  slides: [
-    { id: 1, src: 'https://via.placeholder.com/1200x600?text=Slide+1', caption: 'Selamat Datang' },
-    { id: 2, src: 'https://via.placeholder.com/1200x600?text=Slide+2', caption: 'IMK-UNAND' },
-  ],
-  finances: [],
-  inventory: [],
-  anggota: [],
-  peminjaman: [],
-  prestasiList: [],
-  visitorLogs: [],
-  gallery: [],
-  peminjamanSettings: {
-    bank: 'BNI',
-    rek: '0000000',
-    name: 'Ikatan Mahasiswa Kerinci'
-  }
-}
-
-function loadData() {
-  try {
-    if (fs.existsSync(DATA_FILE)) {
-      const raw = fs.readFileSync(DATA_FILE, 'utf-8')
-      const parsed = JSON.parse(raw)
-      // Merge with defaults so new fields always exist
-      return { ...defaultData, ...parsed }
-    }
-  } catch (e) {
-    console.error('Error loading data.json, using defaults:', e.message)
-  }
-  return JSON.parse(JSON.stringify(defaultData))
-}
-
-function saveData(data) {
-  try {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8')
-  } catch (e) {
-    console.error('Error saving data.json:', e.message)
-  }
-}
-
-let data = loadData()
-
-// helper: generate next id
-function nextId(arr) {
-  if (!arr.length) return 1
-  return Math.max(...arr.map(i => i.id || 0)) + 1
-}
+const db = require('../db')
+const crypto = require('crypto')
 
 // ── Public read endpoints ───────────────────────────────────────────
 
-router.get('/public-stats', (req, res) => {
-  res.json({
-    membersCount: (data.members || []).length,
-    divisionsCount: (data.divisions || []).length,
-    anggotaCount: (data.anggota || []).length
-  })
+router.get('/public-stats', async (req, res) => {
+  const membersCount = await db.Member.count()
+  const divisionsCount = await db.Division.count()
+  const anggotaCount = await db.Anggota.count()
+  res.json({ membersCount, divisionsCount, anggotaCount })
 })
 
-router.get('/prestasi', (req, res) => {
-  res.json(data.prestasiList || [])
+router.get('/prestasi', async (req, res) => {
+  const data = await db.Prestasi.findAll()
+  res.json(data)
 })
 
-router.get('/gallery', (req, res) => {
-  res.json(data.gallery || [])
+router.get('/gallery', async (req, res) => {
+  const data = await db.Gallery.findAll()
+  res.json(data.map(d => {
+    const item = d.toJSON()
+    if (typeof item.photos === 'string') {
+      try { item.photos = JSON.parse(item.photos) } catch (e) { item.photos = [] }
+    }
+    return item
+  }))
 })
 
-router.get('/profile', (req, res) => {
-  res.json(data.profile)
+router.get('/profile', async (req, res) => {
+  const profile = await db.Profile.findOne()
+  res.json(profile || {})
 })
 
-router.get('/contact', (req, res) => {
-  res.json(data.contact)
+router.get('/contact', async (req, res) => {
+  const contact = await db.Contact.findOne()
+  res.json(contact || {})
 })
 
-router.get('/members', (req, res) => {
-  res.json(data.members)
+router.get('/members', async (req, res) => {
+  const data = await db.Member.findAll()
+  res.json(data)
 })
 
-router.get('/divisions', (req, res) => {
-  res.json(data.divisions)
+router.get('/divisions', async (req, res) => {
+  const data = await db.Division.findAll()
+  res.json(data)
 })
 
-router.get('/divisions/:key', (req, res) => {
-  const found = data.divisions.find(d => d.key === req.params.key)
+router.get('/divisions/:key', async (req, res) => {
+  const found = await db.Division.findByPk(req.params.key)
   if (found) return res.json(found)
   res.status(404).json({ error: 'Division not found' })
 })
 
-router.get('/programs', (req, res) => {
-  res.json(data.programs)
+router.get('/programs', async (req, res) => {
+  const data = await db.Program.findAll()
+  res.json(data)
 })
 
-router.get('/slides', (req, res) => {
-  res.json(data.slides)
+router.get('/slides', async (req, res) => {
+  const data = await db.Slide.findAll()
+  res.json(data)
 })
 
-router.get('/inventory', (req, res) => {
-  const inventory = data.inventory || []
-  const peminjaman = data.peminjaman || []
+router.get('/inventory', async (req, res) => {
+  const inventory = await db.Inventory.findAll()
+  const peminjaman = await db.Peminjaman.findAll({ where: { status: 'Disetujui' } })
   
   const mapped = inventory.map(item => {
-    const isBorrowed = peminjaman.some(p => String(p.itemId) === String(item.id) && p.status === 'Disetujui')
-    return { ...item, isBorrowed }
+    const isBorrowed = peminjaman.some(p => String(p.itemId) === String(item.id))
+    return { ...item.toJSON(), isBorrowed }
   })
   
   res.json(mapped)
@@ -167,486 +79,398 @@ router.get('/inventory', (req, res) => {
 // ── Admin CRUD endpoints ────────────────────────────────────────────
 
 // Profile
-router.put('/admin/profile', (req, res) => {
-  data.profile = { ...data.profile, ...req.body }
-  saveData(data)
-  res.json(data.profile)
+router.put('/admin/profile', async (req, res) => {
+  let profile = await db.Profile.findOne()
+  if (!profile) {
+    profile = await db.Profile.create(req.body)
+  } else {
+    await profile.update(req.body)
+  }
+  res.json(profile)
 })
 
 // Contact
-router.put('/admin/contact', (req, res) => {
-  data.contact = { ...data.contact, ...req.body }
-  saveData(data)
-  res.json(data.contact)
+router.put('/admin/contact', async (req, res) => {
+  let contact = await db.Contact.findOne()
+  if (!contact) {
+    contact = await db.Contact.create(req.body)
+  } else {
+    await contact.update(req.body)
+  }
+  res.json(contact)
 })
 
 // Members
-router.get('/admin/members', (req, res) => {
-  let members = data.members || []
+router.get('/admin/members', async (req, res) => {
+  let where = {}
   if (req.user && req.user.role === 'divisi') {
-    members = members.filter(m => m.division_key === req.user.division_key)
+    where.division_key = req.user.division_key
   }
+  const members = await db.Member.findAll({ where })
   res.json(members)
 })
 
-router.post('/admin/members', (req, res) => {
+router.post('/admin/members', async (req, res) => {
   const isDivisi = req.user && req.user.role === 'divisi'
   const divKey = isDivisi ? req.user.division_key : (req.body.division_key || '')
-  const member = { ...req.body, division_key: divKey, id: nextId(data.members || []) }
-  if (!data.members) data.members = []
-  data.members.push(member)
-  saveData(data)
+  const member = await db.Member.create({ ...req.body, division_key: divKey })
   res.status(201).json(member)
 })
 
-router.put('/admin/members/:id', (req, res) => {
-  if (!data.members) data.members = []
-  const idx = data.members.findIndex(m => String(m.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Member not found' })
+router.put('/admin/members/:id', async (req, res) => {
+  const member = await db.Member.findByPk(req.params.id)
+  if (!member) return res.status(404).json({ error: 'Member not found' })
 
-  const existing = data.members[idx]
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Pengurus dari divisi lain tidak dapat diubah.' })
+  if (isDivisi && member.division_key && member.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-
-  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : existing.division_key)
-  data.members[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
-  saveData(data)
-  res.json(data.members[idx])
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : member.division_key)
+  await member.update({ ...req.body, division_key: updatedDivKey })
+  res.json(member)
 })
 
-router.delete('/admin/members/:id', (req, res) => {
-  if (!data.members) data.members = []
-  const idx = data.members.findIndex(m => String(m.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Member not found' })
-
-  const existing = data.members[idx]
+router.delete('/admin/members/:id', async (req, res) => {
+  const member = await db.Member.findByPk(req.params.id)
+  if (!member) return res.status(404).json({ error: 'Member not found' })
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Pengurus dari divisi lain tidak dapat dihapus.' })
+  if (isDivisi && member.division_key && member.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-
-  data.members.splice(idx, 1)
-  saveData(data)
+  await member.destroy()
   res.json({ success: true })
 })
 
 // Divisions
-router.post('/admin/divisions', (req, res) => {
+router.post('/admin/divisions', async (req, res) => {
   const div = { ...req.body }
-  if (!div.key) {
-    div.key = div.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  if (!div.key) div.key = div.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  try {
+    const newDiv = await db.Division.create(div)
+    res.status(201).json(newDiv)
+  } catch(e) {
+    res.status(409).json({ error: 'Division key already exists' })
   }
-  // prevent duplicate keys
-  if (data.divisions.find(d => String(d.key) === String(div.key))) {
-    return res.status(409).json({ error: 'Division key already exists' })
-  }
-  data.divisions.push(div)
-  saveData(data)
-  res.status(201).json(div)
 })
 
-router.put('/admin/divisions/:key', (req, res) => {
-  const idx = data.divisions.findIndex(d => String(d.key) === String(req.params.key))
-  if (idx === -1) return res.status(404).json({ error: 'Division not found' })
-  data.divisions[idx] = { ...data.divisions[idx], ...req.body, key: req.params.key }
-  saveData(data)
-  res.json(data.divisions[idx])
+router.put('/admin/divisions/:key', async (req, res) => {
+  const div = await db.Division.findByPk(req.params.key)
+  if (!div) return res.status(404).json({ error: 'Division not found' })
+  await div.update(req.body)
+  res.json(div)
 })
 
-router.delete('/admin/divisions/:key', (req, res) => {
-  data.divisions = data.divisions.filter(d => String(d.key) !== String(req.params.key))
-  saveData(data)
+router.delete('/admin/divisions/:key', async (req, res) => {
+  await db.Division.destroy({ where: { key: req.params.key } })
   res.json({ success: true })
 })
 
 // Programs
-router.post('/admin/programs', (req, res) => {
+router.post('/admin/programs', async (req, res) => {
   const isDivisi = req.user && req.user.role === 'divisi'
   const divKey = isDivisi ? req.user.division_key : (req.body.division_key || 'umum')
-  const program = { ...req.body, division_key: divKey, id: nextId(data.programs) }
-  data.programs.push(program)
-  saveData(data)
+  const program = await db.Program.create({ ...req.body, id: Date.now().toString(), division_key: divKey })
   res.status(201).json(program)
 })
 
-router.put('/admin/programs/:id', (req, res) => {
-  const idx = data.programs.findIndex(p => String(p.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Program not found' })
-  const existing = data.programs[idx]
+router.put('/admin/programs/:id', async (req, res) => {
+  const program = await db.Program.findByPk(req.params.id)
+  if (!program) return res.status(404).json({ error: 'Program not found' })
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Program dari divisi lain tidak dapat diubah.' })
+  if (isDivisi && program.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : existing.division_key)
-  data.programs[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
-  saveData(data)
-  res.json(data.programs[idx])
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : program.division_key)
+  await program.update({ ...req.body, division_key: updatedDivKey })
+  res.json(program)
 })
 
-router.delete('/admin/programs/:id', (req, res) => {
-  const idx = data.programs.findIndex(p => String(p.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Program not found' })
-  const existing = data.programs[idx]
+router.delete('/admin/programs/:id', async (req, res) => {
+  const program = await db.Program.findByPk(req.params.id)
+  if (!program) return res.status(404).json({ error: 'Program not found' })
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Program dari divisi lain tidak dapat dihapus.' })
+  if (isDivisi && program.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-  data.programs.splice(idx, 1)
-  saveData(data)
+  await program.destroy()
   res.json({ success: true })
 })
 
 // Slides
-router.post('/admin/slides', (req, res) => {
-  const slide = { ...req.body, id: nextId(data.slides) }
-  data.slides.push(slide)
-  saveData(data)
+router.post('/admin/slides', async (req, res) => {
+  const slide = await db.Slide.create({ ...req.body, id: Date.now().toString() })
   res.status(201).json(slide)
 })
 
-router.put('/admin/slides/:id', (req, res) => {
-  const idx = data.slides.findIndex(s => String(s.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Slide not found' })
-  data.slides[idx] = { ...data.slides[idx], ...req.body, id: data.slides[idx].id }
-  saveData(data)
-  res.json(data.slides[idx])
+router.put('/admin/slides/:id', async (req, res) => {
+  const slide = await db.Slide.findByPk(req.params.id)
+  if (!slide) return res.status(404).json({ error: 'Slide not found' })
+  await slide.update(req.body)
+  res.json(slide)
 })
 
-router.delete('/admin/slides/:id', (req, res) => {
-  data.slides = data.slides.filter(s => String(s.id) !== String(req.params.id))
-  saveData(data)
+router.delete('/admin/slides/:id', async (req, res) => {
+  await db.Slide.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Prestasi
-router.get('/admin/prestasi', (req, res) => {
-  res.json(data.prestasiList || [])
+router.get('/admin/prestasi', async (req, res) => {
+  res.json(await db.Prestasi.findAll())
 })
 
-router.post('/admin/prestasi', (req, res) => {
-  const item = { ...req.body, id: nextId(data.prestasiList || []) }
-  if (!data.prestasiList) data.prestasiList = []
-  data.prestasiList.push(item)
-  saveData(data)
+router.post('/admin/prestasi', async (req, res) => {
+  const item = await db.Prestasi.create(req.body)
   res.status(201).json(item)
 })
 
-router.put('/admin/prestasi/:id', (req, res) => {
-  if (!data.prestasiList) data.prestasiList = []
-  const idx = data.prestasiList.findIndex(p => String(p.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Prestasi not found' })
-  data.prestasiList[idx] = { ...data.prestasiList[idx], ...req.body, id: data.prestasiList[idx].id }
-  saveData(data)
-  res.json(data.prestasiList[idx])
+router.put('/admin/prestasi/:id', async (req, res) => {
+  const item = await db.Prestasi.findByPk(req.params.id)
+  if (!item) return res.status(404).json({ error: 'Prestasi not found' })
+  await item.update(req.body)
+  res.json(item)
 })
 
-router.delete('/admin/prestasi/:id', (req, res) => {
-  if (!data.prestasiList) data.prestasiList = []
-  data.prestasiList = data.prestasiList.filter(p => String(p.id) !== String(req.params.id))
-  saveData(data)
+router.delete('/admin/prestasi/:id', async (req, res) => {
+  await db.Prestasi.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
-// Gallery (Album)
-router.get('/admin/gallery', (req, res) => {
-  res.json(data.gallery || [])
+// Gallery
+router.get('/admin/gallery', async (req, res) => {
+  const data = await db.Gallery.findAll()
+  res.json(data.map(d => {
+    const item = d.toJSON()
+    if (typeof item.photos === 'string') {
+      try { item.photos = JSON.parse(item.photos) } catch (e) { item.photos = [] }
+    }
+    return item
+  }))
 })
 
-router.post('/admin/gallery', (req, res) => {
+router.post('/admin/gallery', async (req, res) => {
   if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
     return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
   }
-  const item = {
-    ...req.body,
-    id: nextId(data.gallery || []),
-    photos: req.body.photos || []
-  }
-  if (!data.gallery) data.gallery = []
-  data.gallery.push(item)
-  saveData(data)
+  const item = await db.Gallery.create({ ...req.body, id: Date.now().toString(), photos: req.body.photos || [] })
   res.status(201).json(item)
 })
 
-router.put('/admin/gallery/:id', (req, res) => {
+router.put('/admin/gallery/:id', async (req, res) => {
   if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
-    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
+    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri.' })
   }
-  if (!data.gallery) data.gallery = []
-  const idx = data.gallery.findIndex(g => String(g.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Gallery item not found' })
-  data.gallery[idx] = { ...data.gallery[idx], ...req.body, id: data.gallery[idx].id }
-  saveData(data)
-  res.json(data.gallery[idx])
+  const item = await db.Gallery.findByPk(req.params.id)
+  if (!item) return res.status(404).json({ error: 'Gallery item not found' })
+  await item.update(req.body)
+  res.json(item)
 })
 
-router.delete('/admin/gallery/:id', (req, res) => {
+router.delete('/admin/gallery/:id', async (req, res) => {
   if (req.user && req.user.role === 'divisi' && req.user.division_key !== 'infokom') {
-    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri foto.' })
+    return res.status(403).json({ error: 'Hanya Admin dan Divisi Infokom yang dapat mengelola galeri.' })
   }
-  if (!data.gallery) data.gallery = []
-  data.gallery = data.gallery.filter(g => String(g.id) !== String(req.params.id))
-  saveData(data)
+  await db.Gallery.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Finances
-router.get('/admin/finances', (req, res) => {
-  res.json(data.finances || [])
+router.get('/admin/finances', async (req, res) => {
+  res.json(await db.Finance.findAll())
 })
 
-router.post('/admin/finances', (req, res) => {
-  const finance = { ...req.body, id: nextId(data.finances || []) }
-  if (!data.finances) data.finances = []
-  data.finances.push(finance)
-  saveData(data)
-  res.status(201).json(finance)
+router.post('/admin/finances', async (req, res) => {
+  const item = await db.Finance.create({ ...req.body, id: Date.now().toString() })
+  res.status(201).json(item)
 })
 
-router.put('/admin/finances/:id', (req, res) => {
-  if (!data.finances) data.finances = []
-  const idx = data.finances.findIndex(f => String(f.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Finance record not found' })
-  data.finances[idx] = { ...data.finances[idx], ...req.body, id: data.finances[idx].id }
-  saveData(data)
-  res.json(data.finances[idx])
+router.put('/admin/finances/:id', async (req, res) => {
+  const item = await db.Finance.findByPk(req.params.id)
+  if (!item) return res.status(404).json({ error: 'Finance record not found' })
+  await item.update(req.body)
+  res.json(item)
 })
 
-router.delete('/admin/finances/:id', (req, res) => {
-  if (!data.finances) data.finances = []
-  data.finances = data.finances.filter(f => String(f.id) !== String(req.params.id))
-  saveData(data)
+router.delete('/admin/finances/:id', async (req, res) => {
+  await db.Finance.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Inventory
-router.get('/admin/inventory', (req, res) => {
-  res.json(data.inventory || [])
+router.get('/admin/inventory', async (req, res) => {
+  res.json(await db.Inventory.findAll())
 })
 
-router.post('/admin/inventory', (req, res) => {
-  const item = { ...req.body, id: nextId(data.inventory || []) }
-  if (!data.inventory) data.inventory = []
-  data.inventory.push(item)
-  saveData(data)
+router.post('/admin/inventory', async (req, res) => {
+  const item = await db.Inventory.create({ ...req.body, id: Date.now().toString() })
   res.status(201).json(item)
 })
 
-router.put('/admin/inventory/:id', (req, res) => {
-  if (!data.inventory) data.inventory = []
-  const idx = data.inventory.findIndex(i => String(i.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Inventory item not found' })
-  data.inventory[idx] = { ...data.inventory[idx], ...req.body, id: data.inventory[idx].id }
-  saveData(data)
-  res.json(data.inventory[idx])
+router.put('/admin/inventory/:id', async (req, res) => {
+  const item = await db.Inventory.findByPk(req.params.id)
+  if (!item) return res.status(404).json({ error: 'Inventory item not found' })
+  await item.update(req.body)
+  res.json(item)
 })
 
-router.delete('/admin/inventory/:id', (req, res) => {
-  if (!data.inventory) data.inventory = []
-  data.inventory = data.inventory.filter(i => String(i.id) !== String(req.params.id))
-  saveData(data)
+router.delete('/admin/inventory/:id', async (req, res) => {
+  await db.Inventory.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Peminjaman
-router.get('/admin/peminjaman', (req, res) => {
-  res.json(data.peminjaman || [])
+router.get('/admin/peminjaman', async (req, res) => {
+  const requests = await db.Peminjaman.findAll()
+  res.json(requests.map(request => {
+    const data = request.toJSON()
+    if (data.suratUrl) data.suratUrl = `/api/admin/peminjaman/${data.id}/document/surat`
+    if (data.buktiUrl) data.buktiUrl = `/api/admin/peminjaman/${data.id}/document/bukti`
+    return data
+  }))
 })
 
-router.put('/admin/peminjaman/:id', (req, res) => {
-  if (!data.peminjaman) data.peminjaman = []
-  const idx = data.peminjaman.findIndex(p => String(p.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Permintaan peminjaman tidak ditemukan' })
-  data.peminjaman[idx] = { ...data.peminjaman[idx], ...req.body, id: data.peminjaman[idx].id }
-  saveData(data)
-  res.json(data.peminjaman[idx])
+router.put('/admin/peminjaman/:id', async (req, res) => {
+  const item = await db.Peminjaman.findByPk(req.params.id)
+  if (!item) return res.status(404).json({ error: 'Permintaan tidak ditemukan' })
+  await item.update(req.body)
+  res.json(item)
 })
 
-router.delete('/admin/peminjaman/:id', (req, res) => {
-  if (!data.peminjaman) data.peminjaman = []
-  data.peminjaman = data.peminjaman.filter(p => String(p.id) !== String(req.params.id))
-  saveData(data)
+router.delete('/admin/peminjaman/:id', async (req, res) => {
+  await db.Peminjaman.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Users Management
-router.get('/admin/users', (req, res) => {
-  res.json(data.users || [])
+router.get('/admin/users', async (req, res) => {
+  const users = await db.User.findAll()
+  res.json(users.map(sanitizeUser))
 })
 
-router.post('/admin/users', (req, res) => {
-  if (!data.users) data.users = []
+router.post('/admin/users', async (req, res) => {
   const { username, password, role, division_key, name } = req.body
-  if (!username || !password || !role) {
+  if (!username || !password || !role || !['admin', 'bendahara', 'divisi'].includes(role)) {
     return res.status(400).json({ error: 'Username, password, dan role wajib diisi' })
   }
-  const existing = data.users.find(u => u.username.toLowerCase() === username.toLowerCase())
+  const existing = await db.User.findOne({ where: { username } })
   if (existing) {
     return res.status(409).json({ error: 'Username sudah digunakan' })
   }
-  const newUser = {
-    id: nextId(data.users),
+  const newUser = await db.User.create({
     username: username.trim(),
-    password: password.trim(),
+    password: hashPassword(password.trim()),
     role: role.trim(),
     name: name ? name.trim() : username.trim(),
     division_key: role === 'divisi' ? (division_key || null) : null
-  }
-  data.users.push(newUser)
-  saveData(data)
-  res.status(201).json(newUser)
+  })
+  res.status(201).json(sanitizeUser(newUser))
 })
 
-router.put('/admin/users/:id', (req, res) => {
-  if (!data.users) data.users = []
-  const idx = data.users.findIndex(u => String(u.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'User tidak ditemukan' })
-  const existing = data.users[idx]
+router.put('/admin/users/:id', async (req, res) => {
+  const user = await db.User.findByPk(req.params.id)
+  if (!user) return res.status(404).json({ error: 'User tidak ditemukan' })
+  
   const { username, password, role, division_key, name } = req.body
-  if (username && username.toLowerCase() !== existing.username.toLowerCase()) {
-    if (data.users.some(u => String(u.id) !== String(req.params.id) && u.username.toLowerCase() === username.toLowerCase())) {
+  if (role && !['admin', 'bendahara', 'divisi'].includes(role)) {
+    return res.status(400).json({ error: 'Role tidak valid' })
+  }
+  if (username && username.toLowerCase() !== user.username.toLowerCase()) {
+    const existing = await db.User.findOne({ where: { username } })
+    if (existing && String(existing.id) !== String(req.params.id)) {
       return res.status(409).json({ error: 'Username sudah digunakan' })
     }
   }
-  data.users[idx] = {
-    ...existing,
+  await user.update({
     ...(username ? { username: username.trim() } : {}),
-    ...(password ? { password: password.trim() } : {}),
+    ...(password ? { password: hashPassword(password.trim()) } : {}),
     ...(role ? { role: role.trim() } : {}),
     ...(name !== undefined ? { name: name.trim() } : {}),
-    division_key: (role || existing.role) === 'divisi' ? (division_key !== undefined ? division_key : existing.division_key) : null
-  }
-  saveData(data)
-  res.json(data.users[idx])
+    division_key: (role || user.role) === 'divisi' ? (division_key !== undefined ? division_key : user.division_key) : null
+  })
+  res.json(sanitizeUser(user))
 })
 
-router.delete('/admin/users/:id', (req, res) => {
-  if (!data.users) data.users = []
+router.delete('/admin/users/:id', async (req, res) => {
   if (String(req.params.id) === '1') {
     return res.status(400).json({ error: 'Akun Super Admin utama tidak dapat dihapus' })
   }
-  data.users = data.users.filter(u => String(u.id) !== String(req.params.id))
-  saveData(data)
+  await db.User.destroy({ where: { id: req.params.id } })
   res.json({ success: true })
 })
 
 // Anggota CRUD
-router.get('/admin/anggota', (req, res) => {
-  let list = data.anggota || []
+router.get('/admin/anggota', async (req, res) => {
+  let where = {}
   if (req.user && req.user.role === 'divisi') {
-    list = list.filter(a => a.division_key === req.user.division_key)
+    where.division_key = req.user.division_key
   }
-  res.json(list)
+  res.json(await db.Anggota.findAll({ where }))
 })
 
-router.post('/admin/anggota', (req, res) => {
-  if (!data.anggota) data.anggota = []
+router.post('/admin/anggota', async (req, res) => {
   const isDivisi = req.user && req.user.role === 'divisi'
   const divKey = isDivisi ? req.user.division_key : (req.body.division_key || '')
-  const record = {
-    ...req.body,
-    division_key: divKey,
-    id: nextId(data.anggota)
-  }
-  data.anggota.push(record)
-  saveData(data)
+  const record = await db.Anggota.create({ ...req.body, division_key: divKey })
   res.status(201).json(record)
 })
 
-router.put('/admin/anggota/:id', (req, res) => {
-  if (!data.anggota) data.anggota = []
-  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
-
-  const existing = data.anggota[idx]
+router.put('/admin/anggota/:id', async (req, res) => {
+  const anggota = await db.Anggota.findByPk(req.params.id)
+  if (!anggota) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
+  
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Data anggota divisi lain tidak dapat diubah.' })
+  if (isDivisi && anggota.division_key && anggota.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-
-  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : (existing.division_key || ''))
-  data.anggota[idx] = { ...existing, ...req.body, division_key: updatedDivKey, id: existing.id }
-  saveData(data)
-  res.json(data.anggota[idx])
+  const updatedDivKey = isDivisi ? req.user.division_key : (req.body.division_key !== undefined ? req.body.division_key : (anggota.division_key || ''))
+  await anggota.update({ ...req.body, division_key: updatedDivKey })
+  res.json(anggota)
 })
 
-router.delete('/admin/anggota/:id', (req, res) => {
-  if (!data.anggota) data.anggota = []
-  const idx = data.anggota.findIndex(a => String(a.id) === String(req.params.id))
-  if (idx === -1) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
-
-  const existing = data.anggota[idx]
+router.delete('/admin/anggota/:id', async (req, res) => {
+  const anggota = await db.Anggota.findByPk(req.params.id)
+  if (!anggota) return res.status(404).json({ error: 'Anggota tidak ditemukan' })
+  
   const isDivisi = req.user && req.user.role === 'divisi'
-  if (isDivisi && existing.division_key && existing.division_key !== req.user.division_key) {
-    return res.status(403).json({ error: 'Akses ditolak. Data anggota divisi lain tidak dapat dihapus.' })
+  if (isDivisi && anggota.division_key && anggota.division_key !== req.user.division_key) {
+    return res.status(403).json({ error: 'Akses ditolak.' })
   }
-
-  data.anggota.splice(idx, 1)
-  saveData(data)
+  await anggota.destroy()
   res.json({ success: true })
 })
 
-// Bulk Anggota Import
-router.post('/admin/anggota/bulk', (req, res) => {
-  if (!Array.isArray(req.body)) {
-    return res.status(400).json({ error: 'Body harus berupa array data anggota' })
-  }
-  if (!data.anggota) data.anggota = []
-  
+router.post('/admin/anggota/bulk', async (req, res) => {
+  if (!Array.isArray(req.body)) return res.status(400).json({ error: 'Body harus berupa array' })
   const isDivisi = req.user && req.user.role === 'divisi'
-  let currentId = nextId(data.anggota)
-  const added = []
-
-  req.body.forEach(item => {
-    if (!item.name || !item.nim) return
-    const divKey = isDivisi ? req.user.division_key : (item.division_key || '')
-    const record = {
-      id: currentId++,
-      name: String(item.name).trim(),
-      nim: String(item.nim).trim(),
-      program_study: item.program_study ? String(item.program_study).trim() : '-',
-      join_year: Number(item.join_year) || new Date().getFullYear(),
-      status: item.status === 'alumni' ? 'alumni' : 'aktif',
-      division_key: divKey
-    }
-    data.anggota.push(record)
-    added.push(record)
-  })
-
-  saveData(data)
+  
+  const toInsert = req.body.filter(i => i.name && i.nim).map(item => ({
+    name: String(item.name).trim(),
+    nim: String(item.nim).trim(),
+    program_study: item.program_study ? String(item.program_study).trim() : '-',
+    join_year: Number(item.join_year) || new Date().getFullYear(),
+    status: item.status === 'alumni' ? 'alumni' : 'aktif',
+    division_key: isDivisi ? req.user.division_key : (item.division_key || '')
+  }))
+  
+  const added = await db.Anggota.bulkCreate(toInsert)
   res.status(201).json({ success: true, count: added.length, added })
 })
 
-// Public endpoint for registering visitor logs
-router.post('/visit', (req, res) => {
-  if (!data.visitorLogs) data.visitorLogs = []
+// Public endpoint for visitor logs
+router.post('/visit', async (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1'
-  const userAgent = req.headers['user-agent'] || 'Unknown'
-  const pathName = req.body?.path || '/'
-
-  const visit = {
+  await db.VisitorLog.create({
     id: Date.now().toString() + '-' + Math.random().toString(36).slice(2, 6),
     ip: String(ip).replace('::ffff:', ''),
-    path: pathName,
-    userAgent,
+    path: req.body?.path || '/',
+    userAgent: req.headers['user-agent'] || 'Unknown',
     timestamp: new Date().toISOString()
-  }
-
-  data.visitorLogs.push(visit)
-
-  // Keep last 1000 logs to prevent file bloat
-  if (data.visitorLogs.length > 1000) {
-    data.visitorLogs = data.visitorLogs.slice(-1000)
-  }
-
-  saveData(data)
+  })
   res.json({ success: true })
 })
 
-// Admin endpoint for visitor analytics and logs
-router.get('/admin/logs', (req, res) => {
-  const logs = data.visitorLogs || []
+router.get('/admin/logs', async (req, res) => {
+  const logs = await db.VisitorLog.findAll()
   const now = new Date()
   const todayStr = now.toISOString().slice(0, 10)
   const monthStr = now.toISOString().slice(0, 7)
@@ -661,7 +485,6 @@ router.get('/admin/logs', (req, res) => {
   const monthLogs = logs.filter(l => l.timestamp.startsWith(monthStr))
   const monthViews = monthLogs.length
 
-  // Group by date for daily chart / stats (last 14 days)
   const dailyMap = {}
   for (let i = 13; i >= 0; i--) {
     const d = new Date(now)
@@ -671,12 +494,8 @@ router.get('/admin/logs', (req, res) => {
   }
   logs.forEach(l => {
     const ds = l.timestamp.slice(0, 10)
-    if (dailyMap[ds] !== undefined) {
-      dailyMap[ds] += 1
-    }
+    if (dailyMap[ds] !== undefined) dailyMap[ds] += 1
   })
-
-  const dailyStats = Object.keys(dailyMap).map(date => ({ date, count: dailyMap[date] }))
 
   res.json({
     totalViews,
@@ -684,69 +503,96 @@ router.get('/admin/logs', (req, res) => {
     todayViews,
     todayUnique,
     monthViews,
-    dailyStats,
-    recentLogs: logs.slice(-100).reverse() // last 100 logs
+    dailyStats: Object.keys(dailyMap).map(date => ({ date, count: dailyMap[date] })),
+    recentLogs: logs.slice(-100).reverse()
   })
 })
 
-// ── Peminjaman Settings ──────────────────────────────────────────────────
-router.get('/peminjaman-settings', (req, res) => {
-  res.json(data.peminjamanSettings || { bank: 'BNI', rek: '0000000', name: 'Ikatan Mahasiswa Kerinci' })
+// Peminjaman Settings
+router.get('/peminjaman-settings', async (req, res) => {
+  const setting = await db.PeminjamanSetting.findOne()
+  res.json(setting || { bank: 'BNI', rek: '0000000', name: 'Ikatan Mahasiswa Kerinci' })
 })
 
-router.put('/admin/peminjaman-settings', (req, res) => {
+router.put('/admin/peminjaman-settings', async (req, res) => {
   if (req.user.role !== 'admin' && req.user.role !== 'bendahara' && req.user.division_key !== 'kestari') {
-    // Only allow admin, bendahara, or kestari
     return res.status(403).json({ error: 'Akses ditolak' })
   }
-  const { bank, rek, name } = req.body
-  data.peminjamanSettings = { bank, rek, name }
-  saveData(data)
-  res.json(data.peminjamanSettings)
+  let setting = await db.PeminjamanSetting.findOne()
+  if (!setting) {
+    setting = await db.PeminjamanSetting.create(req.body)
+  } else {
+    await setting.update(req.body)
+  }
+  res.json(setting)
 })
 
-// Stats for dashboard overview
-router.get('/admin/stats', (req, res) => {
-  let programsCount = data.programs.length
-  let membersCount = data.members.length
-  
+router.get('/admin/stats', async (req, res) => {
+  let programsWhere = {}
+  let membersWhere = {}
   if (req.user && req.user.role === 'divisi') {
-    programsCount = data.programs.filter(p => p.division_key === req.user.division_key).length
-    membersCount = data.members.filter(m => m.division_key === req.user.division_key).length
+    programsWhere.division_key = req.user.division_key
+    membersWhere.division_key = req.user.division_key
   }
 
   res.json({
-    divisions: data.divisions.length,
-    programs: programsCount,
-    members: membersCount,
-    slides: data.slides.length,
-    finances: (data.finances || []).length,
-    inventory: (data.inventory || []).length,
-    anggota: (data.anggota || []).length,
-    peminjaman: (data.peminjaman || []).length,
-    prestasi: (data.prestasiList || []).length,
-    gallery: (data.gallery || []).length,
-    visitorViews: (data.visitorLogs || []).length
+    divisions: await db.Division.count(),
+    programs: await db.Program.count({ where: programsWhere }),
+    members: await db.Member.count({ where: membersWhere }),
+    slides: await db.Slide.count(),
+    finances: await db.Finance.count(),
+    inventory: await db.Inventory.count(),
+    anggota: await db.Anggota.count(),
+    peminjaman: await db.Peminjaman.count(),
+    prestasi: await db.Prestasi.count(),
+    gallery: await db.Gallery.count(),
+    visitorViews: await db.VisitorLog.count()
   })
 })
 
-function addPeminjamanRecord(record) {
-  if (!data.peminjaman) data.peminjaman = []
-  const newId = nextId(data.peminjaman)
-  const newRecord = { ...record, id: newId }
-  data.peminjaman.push(newRecord)
-  saveData(data)
-  return newRecord
+async function addPeminjamanRecord(record) {
+  return await db.Peminjaman.create({ ...record, id: Date.now().toString() })
 }
 
-function findUser(username, password) {
-  const users = data.users || []
-  return users.find(u => u.username === username && u.password === password)
+async function findUser(username, password) {
+  const user = await db.User.findOne({ where: { username } })
+  if (!user || !verifyPassword(password, user.password)) return null
+
+  if (!String(user.password).startsWith('scrypt$')) {
+    await user.update({ password: hashPassword(password) })
+  }
+  return user
+}
+
+function hashPassword(password) {
+  const salt = crypto.randomBytes(16).toString('hex')
+  const hash = crypto.scryptSync(password, salt, 64).toString('hex')
+  return `scrypt$${salt}$${hash}`
+}
+
+function verifyPassword(password, storedPassword) {
+  const value = String(storedPassword || '')
+  if (!value.startsWith('scrypt$')) return value === password
+
+  const [, salt, expectedHash] = value.split('$')
+  if (!salt || !expectedHash) return false
+  const actualHash = crypto.scryptSync(password, salt, 64).toString('hex')
+  return actualHash.length === expectedHash.length && crypto.timingSafeEqual(Buffer.from(actualHash), Buffer.from(expectedHash))
+}
+
+function sanitizeUser(user) {
+  const data = user.toJSON()
+  delete data.password
+  return data
+}
+
+async function getDivisions() {
+  return await db.Division.findAll()
 }
 
 module.exports = { 
   router, 
-  get divisions() { return data.divisions }, 
+  getDivisions,
   addPeminjamanRecord,
   findUser
 }

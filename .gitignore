@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+backend/private-uploads/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+frontend/dist/
