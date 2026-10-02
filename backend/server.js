@@ -329,6 +329,10 @@ const port = process.env.PORT || 4000
 const db = require('./db')
 let server
 
+app.get('/', (req, res) => {
+  res.json({ service: 'IMK-UNAND API', status: 'online', health: '/health' })
+})
+
 app.get('/health', async (req, res) => {
   try {
     await db.sequelize.authenticate()

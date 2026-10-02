@@ -6,11 +6,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.imkunand.com/api/:path*"
+      "destination": "https://projek-imk.onrender.com/api/:path*"
     },
     {
       "source": "/uploads/:path*",
-      "destination": "https://api.imkunand.com/uploads/:path*"
+      "destination": "https://projek-imk.onrender.com/uploads/:path*"
     },
     {
       "source": "/(.*)",
