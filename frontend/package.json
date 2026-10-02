@@ -12,9 +12,7 @@
     "react-dom": "^18.2.0",
     "react-easy-crop": "^6.0.2",
     "read-excel-file": "^9.3.10",
-    "recharts": "^3.9.0"
-  },
-  "optionalDependencies": {
+    "recharts": "^3.9.0",
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
