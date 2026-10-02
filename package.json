@@ -2,6 +2,6 @@
   "name": "proyek-imk-deployment",
   "private": true,
   "scripts": {
-    "build": "npm --prefix frontend run build"
+    "build": "npm --prefix frontend rebuild esbuild && npm --prefix frontend run build"
   }
 }

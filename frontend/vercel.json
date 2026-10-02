@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "npm rebuild esbuild && npm run build",
   "installCommand": "npm install",
   "outputDirectory": "dist",
   "rewrites": [
