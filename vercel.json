@@ -5,6 +5,14 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://api.imkunand.com/api/:path*"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://api.imkunand.com/uploads/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
